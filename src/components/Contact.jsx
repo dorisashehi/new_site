@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const contactCards = [
-  { icon: 'bi-geo-alt', title: 'Location', text: 'New York Metro Area · Serving clients nationwide' },
+  { icon: 'bi-geo-alt', title: 'Location', text: '750 Lexington Avenue, New York, NY 10022' },
   { icon: 'bi-envelope', title: 'Email', text: 'info@infomanage.com' },
   { icon: 'bi-telephone', title: 'Call', text: '+1 (800) 555-0195' },
   { icon: 'bi-clock', title: 'Business Hours', text: 'Mon–Fri: 8AM – 6PM · Enterprise: 24×7' },
@@ -49,7 +49,7 @@ export default function Contact() {
           <div className="map-wrapper">
             <iframe
               title="InfoManage location"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291865!2d-73.97066642346918!3d40.75953537138799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258e4a1c484e7%3A0x855282b0f0b8f85e!2s750%20Lexington%20Ave%2C%20New%20York%2C%20NY%2010022!5e0!3m2!1sen!2sus!4v1717960000000!5m2!1sen!2sus"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

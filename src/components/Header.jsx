@@ -69,8 +69,8 @@ export default function Header() {
     <>
       <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
         <div className="header-inner">
-          <a href="#hero" className="logo">
-            <img src="/logo.jpg" alt="InfoManage" style={{ height: 44, maxWidth: 180, objectFit: 'contain' }} />
+          <a href="#hero" className="logo" style={{ display: 'inline-flex', alignItems: 'center' }}>
+            <img src="/logo.png" alt="InfoManage" style={{ height: 68, maxWidth: 240, objectFit: 'contain', display: 'block', filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.5)) brightness(1.08)' }} />
           </a>
 
           <nav className="navmenu">
@@ -97,7 +97,7 @@ export default function Header() {
         <div className="mobile-nav open" onClick={() => setMobileOpen(false)}>
           <div className="mobile-nav-inner" onClick={e => e.stopPropagation()}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 20px 0' }}>
-              <img src="/logo.jpg" alt="InfoManage" style={{ height: 36, objectFit: 'contain' }} />
+              <img src="/logo.png" alt="InfoManage" style={{ height: 36, objectFit: 'contain', display: 'block' }} />
               <i className="bi bi-x" style={{ fontSize: 26, cursor: 'pointer', color: '#333' }} onClick={() => setMobileOpen(false)} />
             </div>
             {mobileLinks.map((link, i) => (

@@ -7,8 +7,11 @@ import About from "./components/About";
 import Services from "./components/Services";
 import CTA from "./components/CTA";
 import Features from "./components/Features";
+import HowWeWork from "./components/HowWeWork";
 import Clients from "./components/Clients";
 import Pricing from "./components/Pricing";
+import Partnership from "./components/Partnership";
+import Trusted from "./components/Trusted";
 import FAQ from "./components/FAQ";
 import Team from "./components/Team";
 import Blog from "./components/Blog";
@@ -39,8 +42,11 @@ export default function App() {
         <Services />
         <CTA />
         <Features />
+        <HowWeWork />
         <Clients />
         <Pricing />
+        <Partnership />
+        <Trusted />
         <FAQ />
         <Team />
         <Blog />

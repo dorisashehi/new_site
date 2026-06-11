@@ -180,8 +180,8 @@ export default function ManagedITPage() {
 
               <div style={{ flex: '1 1 400px' }} data-aos="fade-left" data-aos-delay="250" className="services-image">
                 <img
-                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
-                  alt="Managed IT operations"
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                  alt="IT helpdesk and operations team"
                 />
                 <div className="shape-circle" />
                 <div className="shape-accent" />
@@ -293,7 +293,7 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── Service Plan Overview ─────────────────────────────── */}
-        <section className="pricing-section">
+        <section className="pricing-section" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1800&q=80')" }}>
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>Service Plan Overview</h2>
@@ -393,8 +393,8 @@ export default function ManagedITPage() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 48, alignItems: 'center' }}>
               <div style={{ flex: '1 1 400px' }} data-aos="fade-left" data-aos-delay="200" className="services-image">
                 <img
-                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80"
-                  alt="Organizations that rely on technology"
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                  alt="Business team that relies on technology"
                 />
                 <div className="shape-circle" />
                 <div className="shape-accent" />
@@ -430,7 +430,7 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── Final CTA ─────────────────────────────────────────── */}
-        <section className="cta-section">
+        <section className="cta-section" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1800&q=80')" }}>
           <div className="container">
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40, alignItems: 'center' }}>
               <div style={{ flex: '1 1 400px' }} data-aos="fade-right" data-aos-delay="200">

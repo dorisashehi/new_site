@@ -2,12 +2,19 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const navLinks = [
-  { label: 'Home', href: '#hero' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Industries', href: '#portfolio' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Insights', href: '#recent-posts' },
+  {
+    label: 'Home', href: '#hero', children: [
+      { label: 'About', href: '#about' },
+      { label: 'Services', href: '#services' },
+      { label: 'How We Work', href: '#how-we-work' },
+      { label: 'IT Governance', href: '#features' },
+      { label: 'Industries', href: '#clients' },
+      { label: 'Pricing', href: '#pricing' },
+      { label: 'FAQ', href: '#faq' },
+      { label: 'Team', href: '#team' },
+      { label: 'Insights', href: '#recent-posts' },
+    ]
+  },
   { label: 'Managed IT', href: '/managed-it-services', internal: true },
   {
     label: 'Solutions', href: '#', children: [
@@ -59,11 +66,15 @@ export default function Header() {
 
   const mobileLinks = [
     { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Industries', href: '#portfolio' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'Insights', href: '#recent-posts' },
+    { label: 'About', href: '#about', indent: true },
+    { label: 'Services', href: '#services', indent: true },
+    { label: 'How We Work', href: '#how-we-work', indent: true },
+    { label: 'IT Governance', href: '#features', indent: true },
+    { label: 'Industries', href: '#clients', indent: true },
+    { label: 'Pricing', href: '#pricing', indent: true },
+    { label: 'FAQ', href: '#faq', indent: true },
+    { label: 'Team', href: '#team', indent: true },
+    { label: 'Insights', href: '#recent-posts', indent: true },
     { label: 'Managed IT', href: '/managed-it-services', internal: true },
     { label: 'Contact', href: '#contact' },
   ];
@@ -111,7 +122,9 @@ export default function Header() {
                 ? <Link key={i} to={link.href} onClick={() => setMobileOpen(false)}>{link.label}</Link>
                 : <a key={i} href={link.href}
                     className={activeSection === link.href.replace('#', '') ? 'active' : ''}
-                    onClick={() => setMobileOpen(false)}>
+                    onClick={() => setMobileOpen(false)}
+                    style={link.indent ? { paddingLeft: 36, fontSize: 14, color: '#666', borderBottom: '1px solid #f5f5f5' } : {}}>
+                    {link.indent && <i className="bi bi-chevron-right" style={{ fontSize: 10, marginRight: 6, color: 'var(--accent)' }} />}
                     {link.label}
                   </a>
             ))}

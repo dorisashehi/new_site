@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 
 import Header from "./components/Header";
@@ -17,21 +18,9 @@ import Team from "./components/Team";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ManagedITPage from "./pages/ManagedITPage";
 
-export default function App() {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    AOS.init({
-      duration: 700,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false,
-    });
-    const timer = setTimeout(() => setLoaded(true), 600);
-    return () => clearTimeout(timer);
-  }, []);
-
+function HomePage({ loaded }) {
   return (
     <>
       <div id="preloader" className={loaded ? "done" : ""} />
@@ -54,5 +43,27 @@ export default function App() {
       </main>
       <Footer />
     </>
+  );
+}
+
+export default function App() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 700,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    });
+    const timer = setTimeout(() => setLoaded(true), 600);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage loaded={loaded} />} />
+      <Route path="/managed-it-services" element={<ManagedITPage />} />
+    </Routes>
   );
 }

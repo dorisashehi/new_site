@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
@@ -7,9 +8,10 @@ const navLinks = [
   { label: 'Industries', href: '#portfolio' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'Insights', href: '#recent-posts' },
+  { label: 'Managed IT', href: '/managed-it-services', internal: true },
   {
     label: 'Solutions', href: '#', children: [
-      { label: 'Managed IT', href: '#services' },
+      { label: 'Managed IT', href: '/managed-it-services', internal: true },
       { label: 'Cybersecurity', href: '#features' },
       { label: 'Cloud Management', href: '#services' },
       { label: 'vCTO Advisory', href: '#about' },
@@ -23,10 +25,10 @@ function DropdownItems({ items }) {
     <ul className="dropdown-menu">
       {items.map((item, i) => (
         <li key={i} style={{ position: 'relative' }} className={item.children ? 'dropdown' : ''}>
-          <a href={item.href}>
-            {item.label}
-            {item.children && <i className="bi bi-chevron-down" style={{ marginLeft: 6, fontSize: 11 }} />}
-          </a>
+          {item.internal
+            ? <Link to={item.href}>{item.label}</Link>
+            : <a href={item.href}>{item.label}{item.children && <i className="bi bi-chevron-down" style={{ marginLeft: 6, fontSize: 11 }} />}</a>
+          }
           {item.children && <DropdownItems items={item.children} />}
         </li>
       ))}
@@ -62,6 +64,7 @@ export default function Header() {
     { label: 'Industries', href: '#portfolio' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'Insights', href: '#recent-posts' },
+    { label: 'Managed IT', href: '/managed-it-services', internal: true },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -78,10 +81,13 @@ export default function Header() {
               {navLinks.map((link, i) => (
                 <li key={i} style={{ position: 'relative', padding: '15px 14px' }}
                     className={link.children ? 'dropdown' : ''}>
-                  <a href={link.href} className={activeSection === link.href.replace('#', '') ? 'active' : ''}>
-                    {link.label}
-                    {link.children && <i className="bi bi-chevron-down toggle-dropdown" style={{ fontSize: 12, marginLeft: 4 }} />}
-                  </a>
+                  {link.internal
+                    ? <Link to={link.href}>{link.label}</Link>
+                    : <a href={link.href} className={activeSection === link.href.replace('#', '') ? 'active' : ''}>
+                        {link.label}
+                        {link.children && <i className="bi bi-chevron-down toggle-dropdown" style={{ fontSize: 12, marginLeft: 4 }} />}
+                      </a>
+                  }
                   {link.children && <DropdownItems items={link.children} />}
                 </li>
               ))}
@@ -101,11 +107,13 @@ export default function Header() {
               <i className="bi bi-x" style={{ fontSize: 26, cursor: 'pointer', color: '#333' }} onClick={() => setMobileOpen(false)} />
             </div>
             {mobileLinks.map((link, i) => (
-              <a key={i} href={link.href}
-                className={activeSection === link.href.replace('#', '') ? 'active' : ''}
-                onClick={() => setMobileOpen(false)}>
-                {link.label}
-              </a>
+              link.internal
+                ? <Link key={i} to={link.href} onClick={() => setMobileOpen(false)}>{link.label}</Link>
+                : <a key={i} href={link.href}
+                    className={activeSection === link.href.replace('#', '') ? 'active' : ''}
+                    onClick={() => setMobileOpen(false)}>
+                    {link.label}
+                  </a>
             ))}
             <div style={{ padding: '16px 20px' }}>
               <a href="#contact" onClick={() => setMobileOpen(false)} style={{ display: 'inline-block', background: 'var(--accent)', color: '#fff', padding: '10px 24px', borderRadius: 50, fontWeight: 600, fontSize: 14 }}>

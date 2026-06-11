@@ -757,6 +757,121 @@ a:hover { color: var(--accent-hover); }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ---- Managed IT Page ---- */
+.mit-hero {
+  min-height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
+  background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80');
+  background-size: cover; background-position: center; background-attachment: fixed;
+}
+.mit-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(10,22,40,0.82) 0%, rgba(26,108,181,0.45) 100%);
+}
+.mit-hero-content {
+  position: relative; z-index: 2; text-align: center; padding: 120px 20px 80px;
+}
+.mit-hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px; padding: 6px 18px; margin-bottom: 24px;
+  color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 500;
+}
+.mit-hero-badge i { color: var(--accent); font-size: 14px; }
+.mit-hero-content h1 {
+  font-size: clamp(32px, 5vw, 60px); font-weight: 700; color: #fff;
+  margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+.mit-hero-sub {
+  font-size: clamp(16px, 2.5vw, 22px); color: rgba(255,255,255,0.9);
+  margin-bottom: 24px; max-width: 700px; margin-left: auto; margin-right: auto;
+}
+.mit-hero-body {
+  font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.8;
+  max-width: 680px; margin: 0 auto 16px;
+}
+.mit-hero-note {
+  font-size: 14px; color: rgba(255,255,255,0.6); font-style: italic;
+  max-width: 580px; margin: 0 auto 36px;
+}
+.mit-hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.mit-hero-outline-btn {
+  display: inline-block; padding: 14px 36px; border-radius: 50px; font-weight: 600;
+  font-size: 15px; border: 2px solid rgba(255,255,255,0.5); color: #fff; transition: 0.3s;
+}
+.mit-hero-outline-btn:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
+
+.mit-section { padding: 80px 0; }
+
+/* Fix / Maintain / Enhance framework */
+.mit-framework-section { padding: 80px 0; background: var(--light-bg); }
+.mit-framework-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+}
+.mit-framework-card {
+  background: #fff; border-radius: 12px; padding: 40px 32px; position: relative;
+  border: 2px solid #e8edf4; box-shadow: 0 2px 20px rgba(0,0,0,0.06); transition: 0.3s; overflow: hidden;
+}
+.mit-framework-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(26,108,181,0.14); border-color: var(--accent); }
+.mit-framework-card--accent {
+  background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 10px 40px rgba(26,108,181,0.35);
+}
+.mit-framework-card--accent:hover { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(26,108,181,0.45); }
+.mit-fw-num {
+  position: absolute; top: 20px; right: 24px;
+  font-size: 64px; font-weight: 900; color: rgba(26,108,181,0.07);
+  font-family: 'Nunito', sans-serif; line-height: 1;
+}
+.mit-framework-card--accent .mit-fw-num { color: rgba(255,255,255,0.15); }
+.mit-fw-icon-wrap {
+  width: 64px; height: 64px; border-radius: 14px;
+  background: rgba(26,108,181,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+}
+.mit-fw-icon-wrap i { font-size: 28px; color: var(--accent); }
+.mit-framework-card--accent .mit-fw-icon-wrap { background: rgba(255,255,255,0.2); }
+.mit-framework-card--accent .mit-fw-icon-wrap i { color: #fff; }
+.mit-framework-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; color: var(--heading-color); }
+.mit-framework-card--accent h3 { color: #fff; }
+.mit-framework-card > p { font-size: 14px; color: #666; line-height: 1.7; margin-bottom: 20px; }
+.mit-framework-card--accent > p { color: rgba(255,255,255,0.85); }
+.mit-framework-card ul { list-style: none; padding: 0; margin: 0; }
+.mit-framework-card ul li {
+  font-size: 13px; color: #555; padding: 5px 0;
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.mit-framework-card ul li i { color: var(--accent); flex-shrink: 0; margin-top: 2px; font-size: 14px; }
+.mit-framework-card--accent ul li { color: rgba(255,255,255,0.9); }
+.mit-framework-card--accent ul li i { color: rgba(255,255,255,0.8); }
+
+/* Operational Support vs Project Work */
+.mit-compare-card {
+  background: #fff; border-radius: 12px; padding: 36px 32px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06); border: 2px solid #e8edf4; height: 100%; transition: 0.3s;
+}
+.mit-compare-card:hover { box-shadow: 0 12px 40px rgba(26,108,181,0.1); border-color: rgba(26,108,181,0.3); }
+.mit-compare-card--project { border-top: 4px solid var(--accent); }
+.mit-compare-card--ops { border-top: 4px solid #2da44e; }
+.mit-compare-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.mit-compare-icon {
+  width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0;
+  background: rgba(45,164,78,0.1); display: flex; align-items: center; justify-content: center;
+}
+.mit-compare-icon i { font-size: 22px; color: #2da44e; }
+.mit-compare-icon--project { background: rgba(26,108,181,0.1); }
+.mit-compare-icon--project i { color: var(--accent); }
+.mit-compare-header h4 { font-size: 18px; font-weight: 700; margin: 0 0 4px; color: var(--heading-color); }
+.mit-compare-header span { font-size: 13px; color: #888; }
+
+/* Pricing model tags */
+.mit-pricing-models { text-align: center; margin-top: 40px; }
+.mit-pricing-model-tags { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+.mit-model-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 22px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px; color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500;
+}
+.mit-model-tag i { color: var(--accent); }
+
 /* Responsive */
 @media (max-width: 1199px) {
   .navmenu, .cta-btn { display: none; }
@@ -769,6 +884,11 @@ a:hover { color: var(--accent-hover); }
   .contact-wrapper { grid-template-columns: 1fr; }
   .map-wrapper { min-height: 280px; }
   .features-grid { grid-template-columns: 1fr; }
+  .mit-framework-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .mit-framework-grid { grid-template-columns: 1fr; }
+  .mit-hero-content { padding: 100px 20px 60px; }
 }
 @media (max-width: 767px) {
   .hero-info h2 { font-size: 28px; }

@@ -141,159 +141,131 @@ export default function ManagedITPage() {
           </div>
         </section>
 
-        {/* ── What Managed IT Means ─────────────────────────────── */}
-        <section className="mit-section">
+        {/* ── What Managed IT Means — dark section ─────────────── */}
+        <section className="mit-dark-section">
           <div className="container">
-            <div className="section-title" data-aos="fade-up">
+            <div className="section-title mit-dark-title" data-aos="fade-up">
               <h2>What Managed IT Means at InfoManage</h2>
               <p>Operational responsibility for the stability, performance, and security of your technology environment</p>
             </div>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 48, alignItems: 'center' }}>
-              <div style={{ flex: '1 1 400px' }} data-aos="fade-right" data-aos-delay="150">
-                <span className="services-content subtitle" style={{ display: 'block', fontSize: 13, fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 16 }}>
-                  Comprehensive Coverage
-                </span>
-                <h2 style={{ fontSize: 30, fontWeight: 700, marginBottom: 18, color: 'var(--heading-color)' }}>
-                  Beyond Traditional Support
-                </h2>
-                <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 16 }}>
-                  Managed IT services at InfoManage go beyond traditional support. We take operational responsibility
-                  for maintaining the stability, performance, and security of your technology environment.
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 56, alignItems: 'center' }}>
+              <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="150">
+                <span className="mit-split-label">Comprehensive Coverage</span>
+                <h2 style={{ fontSize: 30, fontWeight: 700, color: '#fff', marginBottom: 18 }}>Beyond Traditional Support</h2>
+                <p style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.8, marginBottom: 14, fontSize: 15 }}>
+                  Managed IT services at InfoManage go beyond traditional support. We take operational
+                  responsibility for maintaining the stability, performance, and security of your technology environment.
                 </p>
-                <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 28 }}>
-                  Our team manages the core infrastructure that businesses depend on every day, ensuring that systems
-                  remain reliable and users remain productive.
+                <p style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.8, marginBottom: 24, fontSize: 15 }}>
+                  Our team manages the core infrastructure that businesses depend on every day, ensuring
+                  systems remain reliable and users remain productive.
                 </p>
-                <p style={{ fontWeight: 700, color: 'var(--heading-color)', marginBottom: 14, fontSize: 15 }}>
-                  Operational coverage includes:
-                </p>
-                <ul className="check-list">
+                <p className="mit-split-list-label">Operational coverage includes:</p>
+                <ul className="mit-split-list">
                   {coverageItems.map((item, i) => (
-                    <li key={i}>
-                      <i className="bi bi-check2-circle" />
-                      {item}
-                    </li>
+                    <li key={i}><i className="bi bi-check2" />{item}</li>
                   ))}
                 </ul>
               </div>
 
-              <div style={{ flex: '1 1 400px' }} data-aos="fade-left" data-aos-delay="250" className="services-image">
+              <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="250">
                 <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                  alt="IT helpdesk and operations team"
+                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80"
+                  alt="IT operations team at work"
+                  style={{ width: '100%', borderRadius: 10, display: 'block', boxShadow: '0 12px 48px rgba(0,0,0,0.4)' }}
                 />
-                <div className="shape-circle" />
-                <div className="shape-accent" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── Fix / Maintain / Enhance ─────────────────────────── */}
-        <section className="mit-framework-section">
+        {/* ── Fix / Maintain / Enhance — zigzag rows ───────────── */}
+        <section className="mit-zigzag-section">
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>How InfoManage Manages IT</h2>
               <p>A structured operational model designed to keep systems running smoothly while enabling continuous improvement</p>
             </div>
 
-            <div className="mit-framework-grid">
-              {frameworkCards.map((card, i) => (
-                <div
-                  key={i}
-                  className={`mit-framework-card${card.accent ? ' mit-framework-card--accent' : ''}`}
-                  data-aos="fade-up"
-                  data-aos-delay={100 + i * 120}
-                >
-                  <div className="mit-fw-num">{card.num}</div>
-                  <div className="mit-fw-icon-wrap">
+            {frameworkCards.map((card, i) => (
+              <div
+                key={i}
+                className={`mit-step-row${i % 2 === 1 ? ' mit-step-row--reverse' : ''}${card.accent ? ' mit-step-row--featured' : ''}`}
+                data-aos="fade-up"
+                data-aos-delay={100 + i * 100}
+              >
+                <div className="mit-step-visual">
+                  <div className="mit-step-circle">
                     <i className={`bi ${card.icon}`} />
                   </div>
+                  <div className="mit-step-bignum">{card.num}</div>
+                </div>
+                <div className="mit-step-content">
                   <h3>{card.title}</h3>
                   <p>{card.desc}</p>
                   <ul>
                     {card.bullets.map((b, j) => (
-                      <li key={j}>
-                        <i className="bi bi-check2" />
-                        {b}
-                      </li>
+                      <li key={j}><i className="bi bi-check2" />{b}</li>
                     ))}
                   </ul>
                 </div>
-              ))}
-            </div>
-
-            <p style={{ textAlign: 'center', color: '#888', fontSize: 14, marginTop: 40 }} data-aos="fade-up" data-aos-delay="400">
-              This structured approach ensures that IT operations remain reliable while supporting future growth.
-            </p>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* ── Operational Support vs Project Work ───────────────── */}
-        <section className="mit-section" style={{ background: 'var(--light-bg)' }}>
-          <div className="container">
-            <div className="section-title" data-aos="fade-up">
-              <h2>Operational Support vs Project Work</h2>
-              <p>Clear separation ensures predictable service delivery and allows organizations to plan technology improvements effectively</p>
+        {/* ── Ops vs Project Work — dark overlay split ─────────── */}
+        <section className="mit-dark-compare">
+          <div className="mit-dark-compare-overlay" />
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            <div className="section-title" data-aos="fade-up" style={{ paddingBottom: 48 }}>
+              <h2 style={{ color: '#fff' }}>Operational Support vs Project Work</h2>
+              <p style={{ color: 'rgba(255,255,255,0.6)' }}>
+                Clear separation ensures predictable service delivery while allowing organizations to plan technology improvements effectively
+              </p>
             </div>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 28, justifyContent: 'center' }}>
-              {/* Operational Support */}
-              <div style={{ flex: '1 1 320px', maxWidth: 520 }} data-aos="fade-right" data-aos-delay="150">
-                <div className="mit-compare-card mit-compare-card--ops">
-                  <div className="mit-compare-header">
-                    <div className="mit-compare-icon">
-                      <i className="bi bi-gear-fill" />
-                    </div>
-                    <div>
-                      <h4>Operational Support</h4>
-                      <span>Covered within the monthly service plan</span>
-                    </div>
+            <div className="mit-dc-grid">
+              <div data-aos="fade-up" data-aos-delay="150">
+                <div className="mit-dc-header mit-dc-header--ops">
+                  <i className="bi bi-gear-fill" />
+                  <div>
+                    <h4>Operational Support</h4>
+                    <span>Covered within the monthly service plan</span>
                   </div>
-                  <p style={{ color: '#666', fontSize: 14, lineHeight: 1.7, marginBottom: 20 }}>
-                    Day-to-day IT activities are included in your service plan. No additional billing for standard operational tasks.
-                  </p>
-                  <ul className="check-list">
-                    {opsSupportItems.map((item, i) => (
-                      <li key={i}><i className="bi bi-check2-circle" />{item}</li>
-                    ))}
-                  </ul>
                 </div>
+                <p className="mit-dc-desc">Day-to-day IT activities are included in your service plan. No additional billing for standard operational tasks.</p>
+                <ul className="mit-dc-list">
+                  {opsSupportItems.map((item, i) => (
+                    <li key={i}><i className="bi bi-check2" />{item}</li>
+                  ))}
+                </ul>
               </div>
 
-              {/* Project Work */}
-              <div style={{ flex: '1 1 320px', maxWidth: 520 }} data-aos="fade-left" data-aos-delay="250">
-                <div className="mit-compare-card mit-compare-card--project">
-                  <div className="mit-compare-header">
-                    <div className="mit-compare-icon mit-compare-icon--project">
-                      <i className="bi bi-clipboard2-data" />
-                    </div>
-                    <div>
-                      <h4>Project Work</h4>
-                      <span>Planned and delivered separately</span>
-                    </div>
+              <div className="mit-dc-divider" />
+
+              <div data-aos="fade-up" data-aos-delay="250">
+                <div className="mit-dc-header mit-dc-header--project">
+                  <i className="bi bi-clipboard2-data" />
+                  <div>
+                    <h4>Project Work</h4>
+                    <span>Planned and delivered separately</span>
                   </div>
-                  <p style={{ color: '#666', fontSize: 14, lineHeight: 1.7, marginBottom: 20 }}>
-                    Major infrastructure changes that exceed defined thresholds are structured as projects to ensure proper design and implementation.
-                  </p>
-                  <ul className="check-list">
-                    {projectItems.map((item, i) => (
-                      <li key={i}><i className="bi bi-check2-circle" />{item}</li>
-                    ))}
-                  </ul>
                 </div>
+                <p className="mit-dc-desc">Major infrastructure changes that exceed defined thresholds are structured as projects to ensure proper design and implementation.</p>
+                <ul className="mit-dc-list">
+                  {projectItems.map((item, i) => (
+                    <li key={i}><i className="bi bi-check2" />{item}</li>
+                  ))}
+                </ul>
               </div>
             </div>
-
-            <p style={{ textAlign: 'center', color: '#888', fontSize: 14, marginTop: 32 }} data-aos="fade-up" data-aos-delay="400">
-              This clear separation allows operational support to remain predictable while ensuring complex initiatives receive appropriate attention.
-            </p>
           </div>
         </section>
 
         {/* ── Service Plan Overview ─────────────────────────────── */}
-        <section className="pricing-section" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1800&q=80')" }}>
+        <section className="mit-section" style={{ background: '#f0f4f9' }}>
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>Service Plan Overview</h2>
@@ -326,13 +298,13 @@ export default function ManagedITPage() {
               ))}
             </div>
 
-            <div className="mit-pricing-models" data-aos="fade-up" data-aos-delay="400">
-              <p style={{ textAlign: 'center', color: 'rgba(255,255,255,0.8)', fontSize: 15, marginBottom: 20 }}>
+            <div className="mit-pricing-models" data-aos="fade-up" data-aos-delay="400" style={{ marginTop: 40 }}>
+              <p style={{ textAlign: 'center', color: '#666', fontSize: 15, marginBottom: 20 }}>
                 Flexible pricing models to fit your environment
               </p>
               <div className="mit-pricing-model-tags">
                 {['Per-user pricing', 'Per-device pricing', 'Hybrid models for mixed environments'].map((model, i) => (
-                  <span key={i} className="mit-model-tag">
+                  <span key={i} className="mit-model-tag mit-model-tag--light">
                     <i className="bi bi-check-circle-fill" />
                     {model}
                   </span>
@@ -342,131 +314,120 @@ export default function ManagedITPage() {
           </div>
         </section>
 
-        {/* ── Governance-Driven ITSM ────────────────────────────── */}
-        <section className="features-section">
+        {/* ── Governance-Driven ITSM — stats strip + full grid ──── */}
+        <section className="mit-section">
           <div className="container">
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40, alignItems: 'flex-start' }}>
-              <div style={{ flex: '1 1 340px' }} data-aos="fade-right" data-aos-delay="200">
-                <div className="features-content">
-                  <span style={{ display: 'block', fontSize: 13, fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 16 }}>
-                    ITSM Practices
-                  </span>
-                  <h2>Governance-Driven IT Service Management</h2>
-                  <p>
-                    Reliable IT operations require structured processes and accountability. InfoManage delivers
-                    services using established IT Service Management practices to maintain operational discipline
-                    and visibility.
-                  </p>
-                  <div className="main-feature">
-                    <div className="feat-icon"><i className="bi bi-shield-lock-fill" /></div>
-                    <div>
-                      <h4>Predictable IT Management</h4>
-                      <p>
-                        Technology operations should be predictable and transparent. InfoManage service plans
-                        provide consistent operational coverage without unexpected service invoices — so your
-                        organization can focus on its mission.
-                      </p>
-                    </div>
-                  </div>
-                  <Link to="/#contact" className="btn-features">Request an Assessment</Link>
-                </div>
-              </div>
+            <div className="section-title" data-aos="fade-up">
+              <h2>Governance-Driven IT Service Management</h2>
+              <p>Reliable IT operations require structured processes and accountability. InfoManage uses established ITSM practices to maintain operational discipline and visibility.</p>
+            </div>
 
-              <div style={{ flex: '1 1 500px' }} data-aos="fade-left" data-aos-delay="300">
-                <div className="features-grid">
-                  {govItems.map((item, i) => (
-                    <div key={i} className="feature-card" data-aos="zoom-in" data-aos-delay={400 + i * 50}>
-                      <div className="icon-wrapper"><i className={`bi ${item.icon}`} /></div>
-                      <h5>{item.title}</h5>
-                      <p>{item.desc}</p>
-                    </div>
-                  ))}
+            <div className="mit-stats-bar" data-aos="fade-up" data-aos-delay="100">
+              {[
+                { num: '24×7', label: 'System Monitoring' },
+                { num: '6', label: 'ITSM Practices' },
+                { num: '30+', label: 'Years Experience' },
+                { num: '100%', label: 'Operational Transparency' },
+              ].map((s, i) => (
+                <div key={i} className="mit-stat-item">
+                  <strong>{s.num}</strong>
+                  <span>{s.label}</span>
                 </div>
-              </div>
+              ))}
+            </div>
+
+            <div className="mit-gov-grid" data-aos="fade-up" data-aos-delay="200">
+              {govItems.map((item, i) => (
+                <div key={i} className="feature-card" data-aos="fade-up" data-aos-delay={300 + i * 50}>
+                  <div className="icon-wrapper"><i className={`bi ${item.icon}`} /></div>
+                  <h5>{item.title}</h5>
+                  <p>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: 44 }} data-aos="fade-up" data-aos-delay="400">
+              <Link to="/#contact" className="btn-features">Request an Assessment</Link>
             </div>
           </div>
         </section>
 
-        {/* ── Who This Service Is Designed For ─────────────────── */}
+        {/* ── Who This Is For — numbered full-width criteria ──────── */}
         <section className="mit-section" style={{ background: 'var(--light-bg)' }}>
           <div className="container">
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 48, alignItems: 'center' }}>
-              <div style={{ flex: '1 1 400px' }} data-aos="fade-left" data-aos-delay="200" className="services-image">
-                <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-                  alt="Business team that relies on technology"
-                />
-                <div className="shape-circle" />
-                <div className="shape-accent" />
-              </div>
+            <div className="section-title" data-aos="fade-up">
+              <h2>Who This Service Is Designed For</h2>
+              <p>Managed IT services from InfoManage are ideal for organizations that:</p>
+            </div>
 
-              <div style={{ flex: '1 1 400px' }} data-aos="fade-right" data-aos-delay="100">
-                <span style={{ display: 'block', fontSize: 13, fontWeight: 700, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: 2, marginBottom: 16 }}>
-                  Ideal For
-                </span>
-                <h2 style={{ fontSize: 30, fontWeight: 700, marginBottom: 18, color: 'var(--heading-color)' }}>
-                  Who This Service Is Designed For
-                </h2>
-                <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 24 }}>
-                  Managed IT services from InfoManage are ideal for organizations that:
-                </p>
-                <ul className="check-list" style={{ marginBottom: 32 }}>
-                  {idealForItems.map((item, i) => (
-                    <li key={i} style={{ padding: '9px 0', fontSize: 15 }}>
-                      <i className="bi bi-check2-circle" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-                  <Link to="/#contact" className="btn-consultation">
-                    <span>Schedule a Consultation</span>
-                    <i className="bi bi-arrow-right" />
-                  </Link>
+            <div className="mit-criteria-list">
+              {idealForItems.map((item, i) => (
+                <div key={i} className="mit-criteria-item" data-aos="fade-up" data-aos-delay={80 + i * 70}>
+                  <div className="mit-criteria-num">0{i + 1}</div>
+                  <div className="mit-criteria-icon">
+                    <i className={['bi-pc-display', 'bi-arrow-repeat', 'bi-graph-down-arrow', 'bi-activity', 'bi-compass'][i]} />
+                  </div>
+                  <p>{item}</p>
                 </div>
-              </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: 48 }} data-aos="fade-up" data-aos-delay="500">
+              <Link to="/#contact" className="btn-consultation">
+                <span>Schedule a Consultation</span>
+                <i className="bi bi-arrow-right" />
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* ── Final CTA ─────────────────────────────────────────── */}
-        <section className="cta-section" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1800&q=80')" }}>
+        {/* ── Final CTA — white section ─────────────────────────── */}
+        <section className="mit-section" style={{ background: '#fff', borderTop: '1px solid #eef0f4' }}>
           <div className="container">
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40, alignItems: 'center' }}>
-              <div style={{ flex: '1 1 400px' }} data-aos="fade-right" data-aos-delay="200">
-                <div className="cta-badge">
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 60, alignItems: 'center' }}>
+              <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="200">
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 16 }}>
                   <i className="bi bi-rocket-takeoff" />
                   Ready to Get Started?
-                </div>
-                <h2>Ready to Improve Your IT Operations?</h2>
-                <p className="lead">
+                </span>
+                <h2 style={{ fontSize: 34, fontWeight: 700, color: 'var(--heading-color)', marginBottom: 18 }}>
+                  Ready to Improve Your IT Operations?
+                </h2>
+                <p style={{ color: '#666', lineHeight: 1.8, fontSize: 16, marginBottom: 14 }}>
                   Schedule a consultation to discuss your environment and learn how structured IT management
                   can improve reliability, security, and operational efficiency.
                 </p>
-                <p style={{ color: 'rgba(255,255,255,0.65)', marginTop: 14, fontSize: 14, lineHeight: 1.7 }}>
+                <p style={{ color: '#999', fontSize: 14, lineHeight: 1.7 }}>
                   InfoManage has been serving organizations since 1995. Our team brings decades of operational
                   experience to every engagement.
                 </p>
               </div>
 
-              <div style={{ flex: '1 1 400px' }} data-aos="fade-left" data-aos-delay="300">
+              <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="300">
                 <div style={{ marginBottom: 28 }}>
-                  <div className="cta-feature"><i className="bi bi-check-circle-fill" /><span>Proactive monitoring and maintenance — 24×7</span></div>
-                  <div className="cta-feature"><i className="bi bi-check-circle-fill" /><span>Unlimited operational support within service plan scope</span></div>
-                  <div className="cta-feature"><i className="bi bi-check-circle-fill" /><span>Governance-driven ITSM practices</span></div>
-                  <div className="cta-feature"><i className="bi bi-check-circle-fill" /><span>Strategic technology planning and vCTO advisory</span></div>
+                  {[
+                    'Proactive monitoring and maintenance — 24×7',
+                    'Unlimited operational support within service plan scope',
+                    'Governance-driven ITSM practices',
+                    'Strategic technology planning and vCTO advisory',
+                  ].map((text, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 0', borderBottom: '1px solid #f0f2f5', color: '#444', fontSize: 15 }}>
+                      <i className="bi bi-check-circle-fill" style={{ color: 'var(--accent)', fontSize: 18, flexShrink: 0 }} />
+                      <span>{text}</span>
+                    </div>
+                  ))}
                 </div>
-                <div className="cta-buttons">
-                  <Link to="/#contact" className="btn-cta-primary">Schedule Consultation</Link>
-                  <Link to="/#contact" className="btn-cta-outline">Contact InfoManage</Link>
+                <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
+                  <Link to="/#contact" className="btn-get-started" style={{ padding: '12px 32px' }}>Schedule Consultation</Link>
+                  <Link to="/#contact" style={{ display: 'inline-block', padding: '12px 32px', borderRadius: 50, fontWeight: 600, border: '2px solid var(--accent)', color: 'var(--accent)', transition: '0.3s', fontSize: 15 }}
+                    onMouseOver={e => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = '#fff'; }}
+                    onMouseOut={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)'; }}>
+                    Contact InfoManage
+                  </Link>
                 </div>
-                <div className="trust-indicators">
-                  <small>Trusted by organizations across financial services, legal, healthcare, and more</small>
-                  <div className="rating" style={{ marginTop: 8 }}>
-                    <i className="bi bi-star-fill" /><i className="bi bi-star-fill" /><i className="bi bi-star-fill" />
-                    <i className="bi bi-star-fill" /><i className="bi bi-star-fill" />
-                    <span>Established 1995 · 30+ years of service</span>
-                  </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
+                  {[1,2,3,4,5].map(s => <i key={s} className="bi bi-star-fill" style={{ color: '#ffc107', fontSize: 14 }} />)}
+                  <span style={{ color: '#999', fontSize: 13, marginLeft: 6 }}>Established 1995 · 30+ years of service</span>
                 </div>
               </div>
             </div>

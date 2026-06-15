@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 
 const navLinks = [
   {
-    label: 'Home', href: '#hero', children: [
-      { label: 'About', href: '#about' },
-      { label: 'Services', href: '#services' },
-      { label: 'How We Work', href: '#how-we-work' },
-      { label: 'IT Governance', href: '#features' },
-      { label: 'Industries', href: '#clients' },
-      { label: 'Pricing', href: '#pricing' },
-      { label: 'FAQ', href: '#faq' },
-      { label: 'Team', href: '#team' },
-      { label: 'Insights', href: '#recent-posts' },
+    label: 'Home', href: '/', internal: true, children: [
+      { label: 'About', href: '/#about', internal: true },
+      { label: 'Services', href: '/#services', internal: true },
+      { label: 'How We Work', href: '/#how-we-work', internal: true },
+      { label: 'IT Governance', href: '/#features', internal: true },
+      { label: 'Industries', href: '/#clients', internal: true },
+      { label: 'Pricing', href: '/#pricing', internal: true },
+      { label: 'FAQ', href: '/#faq', internal: true },
+      { label: 'Team', href: '/#team', internal: true },
+      { label: 'Insights', href: '/#recent-posts', internal: true },
     ]
   },
   { label: 'Managed IT', href: '/managed-it-services', internal: true },
@@ -21,11 +21,11 @@ const navLinks = [
     label: 'Solutions', href: '#', children: [
       { label: 'Managed IT', href: '/managed-it-services', internal: true },
       { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
-      { label: 'Cloud Management', href: '#services' },
-      { label: 'vCTO Advisory', href: '#about' },
+      { label: 'Cloud Management', href: '/#services', internal: true },
+      { label: 'vCTO Advisory', href: '/#about', internal: true },
     ]
   },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/#contact', internal: true },
 ];
 
 function DropdownItems({ items }) {
@@ -34,7 +34,7 @@ function DropdownItems({ items }) {
       {items.map((item, i) => (
         <li key={i} style={{ position: 'relative' }} className={item.children ? 'dropdown' : ''}>
           {item.internal
-            ? <Link to={item.href}>{item.label}</Link>
+            ? <Link to={item.href}>{item.label}{item.children && <i className="bi bi-chevron-down" style={{ marginLeft: 6, fontSize: 11 }} />}</Link>
             : <a href={item.href}>{item.label}{item.children && <i className="bi bi-chevron-down" style={{ marginLeft: 6, fontSize: 11 }} />}</a>
           }
           {item.children && <DropdownItems items={item.children} />}
@@ -66,26 +66,26 @@ export default function Header() {
   }, []);
 
   const mobileLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about', indent: true },
-    { label: 'Services', href: '#services', indent: true },
-    { label: 'How We Work', href: '#how-we-work', indent: true },
-    { label: 'IT Governance', href: '#features', indent: true },
-    { label: 'Industries', href: '#clients', indent: true },
-    { label: 'Pricing', href: '#pricing', indent: true },
-    { label: 'FAQ', href: '#faq', indent: true },
-    { label: 'Team', href: '#team', indent: true },
-    { label: 'Insights', href: '#recent-posts', indent: true },
+    { label: 'Home', href: '/', internal: true },
+    { label: 'About', href: '/#about', internal: true, indent: true },
+    { label: 'Services', href: '/#services', internal: true, indent: true },
+    { label: 'How We Work', href: '/#how-we-work', internal: true, indent: true },
+    { label: 'IT Governance', href: '/#features', internal: true, indent: true },
+    { label: 'Industries', href: '/#clients', internal: true, indent: true },
+    { label: 'Pricing', href: '/#pricing', internal: true, indent: true },
+    { label: 'FAQ', href: '/#faq', internal: true, indent: true },
+    { label: 'Team', href: '/#team', internal: true, indent: true },
+    { label: 'Insights', href: '/#recent-posts', internal: true, indent: true },
     { label: 'Managed IT', href: '/managed-it-services', internal: true },
     { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Contact', href: '/#contact', internal: true },
   ];
 
   return (
     <>
       <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
         <div className="header-inner">
-          <a href="#hero" className="logo" style={{ display: 'inline-flex', alignItems: 'center' }}>
+          <a href="/" className="logo" style={{ display: 'inline-flex', alignItems: 'center' }}>
             <img src="/logo.png" alt="InfoManage" style={{ height: 68, maxWidth: 240, objectFit: 'contain', display: 'block', filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.5)) brightness(1.08)' }} />
           </a>
 
@@ -95,7 +95,10 @@ export default function Header() {
                 <li key={i} style={{ position: 'relative', padding: '15px 14px' }}
                     className={link.children ? 'dropdown' : ''}>
                   {link.internal
-                    ? <Link to={link.href}>{link.label}</Link>
+                    ? <Link to={link.href}>
+                        {link.label}
+                        {link.children && <i className="bi bi-chevron-down toggle-dropdown" style={{ fontSize: 12, marginLeft: 4 }} />}
+                      </Link>
                     : <a href={link.href} className={activeSection === link.href.replace('#', '') ? 'active' : ''}>
                         {link.label}
                         {link.children && <i className="bi bi-chevron-down toggle-dropdown" style={{ fontSize: 12, marginLeft: 4 }} />}
@@ -107,7 +110,7 @@ export default function Header() {
             </ul>
           </nav>
 
-          <a href="#contact" className="cta-btn">Schedule Consultation</a>
+          <a href="/#contact" className="cta-btn">Schedule Consultation</a>
           <i className="bi bi-list mobile-nav-toggle" onClick={() => setMobileOpen(true)} />
         </div>
       </header>
@@ -120,20 +123,20 @@ export default function Header() {
               <i className="bi bi-x" style={{ fontSize: 26, cursor: 'pointer', color: '#333' }} onClick={() => setMobileOpen(false)} />
             </div>
             {mobileLinks.map((link, i) => (
-              link.internal
-                ? <Link key={i} to={link.href} onClick={() => setMobileOpen(false)}>{link.label}</Link>
-                : <a key={i} href={link.href}
-                    className={activeSection === link.href.replace('#', '') ? 'active' : ''}
-                    onClick={() => setMobileOpen(false)}
-                    style={link.indent ? { paddingLeft: 36, fontSize: 14, color: '#666', borderBottom: '1px solid #f5f5f5' } : {}}>
-                    {link.indent && <i className="bi bi-chevron-right" style={{ fontSize: 10, marginRight: 6, color: 'var(--accent)' }} />}
-                    {link.label}
-                  </a>
+              <Link
+                key={i}
+                to={link.href}
+                onClick={() => setMobileOpen(false)}
+                style={link.indent ? { paddingLeft: 36, fontSize: 14, color: '#666', borderBottom: '1px solid #f5f5f5', display: 'flex', alignItems: 'center' } : {}}
+              >
+                {link.indent && <i className="bi bi-chevron-right" style={{ fontSize: 10, marginRight: 6, color: 'var(--accent)' }} />}
+                {link.label}
+              </Link>
             ))}
             <div style={{ padding: '16px 20px' }}>
-              <a href="#contact" onClick={() => setMobileOpen(false)} style={{ display: 'inline-block', background: 'var(--accent)', color: '#fff', padding: '10px 24px', borderRadius: 50, fontWeight: 600, fontSize: 14 }}>
+              <Link to="/#contact" onClick={() => setMobileOpen(false)} style={{ display: 'inline-block', background: 'var(--accent)', color: '#fff', padding: '10px 24px', borderRadius: 50, fontWeight: 600, fontSize: 14 }}>
                 Schedule Consultation
-              </a>
+              </Link>
             </div>
           </div>
         </div>

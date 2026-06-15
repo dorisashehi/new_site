@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import AOS from "aos";
 
 import Header from "./components/Header";
@@ -20,6 +20,20 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ManagedITPage from "./pages/ManagedITPage";
 import CybersecurityPage from "./pages/CybersecurityPage";
+
+function ScrollToHash() {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const id = hash.replace('#', '');
+    const timer = setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [hash]);
+  return null;
+}
 
 function HomePage({ loaded }) {
   return (
@@ -62,10 +76,13 @@ export default function App() {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePage loaded={loaded} />} />
-      <Route path="/managed-it-services" element={<ManagedITPage />} />
-      <Route path="/cybersecurity-services" element={<CybersecurityPage />} />
-    </Routes>
+    <>
+      <ScrollToHash />
+      <Routes>
+        <Route path="/" element={<HomePage loaded={loaded} />} />
+        <Route path="/managed-it-services" element={<ManagedITPage />} />
+        <Route path="/cybersecurity-services" element={<CybersecurityPage />} />
+      </Routes>
+    </>
   );
 }

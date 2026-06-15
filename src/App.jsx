@@ -19,6 +19,7 @@ import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ManagedITPage from "./pages/ManagedITPage";
+import CybersecurityPage from "./pages/CybersecurityPage";
 
 function HomePage({ loaded }) {
   return (
@@ -64,6 +65,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HomePage loaded={loaded} />} />
       <Route path="/managed-it-services" element={<ManagedITPage />} />
+      <Route path="/cybersecurity-services" element={<CybersecurityPage />} />
     </Routes>
   );
 }

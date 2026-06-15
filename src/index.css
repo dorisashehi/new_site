@@ -991,6 +991,137 @@ a:hover { color: var(--accent-hover); }
 .mit-criteria-item:hover .mit-criteria-icon i { color: #fff; }
 .mit-criteria-item p { font-size: 16px; color: var(--heading-color); font-weight: 500; margin: 0; line-height: 1.5; }
 
+/* ---- Cybersecurity Page ---- */
+.cyber-hero {
+  min-height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
+  background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80');
+  background-size: cover; background-position: center; background-attachment: fixed;
+}
+.cyber-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(8,18,34,0.90) 0%, rgba(26,108,181,0.50) 100%);
+}
+
+/* Three Principles Section */
+.cyber-principles { padding: 80px 0; background: #0d1e2e; }
+.cyber-principles-intro { max-width: 680px; margin: 0 auto 48px; text-align: center; }
+.cyber-principles-intro p { color: rgba(255,255,255,0.72); font-size: 16px; line-height: 1.8; margin-bottom: 12px; }
+.cyber-principles-intro p:last-child { color: rgba(255,255,255,0.5); font-size: 14px; font-style: italic; margin-bottom: 0; }
+.cyber-principles-footer { text-align: center; color: rgba(255,255,255,0.5); font-size: 14px; margin-top: 40px; }
+.cyber-principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; border-radius: 12px; overflow: hidden; }
+.cyber-principle-panel {
+  padding: 48px 36px; position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.cyber-principle-panel--0 { background: #0d1e2e; border: 1px solid rgba(255,255,255,0.06); }
+.cyber-principle-panel--1 { background: #132840; border: 1px solid rgba(255,255,255,0.06); }
+.cyber-principle-panel--2 { background: var(--accent); }
+.cyber-principle-num {
+  font-size: 80px; font-weight: 900; color: rgba(255,255,255,0.05);
+  font-family: 'Nunito', sans-serif; position: absolute; top: 12px; right: 20px;
+  line-height: 1; user-select: none;
+}
+.cyber-principle-icon {
+  width: 64px; height: 64px; border-radius: 14px;
+  background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
+}
+.cyber-principle-icon i { font-size: 28px; color: #fff; }
+.cyber-principle-panel h3 { font-size: 22px; font-weight: 800; color: #fff; margin: 0; }
+.cyber-principle-panel > p { color: rgba(255,255,255,0.72); font-size: 14px; line-height: 1.7; margin: 0; }
+.cyber-principle-panel ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.cyber-principle-panel ul li { display: flex; gap: 8px; align-items: center; color: rgba(255,255,255,0.85); font-size: 13px; }
+.cyber-principle-panel ul li i { font-size: 13px; color: rgba(255,255,255,0.7); flex-shrink: 0; }
+.cyber-principle-panel--2 ul li i { color: rgba(255,255,255,0.9); }
+
+/* Core Services 2×2 grid */
+.cyber-services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.cyber-service-card {
+  background: #fff; border: 1px solid #eef0f4; border-radius: 12px;
+  padding: 36px 32px; transition: 0.3s; position: relative; overflow: hidden;
+}
+.cyber-service-card:hover { box-shadow: 0 12px 40px rgba(26,108,181,0.1); border-color: rgba(26,108,181,0.25); transform: translateY(-4px); }
+.cyber-service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+  background: var(--accent); opacity: 0; transition: 0.3s;
+}
+.cyber-service-card:hover::before { opacity: 1; }
+.cyber-service-icon {
+  width: 60px; height: 60px; border-radius: 14px;
+  background: rgba(26,108,181,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+  transition: 0.3s;
+}
+.cyber-service-card:hover .cyber-service-icon { background: var(--accent); }
+.cyber-service-icon i { font-size: 26px; color: var(--accent); transition: 0.3s; }
+.cyber-service-card:hover .cyber-service-icon i { color: #fff; }
+.cyber-service-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--heading-color); }
+.cyber-service-card > p { color: #666; font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
+.cyber-service-card ul { list-style: none; padding: 0; margin: 0; }
+.cyber-service-card ul li { display: flex; gap: 8px; align-items: flex-start; padding: 4px 0; color: #555; font-size: 13px; }
+.cyber-service-card ul li i { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+
+/* Incident Response Timeline */
+.cyber-timeline {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative;
+}
+.cyber-timeline-step {
+  padding: 32px 28px; background: #fff; border-radius: 12px; text-align: center; position: relative;
+  border: 1px solid #e8edf4; transition: 0.3s; margin: 0 8px;
+}
+.cyber-timeline-step:hover { box-shadow: 0 8px 28px rgba(26,108,181,0.1); border-color: rgba(26,108,181,0.25); transform: translateY(-4px); }
+.cyber-timeline-connector {
+  position: absolute; top: 44px; right: -20px;
+  width: 40px; height: 2px; background: var(--accent); z-index: 1; opacity: 0.4;
+}
+.cyber-timeline-circle {
+  width: 68px; height: 68px; border-radius: 50%;
+  background: rgba(26,108,181,0.08); border: 2px solid rgba(26,108,181,0.2);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; transition: 0.3s;
+}
+.cyber-timeline-step:hover .cyber-timeline-circle { background: var(--accent); border-color: var(--accent); }
+.cyber-timeline-circle i { font-size: 26px; color: var(--accent); transition: 0.3s; }
+.cyber-timeline-step:hover .cyber-timeline-circle i { color: #fff; }
+.cyber-timeline-num { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+.cyber-timeline-step h5 { font-size: 15px; font-weight: 700; color: var(--heading-color); margin-bottom: 8px; }
+.cyber-timeline-step p { font-size: 13px; color: #777; line-height: 1.6; margin: 0; }
+
+/* Security Assessment Card */
+.cyber-assessment-card {
+  background: var(--accent); border-radius: 16px; padding: 56px 60px;
+  display: flex; flex-wrap: wrap; gap: 60px; align-items: center;
+  box-shadow: 0 16px 56px rgba(26,108,181,0.3);
+}
+.cyber-assessment-left { flex: 1 1 360px; }
+.cyber-assessment-left h2 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.cyber-assessment-left p { color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 15px; }
+.cyber-assessment-right { flex: 1 1 280px; }
+.cyber-assessment-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.9); font-size: 15px; font-weight: 500;
+}
+.cyber-assessment-item:last-child { border-bottom: none; }
+.cyber-assessment-icon {
+  width: 38px; height: 38px; border-radius: 8px; flex-shrink: 0;
+  background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center;
+}
+.cyber-assessment-icon i { font-size: 16px; color: #fff; }
+
+/* Who This Is For — icon card grid */
+.cyber-for-orgs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.cyber-for-org-card {
+  background: #fff; border-radius: 12px; padding: 32px 24px; text-align: center;
+  border: 1px solid #e8edf4; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.cyber-for-org-card:hover { box-shadow: 0 8px 28px rgba(26,108,181,0.1); border-color: rgba(26,108,181,0.25); transform: translateY(-4px); }
+.cyber-for-org-icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(26,108,181,0.08); display: flex; align-items: center; justify-content: center; transition: 0.3s;
+}
+.cyber-for-org-card:hover .cyber-for-org-icon { background: var(--accent); }
+.cyber-for-org-icon i { font-size: 26px; color: var(--accent); transition: 0.3s; }
+.cyber-for-org-card:hover .cyber-for-org-icon i { color: #fff; }
+.cyber-for-org-card p { font-size: 14px; color: var(--heading-color); font-weight: 500; margin: 0; line-height: 1.5; }
+
 /* Responsive */
 @media (max-width: 1199px) {
   .navmenu, .cta-btn { display: none; }
@@ -998,6 +1129,12 @@ a:hover { color: var(--accent-hover); }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 991px) {
+  .cyber-principles-grid { grid-template-columns: 1fr; }
+  .cyber-services-grid { grid-template-columns: 1fr; }
+  .cyber-timeline { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .cyber-timeline-connector { display: none; }
+  .cyber-for-orgs-grid { grid-template-columns: repeat(2, 1fr); }
+  .cyber-assessment-card { padding: 40px 32px; }
   .hero-info h2 { font-size: 36px; }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-wrapper { grid-template-columns: 1fr; }
@@ -1014,6 +1151,8 @@ a:hover { color: var(--accent-hover); }
   .mit-stat-item { flex: 1 1 45%; }
 }
 @media (max-width: 768px) {
+  .cyber-timeline { grid-template-columns: 1fr; }
+  .cyber-for-orgs-grid { grid-template-columns: 1fr; }
   .mit-hero-content { padding: 100px 20px 60px; }
   .mit-gov-grid { grid-template-columns: 1fr; }
   .mit-stats-bar { flex-direction: column; }

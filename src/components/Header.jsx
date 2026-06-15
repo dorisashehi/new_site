@@ -16,10 +16,11 @@ const navLinks = [
     ]
   },
   { label: 'Managed IT', href: '/managed-it-services', internal: true },
+  { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
   {
     label: 'Solutions', href: '#', children: [
       { label: 'Managed IT', href: '/managed-it-services', internal: true },
-      { label: 'Cybersecurity', href: '#features' },
+      { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
       { label: 'Cloud Management', href: '#services' },
       { label: 'vCTO Advisory', href: '#about' },
     ]
@@ -76,6 +77,7 @@ export default function Header() {
     { label: 'Team', href: '#team', indent: true },
     { label: 'Insights', href: '#recent-posts', indent: true },
     { label: 'Managed IT', href: '/managed-it-services', internal: true },
+    { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
     { label: 'Contact', href: '#contact' },
   ];
 

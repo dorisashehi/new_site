@@ -189,8 +189,8 @@ export default function CybersecurityPage() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 56, alignItems: 'center' }}>
               <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="150">
                 <img
-                  src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=900&q=80"
-                  alt="Security professional monitoring systems"
+                  src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=900&q=80"
+                  alt="Network security infrastructure"
                   style={{ width: '100%', borderRadius: 10, display: 'block', boxShadow: '0 12px 48px rgba(0,0,0,0.4)' }}
                 />
               </div>
@@ -205,18 +205,10 @@ export default function CybersecurityPage() {
                   InfoManage incorporates security into daily operational processes, ensuring that systems remain
                   protected while continuing to support business operations.
                 </p>
-                <p style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.8, marginBottom: 28, fontSize: 15 }}>
+                <p style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.8, marginBottom: 0, fontSize: 15 }}>
                   This integration allows organizations to maintain strong security practices without adding
                   unnecessary complexity to their technology environment.
                 </p>
-                <Link to="/#contact" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 10,
-                  padding: '12px 28px', background: 'var(--accent)', color: '#fff',
-                  borderRadius: 50, fontWeight: 600, transition: '0.3s', fontSize: 15,
-                }}>
-                  <span>Request an Assessment</span>
-                  <i className="bi bi-arrow-right" />
-                </Link>
               </div>
             </div>
           </div>
@@ -243,6 +235,9 @@ export default function CybersecurityPage() {
                 </div>
               ))}
             </div>
+            <p style={{ textAlign: 'center', color: 'var(--heading-color)', fontSize: 15, marginTop: 40, opacity: 0.7 }} data-aos="fade-up">
+              This structured approach helps minimize disruption and ensures incidents are handled efficiently.
+            </p>
           </div>
         </section>
 

@@ -1,6 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -79,6 +81,8 @@ const assessmentItems = [
 ];
 
 export default function CybersecurityPage() {
+  const swiperRef = useRef(null);
+
   useEffect(() => {
     AOS.init({ duration: 700, easing: 'ease-in-out', once: true, mirror: false });
     window.scrollTo(0, 0);
@@ -141,11 +145,6 @@ export default function CybersecurityPage() {
                   </div>
                   <h3>{p.title}</h3>
                   <p>{p.desc}</p>
-                  <ul>
-                    {p.bullets.map((b, j) => (
-                      <li key={j}><i className="bi bi-check2" />{b}</li>
-                    ))}
-                  </ul>
                 </div>
               ))}
             </div>
@@ -156,7 +155,7 @@ export default function CybersecurityPage() {
           </div>
         </section>
 
-        {/* ── Core Cybersecurity Services — 2×2 grid ───────────── */}
+        {/* ── Core Cybersecurity Services — carousel ────────────── */}
         <section className="mit-section" style={{ background: '#fff' }}>
           <div className="container">
             <div className="section-title" data-aos="fade-up">
@@ -164,21 +163,44 @@ export default function CybersecurityPage() {
               <p>A range of security services designed to protect systems, data, and users</p>
             </div>
 
-            <div className="cyber-services-grid">
-              {services.map((s, i) => (
-                <div key={i} className="cyber-service-card" data-aos="fade-up" data-aos-delay={100 + i * 80}>
-                  <div className="cyber-service-icon">
-                    <i className={`bi ${s.icon}`} />
-                  </div>
-                  <h4>{s.title}</h4>
-                  <p>{s.desc}</p>
-                  <ul>
-                    {s.bullets.map((b, j) => (
-                      <li key={j}><i className="bi bi-check2" />{b}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <div data-aos="fade-up" data-aos-duration="1000">
+              <Swiper
+                modules={[Autoplay]}
+                loop
+                speed={600}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                onSwiper={swiper => { swiperRef.current = swiper; }}
+                breakpoints={{
+                  320: { slidesPerView: 1, spaceBetween: 20 },
+                  768: { slidesPerView: 2, spaceBetween: 20 },
+                  992: { slidesPerView: 3, spaceBetween: 20 },
+                }}
+              >
+                {services.map((s, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="service-card">
+                      <div className="icon-box"><i className={`bi ${s.icon}`} /></div>
+                      <div>
+                        <h4>{s.title}</h4>
+                        <p style={{ marginBottom: 12 }}>{s.desc}</p>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                          {s.bullets.map((b, j) => (
+                            <li key={j} style={{ fontSize: 12, color: '#666', padding: '3px 0', display: 'flex', gap: 6, alignItems: 'flex-start' }}>
+                              <i className="bi bi-check2" style={{ color: 'var(--accent)', flexShrink: 0, marginTop: 2 }} />{b}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="service-number">0{i + 1}</div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              <div className="swiper-nav" style={{ marginTop: 24 }}>
+                <button className="swiper-nav-btn" onClick={() => swiperRef.current?.slidePrev()}><i className="bi bi-chevron-left" /></button>
+                <button className="swiper-nav-btn" onClick={() => swiperRef.current?.slideNext()}><i className="bi bi-chevron-right" /></button>
+              </div>
             </div>
           </div>
         </section>
@@ -215,7 +237,7 @@ export default function CybersecurityPage() {
         </section>
 
         {/* ── Incident Response — horizontal timeline ───────────── */}
-        <section className="mit-section" style={{ background: 'var(--light-bg)' }}>
+        <section className="mit-section" style={{ background: '#fff' }}>
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>Responding to Security Incidents</h2>
@@ -225,57 +247,22 @@ export default function CybersecurityPage() {
             <div className="cyber-timeline">
               {incidentSteps.map((step, i) => (
                 <div key={i} className="cyber-timeline-step" data-aos="fade-up" data-aos-delay={100 + i * 80}>
-                  {i < incidentSteps.length - 1 && <div className="cyber-timeline-connector" />}
-                  <div className="cyber-timeline-circle">
-                    <i className={`bi ${step.icon}`} />
+                  <div className="cyber-timeline-ghost-num">{step.num}</div>
+                  <div className="cyber-timeline-inner">
+                    <div className="cyber-timeline-num">Step {step.num}</div>
+                    <div className="cyber-timeline-circle">
+                      <i className={`bi ${step.icon}`} />
+                    </div>
+                    <h5>{step.title}</h5>
+                    <p>{step.desc}</p>
                   </div>
-                  <div className="cyber-timeline-num">{step.num}</div>
-                  <h5>{step.title}</h5>
-                  <p>{step.desc}</p>
                 </div>
               ))}
             </div>
-            <p style={{ textAlign: 'center', color: 'var(--heading-color)', fontSize: 15, marginTop: 40, opacity: 0.7 }} data-aos="fade-up">
+
+            <p style={{ textAlign: 'center', color: '#6b7a8d', fontSize: 15, marginTop: 48 }} data-aos="fade-up">
               This structured approach helps minimize disruption and ensures incidents are handled efficiently.
             </p>
-          </div>
-        </section>
-
-        {/* ── Security Assessment — accent highlight card ───────── */}
-        <section className="mit-section" style={{ background: '#fff' }}>
-          <div className="container">
-            <div className="cyber-assessment-card" data-aos="fade-up">
-              <div className="cyber-assessment-left">
-                <span className="mit-split-label" style={{ color: 'rgba(255,255,255,0.7)' }}>First Step</span>
-                <h2>Security Assessment</h2>
-                <p>
-                  Understanding your current risk exposure is the first step toward improving cybersecurity.
-                  InfoManage can review your environment and identify areas where improvements may strengthen
-                  protection and operational reliability.
-                </p>
-                <Link to="/#contact" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 10,
-                  padding: '12px 28px', background: '#fff', color: 'var(--accent)',
-                  borderRadius: 50, fontWeight: 700, transition: '0.3s', fontSize: 15, marginTop: 8,
-                }}>
-                  <span>Request a Security Assessment</span>
-                  <i className="bi bi-arrow-right" />
-                </Link>
-              </div>
-              <div className="cyber-assessment-right">
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 14, marginBottom: 20, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>
-                  A security assessment typically reviews:
-                </p>
-                {assessmentItems.map((item, i) => (
-                  <div key={i} className="cyber-assessment-item" data-aos="fade-up" data-aos-delay={100 + i * 60}>
-                    <div className="cyber-assessment-icon">
-                      <i className={`bi ${item.icon}`} />
-                    </div>
-                    <span>{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
@@ -296,6 +283,36 @@ export default function CybersecurityPage() {
                   <p>{item.text}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Security Assessment — accent highlight card ───────── */}
+        <section className="mit-section" style={{ background: '#fff' }}>
+          <div className="container">
+            <div className="cyber-assessment-card" data-aos="fade-up">
+              <div className="cyber-assessment-left">
+                <span className="mit-split-label" style={{ color: 'rgba(255,255,255,0.7)' }}>First Step</span>
+                <h2>Security Assessment</h2>
+                <p>
+                  Understanding your current risk exposure is the first step toward improving cybersecurity.
+                  InfoManage can review your environment and identify areas where improvements may strengthen
+                  protection and operational reliability.
+                </p>
+              </div>
+              <div className="cyber-assessment-right">
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 14, marginBottom: 20, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>
+                  A security assessment typically reviews:
+                </p>
+                {assessmentItems.map((item, i) => (
+                  <div key={i} className="cyber-assessment-item" data-aos="fade-up" data-aos-delay={100 + i * 60}>
+                    <div className="cyber-assessment-icon">
+                      <i className={`bi ${item.icon}`} />
+                    </div>
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

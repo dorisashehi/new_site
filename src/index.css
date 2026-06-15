@@ -1034,55 +1034,59 @@ a:hover { color: var(--accent-hover); }
 .cyber-principle-panel--2 ul li i { color: rgba(255,255,255,0.9); }
 
 /* Core Services 2×2 grid */
-.cyber-services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.cyber-services-grid { display: flex; flex-direction: column; gap: 20px; }
 .cyber-service-card {
-  background: #fff; border: 1px solid #eef0f4; border-radius: 12px;
-  padding: 36px 32px; transition: 0.3s; position: relative; overflow: hidden;
+  display: flex; align-items: stretch; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 4px 24px rgba(26,108,181,0.07); transition: 0.35s;
 }
-.cyber-service-card:hover { box-shadow: 0 12px 40px rgba(26,108,181,0.1); border-color: rgba(26,108,181,0.25); transform: translateY(-4px); }
-.cyber-service-card::before {
-  content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
-  background: var(--accent); opacity: 0; transition: 0.3s;
-}
-.cyber-service-card:hover::before { opacity: 1; }
+.cyber-service-card:hover { box-shadow: 0 12px 44px rgba(26,108,181,0.14); transform: translateY(-3px); }
 .cyber-service-icon {
-  width: 60px; height: 60px; border-radius: 14px;
-  background: rgba(26,108,181,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
-  transition: 0.3s;
+  width: 130px; flex-shrink: 0; background: var(--accent);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 28px 16px; gap: 10px; transition: background 0.3s;
 }
-.cyber-service-card:hover .cyber-service-icon { background: var(--accent); }
-.cyber-service-icon i { font-size: 26px; color: var(--accent); transition: 0.3s; }
-.cyber-service-card:hover .cyber-service-icon i { color: #fff; }
-.cyber-service-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--heading-color); }
-.cyber-service-card > p { color: #666; font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
-.cyber-service-card ul { list-style: none; padding: 0; margin: 0; }
-.cyber-service-card ul li { display: flex; gap: 8px; align-items: flex-start; padding: 4px 0; color: #555; font-size: 13px; }
-.cyber-service-card ul li i { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+.cyber-service-card:hover .cyber-service-icon { background: #155ca0; }
+.cyber-service-icon i { font-size: 34px; color: #fff; }
+.cyber-service-icon-num { font-size: 11px; color: rgba(255,255,255,0.55); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.cyber-service-content { background: #fff; padding: 30px 36px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.cyber-service-content h4 { font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--heading-color); }
+.cyber-service-content > p { color: #666; font-size: 14.5px; line-height: 1.75; margin-bottom: 18px; }
+.cyber-service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.cyber-service-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(26,108,181,0.07); padding: 5px 14px; border-radius: 20px;
+  color: var(--accent); font-size: 12px; font-weight: 600;
+}
+.cyber-service-tag i { font-size: 11px; }
 
 /* Incident Response Timeline */
 .cyber-timeline {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; align-items: stretch;
 }
 .cyber-timeline-step {
-  padding: 32px 28px; background: #fff; border-radius: 12px; text-align: center; position: relative;
-  border: 1px solid #e8edf4; transition: 0.3s; margin: 0 8px;
+  background: #fff; border-radius: 16px; text-align: left; position: relative;
+  border: 1px solid #e3eaf4; transition: 0.35s; overflow: hidden;
+  box-shadow: 0 4px 24px rgba(26,108,181,0.05);
+  display: flex; flex-direction: column;
 }
-.cyber-timeline-step:hover { box-shadow: 0 8px 28px rgba(26,108,181,0.1); border-color: rgba(26,108,181,0.25); transform: translateY(-4px); }
-.cyber-timeline-connector {
-  position: absolute; top: 44px; right: -20px;
-  width: 40px; height: 2px; background: var(--accent); z-index: 1; opacity: 0.4;
+.cyber-timeline-step:hover { box-shadow: 0 14px 44px rgba(26,108,181,0.13); border-color: rgba(26,108,181,0.3); transform: translateY(-6px); }
+.cyber-timeline-connector { display: none; }
+.cyber-timeline-inner { padding: 28px 28px 32px; flex: 1; display: flex; flex-direction: column; }
+.cyber-timeline-ghost-num {
+  position: absolute; bottom: 12px; right: 18px;
+  font-size: 72px; font-weight: 800; color: rgba(26,108,181,0.055); line-height: 1; pointer-events: none; user-select: none;
 }
 .cyber-timeline-circle {
-  width: 68px; height: 68px; border-radius: 50%;
-  background: rgba(26,108,181,0.08); border: 2px solid rgba(26,108,181,0.2);
-  display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; transition: 0.3s;
+  width: 54px; height: 54px; border-radius: 12px;
+  background: rgba(26,108,181,0.09);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: 0.3s;
 }
-.cyber-timeline-step:hover .cyber-timeline-circle { background: var(--accent); border-color: var(--accent); }
-.cyber-timeline-circle i { font-size: 26px; color: var(--accent); transition: 0.3s; }
+.cyber-timeline-step:hover .cyber-timeline-circle { background: var(--accent); }
+.cyber-timeline-circle i { font-size: 24px; color: var(--accent); transition: 0.3s; }
 .cyber-timeline-step:hover .cyber-timeline-circle i { color: #fff; }
-.cyber-timeline-num { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
-.cyber-timeline-step h5 { font-size: 15px; font-weight: 700; color: var(--heading-color); margin-bottom: 8px; }
-.cyber-timeline-step p { font-size: 13px; color: #777; line-height: 1.6; margin: 0; }
+.cyber-timeline-num { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 14px; }
+.cyber-timeline-step h5 { font-size: 16px; font-weight: 700; color: var(--heading-color); margin-bottom: 10px; line-height: 1.35; }
+.cyber-timeline-step p { font-size: 13.5px; color: #6b7a8d; line-height: 1.7; margin: 0; flex: 1; }
 
 /* Security Assessment Card */
 .cyber-assessment-card {
@@ -1130,7 +1134,8 @@ a:hover { color: var(--accent-hover); }
 }
 @media (max-width: 991px) {
   .cyber-principles-grid { grid-template-columns: 1fr; }
-  .cyber-services-grid { grid-template-columns: 1fr; }
+  .cyber-service-icon { width: 90px; }
+  .cyber-service-content { padding: 24px 20px; }
   .cyber-timeline { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .cyber-timeline-connector { display: none; }
   .cyber-for-orgs-grid { grid-template-columns: repeat(2, 1fr); }

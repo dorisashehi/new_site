@@ -63,25 +63,25 @@ const plans = [
   {
     icon: 'bi-shield',
     name: 'Essentials',
-    tagline: 'Foundational Infrastructure Oversight',
-    desc: 'A foundational service plan providing baseline monitoring, patching, and infrastructure oversight. Best suited for organizations that require monitoring and maintenance with optional additional services.',
-    features: ['Infrastructure monitoring', 'Patch management', 'Security baseline management', 'Quarterly reporting', 'Email-based support'],
+    desc1: 'A foundational service plan.',
+    desc2: 'Best suited for organizations that require monitoring and maintenance with optional additional services.',
+    features: ['Monitoring', 'Patching', 'Infrastructure oversight'],
     featured: false,
   },
   {
     icon: 'bi-stars',
     name: 'Professional',
-    tagline: 'Unlimited Remote IT Management',
-    desc: 'Expanded operational coverage with proactive infrastructure management and unlimited remote support during business hours. Includes enhanced monitoring, endpoint protection, and core ITSM governance.',
-    features: ['Everything in Essentials', 'Unlimited remote help desk', 'Proactive system maintenance', 'Security management', 'Monthly operational reporting', 'Vendor management'],
+    desc1: 'Expanded operational coverage with proactive infrastructure management and unlimited remote support during business hours.',
+    desc2: null,
+    features: ['Enhanced monitoring', 'Endpoint protection', 'Core IT service management governance'],
     featured: true,
   },
   {
     icon: 'bi-building-check',
     name: 'Enterprise',
-    tagline: '24×7 Support & On-Site Coverage',
-    desc: 'Maximum service coverage for organizations requiring the highest level of operational support. Includes expanded monitoring, unlimited on-site visits, and 24×7 support coverage.',
-    features: ['Everything in Professional', '24×7 help desk availability', 'On-site support included', 'Dedicated account manager', 'Strategic vCTO advisory', 'Custom SLA agreements'],
+    desc1: 'Maximum service coverage for organizations requiring the highest level of operational support.',
+    desc2: null,
+    features: ['Expanded monitoring', 'Unlimited on-site visits', '24×7 support coverage'],
     featured: false,
   },
 ];
@@ -92,7 +92,6 @@ const govItems = [
   { icon: 'bi-activity', title: 'Monitoring & Alerts', desc: 'Continuous 24×7 infrastructure monitoring with automated alert response keeps your environment stable around the clock.' },
   { icon: 'bi-file-earmark-text', title: 'Infrastructure Documentation', desc: 'Detailed documentation of your environment provides operational clarity and protects institutional knowledge.' },
   { icon: 'bi-bar-chart-line', title: 'Operational Reporting', desc: 'Regular operational reports provide visibility into service delivery, system health, and trend analysis for informed decisions.' },
-  { icon: 'bi-people-fill', title: 'Vendor Coordination', desc: 'We manage relationships with your technology vendors, handling escalations and negotiations so your team does not have to.' },
 ];
 
 const idealForItems = [
@@ -151,15 +150,13 @@ export default function ManagedITPage() {
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 56, alignItems: 'center' }}>
               <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="150">
-                <span className="mit-split-label">Comprehensive Coverage</span>
-                <h2 style={{ fontSize: 30, fontWeight: 700, color: '#fff', marginBottom: 18 }}>Beyond Traditional Support</h2>
                 <p style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.8, marginBottom: 14, fontSize: 15 }}>
                   Managed IT services at InfoManage go beyond traditional support. We take operational
                   responsibility for maintaining the stability, performance, and security of your technology environment.
                 </p>
                 <p style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.8, marginBottom: 24, fontSize: 15 }}>
                   Our team manages the core infrastructure that businesses depend on every day, ensuring
-                  systems remain reliable and users remain productive.
+                  that systems remain reliable and users remain productive.
                 </p>
                 <p className="mit-split-list-label">Operational coverage includes:</p>
                 <ul className="mit-split-list">
@@ -167,12 +164,16 @@ export default function ManagedITPage() {
                     <li key={i}><i className="bi bi-check2" />{item}</li>
                   ))}
                 </ul>
+                <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.8, marginTop: 28, fontSize: 14, fontStyle: 'italic' }}>
+                  By continuously managing these responsibilities, InfoManage helps organizations maintain
+                  stable and secure technology environments.
+                </p>
               </div>
 
               <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="250">
                 <img
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80"
-                  alt="IT operations team at work"
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&q=80"
+                  alt="IT support and operations team"
                   style={{ width: '100%', borderRadius: 10, display: 'block', boxShadow: '0 12px 48px rgba(0,0,0,0.4)' }}
                 />
               </div>
@@ -180,38 +181,31 @@ export default function ManagedITPage() {
           </div>
         </section>
 
-        {/* ── Fix / Maintain / Enhance — zigzag rows ───────────── */}
-        <section className="mit-zigzag-section">
+        {/* ── Fix / Maintain / Enhance — HowWeWork style cards ─── */}
+        <section className="howwework-section">
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>How InfoManage Manages IT</h2>
               <p>A structured operational model designed to keep systems running smoothly while enabling continuous improvement</p>
             </div>
 
-            {frameworkCards.map((card, i) => (
-              <div
-                key={i}
-                className={`mit-step-row${i % 2 === 1 ? ' mit-step-row--reverse' : ''}${card.accent ? ' mit-step-row--featured' : ''}`}
-                data-aos="fade-up"
-                data-aos-delay={100 + i * 100}
-              >
-                <div className="mit-step-visual">
-                  <div className="mit-step-circle">
+            <div className="hww-grid">
+              {frameworkCards.map((card, i) => (
+                <div key={i} className="hww-card" data-aos="fade-up" data-aos-delay={150 + i * 100}>
+                  <div className="hww-num">{card.num}</div>
+                  <div className="hww-icon-wrap">
                     <i className={`bi ${card.icon}`} />
                   </div>
-                  <div className="mit-step-bignum">{card.num}</div>
-                </div>
-                <div className="mit-step-content">
-                  <h3>{card.title}</h3>
+                  <h4>{card.title}</h4>
                   <p>{card.desc}</p>
-                  <ul>
+                  <ul className="hww-points">
                     {card.bullets.map((b, j) => (
-                      <li key={j}><i className="bi bi-check2" />{b}</li>
+                      <li key={j}><i className="bi bi-check2-circle" />{b}</li>
                     ))}
                   </ul>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
@@ -219,10 +213,16 @@ export default function ManagedITPage() {
         <section className="mit-dark-compare">
           <div className="mit-dark-compare-overlay" />
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="section-title" data-aos="fade-up" style={{ paddingBottom: 48 }}>
+            <div className="section-title" data-aos="fade-up" style={{ paddingBottom: 16 }}>
               <h2 style={{ color: '#fff' }}>Operational Support vs Project Work</h2>
-              <p style={{ color: 'rgba(255,255,255,0.6)' }}>
-                Clear separation ensures predictable service delivery while allowing organizations to plan technology improvements effectively
+            </div>
+
+            <div style={{ maxWidth: 700, margin: '0 auto 48px', textAlign: 'center' }} data-aos="fade-up" data-aos-delay="100">
+              <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: 15, lineHeight: 1.8, marginBottom: 12 }}>
+                InfoManage clearly distinguishes between day-to-day operational support and larger infrastructure projects.
+              </p>
+              <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14, lineHeight: 1.8 }}>
+                This distinction ensures predictable service delivery while allowing organizations to plan technology improvements effectively.
               </p>
             </div>
 
@@ -232,10 +232,10 @@ export default function ManagedITPage() {
                   <i className="bi bi-gear-fill" />
                   <div>
                     <h4>Operational Support</h4>
-                    <span>Covered within the monthly service plan</span>
+                    <span>Covered within the monthly service plan.</span>
                   </div>
                 </div>
-                <p className="mit-dc-desc">Day-to-day IT activities are included in your service plan. No additional billing for standard operational tasks.</p>
+                <p className="mit-dc-desc">Examples include:</p>
                 <ul className="mit-dc-list">
                   {opsSupportItems.map((item, i) => (
                     <li key={i}><i className="bi bi-check2" />{item}</li>
@@ -250,16 +250,25 @@ export default function ManagedITPage() {
                   <i className="bi bi-clipboard2-data" />
                   <div>
                     <h4>Project Work</h4>
-                    <span>Planned and delivered separately</span>
+                    <span>Major infrastructure changes or deployments are structured as project work.</span>
                   </div>
                 </div>
-                <p className="mit-dc-desc">Major infrastructure changes that exceed defined thresholds are structured as projects to ensure proper design and implementation.</p>
+                <p className="mit-dc-desc">Examples include:</p>
                 <ul className="mit-dc-list">
                   {projectItems.map((item, i) => (
                     <li key={i}><i className="bi bi-check2" />{item}</li>
                   ))}
                 </ul>
               </div>
+            </div>
+
+            <div style={{ maxWidth: 680, margin: '48px auto 0', textAlign: 'center' }} data-aos="fade-up" data-aos-delay="300">
+              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14, lineHeight: 1.8, marginBottom: 10 }}>
+                Projects that exceed defined thresholds are planned and delivered separately to ensure proper design and implementation.
+              </p>
+              <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 13, lineHeight: 1.8, fontStyle: 'italic' }}>
+                This clear separation allows operational support to remain predictable while ensuring complex initiatives receive appropriate attention.
+              </p>
             </div>
           </div>
         </section>
@@ -269,7 +278,7 @@ export default function ManagedITPage() {
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>Service Plan Overview</h2>
-              <p>Multiple service plans designed to match the operational needs and risk tolerance of each organization</p>
+              <p>InfoManage offers multiple service plans designed to match the operational needs and risk tolerance of each organization</p>
             </div>
 
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 28, justifyContent: 'center', alignItems: 'flex-start' }}>
@@ -280,36 +289,42 @@ export default function ManagedITPage() {
                     {plan.featured && <div className="pricing-badge">Most Popular</div>}
                     <div className="pricing-icon"><i className={`bi ${plan.icon}`} /></div>
                     <h3>{plan.name}</h3>
-                    <p style={{ fontSize: 13, color: 'var(--accent)', fontWeight: 700, marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>
-                      {plan.tagline}
-                    </p>
-                    <p className="description">{plan.desc}</p>
+                    <p className="description">{plan.desc1}</p>
+                    {plan.desc2 && <p className="description">{plan.desc2}</p>}
                     <ul className="features-list">
                       {plan.features.map((f, j) => (
                         <li key={j}><i className="bi bi-check2" />{f}</li>
                       ))}
                     </ul>
                     <Link to="/#contact" className="btn-pricing">Get a Quote</Link>
-                    <p style={{ fontSize: 11, color: '#aaa', marginTop: 12, textAlign: 'center' }}>
-                      Per-user, per-device, or hybrid pricing available
-                    </p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mit-pricing-models" data-aos="fade-up" data-aos-delay="400" style={{ marginTop: 40 }}>
-              <p style={{ textAlign: 'center', color: '#666', fontSize: 15, marginBottom: 20 }}>
-                Flexible pricing models to fit your environment
+          </div>
+        </section>
+
+        {/* ── Predictable IT Management ─────────────────────────── */}
+        <section className="mit-section" style={{ background: 'var(--light-bg)' }}>
+          <div className="container">
+            <div className="section-title" data-aos="fade-up">
+              <h2>Predictable IT Management</h2>
+              <p>Technology operations should be predictable and transparent. InfoManage service plans are designed to provide consistent operational coverage without unexpected service invoices.</p>
+            </div>
+
+            <div style={{ maxWidth: 720, margin: '0 auto' }} data-aos="fade-up" data-aos-delay="100">
+              <p style={{ color: '#555', fontSize: 15, lineHeight: 1.8, marginBottom: 20 }}>
+                Organizations can choose pricing models that best fit their environment, including:
               </p>
-              <div className="mit-pricing-model-tags">
-                {['Per-user pricing', 'Per-device pricing', 'Hybrid models for mixed environments'].map((model, i) => (
-                  <span key={i} className="mit-model-tag mit-model-tag--light">
-                    <i className="bi bi-check-circle-fill" />
-                    {model}
-                  </span>
+              <ul className="mit-split-list" style={{ marginBottom: 28 }}>
+                {['Per-user pricing', 'Per-device pricing', 'Hybrid models for mixed environments'].map((item, i) => (
+                  <li key={i} style={{ color: '#555', borderBottomColor: '#e8edf4' }}><i className="bi bi-check2" />{item}</li>
                 ))}
-              </div>
+              </ul>
+              <p style={{ color: '#777', fontSize: 14, lineHeight: 1.8, fontStyle: 'italic' }}>
+                These flexible options ensure that organizations receive appropriate coverage while maintaining cost efficiency.
+              </p>
             </div>
           </div>
         </section>
@@ -346,9 +361,9 @@ export default function ManagedITPage() {
               ))}
             </div>
 
-            <div style={{ textAlign: 'center', marginTop: 44 }} data-aos="fade-up" data-aos-delay="400">
-              <Link to="/#contact" className="btn-features">Request an Assessment</Link>
-            </div>
+            <p style={{ textAlign: 'center', color: '#777', fontSize: 14, lineHeight: 1.8, marginTop: 40, fontStyle: 'italic' }} data-aos="fade-up">
+              These practices ensure that technology environments remain stable, secure, and well-managed.
+            </p>
           </div>
         </section>
 
@@ -372,12 +387,6 @@ export default function ManagedITPage() {
               ))}
             </div>
 
-            <div style={{ textAlign: 'center', marginTop: 48 }} data-aos="fade-up" data-aos-delay="500">
-              <Link to="/#contact" className="btn-consultation">
-                <span>Schedule a Consultation</span>
-                <i className="bi bi-arrow-right" />
-              </Link>
-            </div>
           </div>
         </section>
 

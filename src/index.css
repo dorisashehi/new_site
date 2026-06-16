@@ -1114,7 +1114,65 @@ a:hover { color: var(--accent-hover); }
 }
 .cyber-assessment-icon i { font-size: 16px; color: #fff; }
 
-/* ---- IT Strategy & Advisory Hero ---- */
+/* ---- IT Strategy & Advisory ---- */
+
+/* Strategic Guidance — 2×2 accent-border cards */
+.its-pillars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.its-pillar-card {
+  background: #fff; border: 1px solid #e8edf4; border-top: 4px solid var(--accent);
+  border-radius: 14px; padding: 36px 32px; position: relative; overflow: hidden;
+  box-shadow: 0 2px 16px rgba(26,108,181,0.05); transition: 0.3s;
+}
+.its-pillar-card:hover { box-shadow: 0 12px 40px rgba(26,108,181,0.13); transform: translateY(-5px); }
+.its-pillar-ghost {
+  position: absolute; top: 10px; right: 20px;
+  font-size: 76px; font-weight: 900; color: rgba(26,108,181,0.055);
+  font-family: 'Nunito', sans-serif; line-height: 1; user-select: none; pointer-events: none;
+}
+.its-pillar-icon {
+  width: 56px; height: 56px; border-radius: 12px;
+  background: rgba(26,108,181,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+  transition: 0.3s;
+}
+.its-pillar-card:hover .its-pillar-icon { background: var(--accent); }
+.its-pillar-icon i { font-size: 24px; color: var(--accent); transition: 0.3s; }
+.its-pillar-card:hover .its-pillar-icon i { color: #fff; }
+.its-pillar-card h3 { font-size: 19px; font-weight: 700; color: var(--heading-color); margin-bottom: 10px; }
+.its-pillar-card > p { font-size: 14.5px; color: #666; line-height: 1.75; margin: 0; }
+
+/* Lifecycle Planning — vertical step list */
+.its-lifecycle-row {
+  display: flex; gap: 20px; align-items: flex-start;
+  padding: 22px 0; border-bottom: 1px solid #dce5ee;
+}
+.its-lifecycle-row:last-child { border-bottom: none; }
+.its-lifecycle-dot {
+  width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+  background: var(--accent); display: flex; align-items: center; justify-content: center;
+}
+.its-lifecycle-dot i { font-size: 20px; color: #fff; }
+.its-lifecycle-content { flex: 1; }
+.its-lifecycle-label { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+.its-lifecycle-content h5 { font-size: 16px; font-weight: 700; color: var(--heading-color); margin-bottom: 6px; }
+.its-lifecycle-content p { font-size: 14px; color: #666; line-height: 1.7; margin: 0; }
+
+/* Vendor Strategy — dark glass cards */
+.its-vendor-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 760px; margin: 0 auto; }
+.its-vendor-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px; padding: 36px 28px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 16px; transition: 0.3s;
+}
+.its-vendor-card:hover { background: rgba(26,108,181,0.22); border-color: rgba(26,108,181,0.45); transform: translateY(-4px); }
+.its-vendor-icon {
+  width: 60px; height: 60px; border-radius: 14px;
+  background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: 0.3s;
+}
+.its-vendor-card:hover .its-vendor-icon { background: var(--accent); }
+.its-vendor-icon i { font-size: 26px; color: #fff; }
+.its-vendor-card p { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.85); margin: 0; line-height: 1.5; }
+
+/* Hero */
 .its-hero {
   min-height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
   background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80');
@@ -1148,6 +1206,7 @@ a:hover { color: var(--accent-hover); }
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 991px) {
+  .its-pillars-grid { grid-template-columns: 1fr; }
   .mit-framework-grid { grid-template-columns: repeat(2, 1fr); }
   .cyber-principles-grid { grid-template-columns: 1fr; }
   .cyber-service-icon { width: 90px; }
@@ -1169,6 +1228,8 @@ a:hover { color: var(--accent-hover); }
   .mit-stat-item { flex: 1 1 45%; }
 }
 @media (max-width: 768px) {
+  .its-pillars-grid { grid-template-columns: 1fr; }
+  .its-vendor-grid { grid-template-columns: 1fr; }
   .cyber-timeline { grid-template-columns: 1fr; }
   .cyber-for-orgs-grid { grid-template-columns: 1fr; }
   .mit-hero-content { padding: 100px 20px 60px; }

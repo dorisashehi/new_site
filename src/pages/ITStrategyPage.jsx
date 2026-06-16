@@ -19,9 +19,15 @@ const pillars = [
   },
   {
     num: '03',
+    icon: 'bi-gear-wide-connected',
+    title: 'Operational Efficiency',
+    desc: 'Identifying opportunities to streamline technology operations and improve system reliability.',
+  },
+  {
+    num: '04',
     icon: 'bi-graph-up-arrow',
     title: 'Long-Term Scalability',
-    desc: 'Planning for growth prevents reactive technology decisions and unexpected operational challenges.',
+    desc: 'Planning ahead prevents reactive technology decisions and unexpected operational challenges.',
   },
 ];
 
@@ -140,39 +146,50 @@ export default function ITStrategyPage() {
           </div>
         </section>
 
-        {/* ── Strategic Technology Guidance — three pillars ─────── */}
-        <section className="cyber-principles">
+        {/* ── Strategic Technology Guidance — features-section layout ─ */}
+        <section className="features-section">
           <div className="container">
-            <div className="section-title mit-dark-title" data-aos="fade-up">
-              <h2>Strategic Technology Guidance</h2>
-              <p>Technology decisions affect nearly every aspect of modern business operations.</p>
-            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40, alignItems: 'flex-start' }}>
 
-            <div className="cyber-principles-intro" data-aos="fade-up" data-aos-delay="100">
-              <p>
-                InfoManage works with organizations to ensure that infrastructure, systems, and technology investments
-                support long-term business needs. Through ongoing advisory and planning, we help organizations maintain
-                stable environments while preparing for future growth.
-              </p>
-              <p>Strategic guidance focuses on:</p>
-            </div>
+              {/* Left */}
+              <div style={{ flex: '1 1 340px' }} data-aos="fade-right" data-aos-delay="200">
+                <div className="features-content">
+                  <h2>Strategic Technology Guidance</h2>
+                  <p>
+                    Technology decisions affect nearly every aspect of modern business operations.
+                    InfoManage works with organizations to ensure that infrastructure, systems, and
+                    technology investments support long-term business needs.
+                  </p>
 
-            <div className="cyber-principles-grid">
-              {pillars.map((p, i) => (
-                <div key={i} className={`cyber-principle-panel cyber-principle-panel--${i}`} data-aos="fade-up" data-aos-delay={200 + i * 100}>
-                  <div className="cyber-principle-num">{p.num}</div>
-                  <div className="cyber-principle-icon">
-                    <i className={`bi ${p.icon}`} />
+                  <div className="main-feature">
+                    <div className="feat-icon"><i className="bi bi-diagram-3-fill" /></div>
+                    <div>
+                      <h4>Advisory-Led Technology Management</h4>
+                      <p>
+                        Through ongoing planning and strategic guidance, we help organizations maintain
+                        stable environments while preparing for future growth and evolving requirements.
+                      </p>
+                    </div>
                   </div>
-                  <h3>{p.title}</h3>
-                  <p>{p.desc}</p>
-                </div>
-              ))}
-            </div>
 
-            <p className="cyber-principles-footer" data-aos="fade-up" data-aos-delay="500">
-              This advisory relationship helps ensure that technology decisions remain aligned with business priorities.
-            </p>
+                  <Link to="/#contact" className="btn-features">Schedule a Consultation</Link>
+                </div>
+              </div>
+
+              {/* Right: pillars grid */}
+              <div style={{ flex: '1 1 500px' }} data-aos="fade-left" data-aos-delay="300">
+                <div className="features-grid">
+                  {pillars.map((p, i) => (
+                    <div key={i} className="feature-card" data-aos="zoom-in" data-aos-delay={400 + i * 50}>
+                      <div className="icon-wrapper"><i className={`bi ${p.icon}`} /></div>
+                      <h5>{p.title}</h5>
+                      <p>{p.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
           </div>
         </section>
 
@@ -223,7 +240,6 @@ export default function ITStrategyPage() {
                   style={{ width: '100%', borderRadius: 10, display: 'block', boxShadow: '0 12px 48px rgba(0,0,0,0.4)' }}
                 />
               </div>
-
               <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="250">
                 <span className="mit-split-label">Roadmap Planning</span>
                 <h2 style={{ fontSize: 30, fontWeight: 700, color: '#fff', marginBottom: 18 }}>
@@ -250,7 +266,7 @@ export default function ITStrategyPage() {
           </div>
         </section>
 
-        {/* ── Infrastructure Architecture — white feature-card grid ─ */}
+        {/* ── Infrastructure Architecture — feature-card grid ───── */}
         <section className="mit-section" style={{ background: '#fff' }}>
           <div className="container">
             <div className="section-title" data-aos="fade-up">
@@ -277,7 +293,7 @@ export default function ITStrategyPage() {
           </div>
         </section>
 
-        {/* ── Lifecycle Planning — four-step timeline ───────────── */}
+        {/* ── Lifecycle Planning — vertical step list + image ───── */}
         <section className="mit-section" style={{ background: 'var(--light-bg)' }}>
           <div className="container">
             <div className="section-title" data-aos="fade-up">
@@ -285,54 +301,58 @@ export default function ITStrategyPage() {
               <p>Technology infrastructure requires regular evaluation and replacement. Proper lifecycle planning helps organizations avoid unexpected failures and maintain reliable environments.</p>
             </div>
 
-            <div className="cyber-timeline">
-              {lifecycleSteps.map((step, i) => (
-                <div key={i} className="cyber-timeline-step" data-aos="fade-up" data-aos-delay={100 + i * 80}>
-                  <div className="cyber-timeline-ghost-num">{step.num}</div>
-                  <div className="cyber-timeline-inner">
-                    <div className="cyber-timeline-num">Phase {step.num}</div>
-                    <div className="cyber-timeline-circle">
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 56, alignItems: 'center' }}>
+              <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="100">
+                {lifecycleSteps.map((step, i) => (
+                  <div key={i} className="its-lifecycle-row" data-aos="fade-up" data-aos-delay={150 + i * 70}>
+                    <div className="its-lifecycle-dot">
                       <i className={`bi ${step.icon}`} />
                     </div>
-                    <h5>{step.title}</h5>
-                    <p>{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <p style={{ textAlign: 'center', color: '#6b7a8d', fontSize: 15, marginTop: 48 }} data-aos="fade-up">
-              This structured approach ensures technology environments remain stable and efficient over time.
-            </p>
-          </div>
-        </section>
-
-        {/* ── Vendor Strategy — accent highlight card ───────────── */}
-        <section className="mit-section" style={{ background: '#fff' }}>
-          <div className="container">
-            <div className="cyber-assessment-card" data-aos="fade-up">
-              <div className="cyber-assessment-left">
-                <span className="mit-split-label" style={{ color: 'rgba(255,255,255,0.7)' }}>Vendor Advisory</span>
-                <h2>Vendor Strategy and Coordination</h2>
-                <p>
-                  Organizations often depend on multiple technology vendors, software providers, and service
-                  platforms. InfoManage assists organizations by helping evaluate vendors, coordinate services,
-                  and ensure that vendor relationships support operational needs.
-                </p>
-              </div>
-              <div className="cyber-assessment-right">
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 14, marginBottom: 20, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>
-                  Vendor advisory includes:
-                </p>
-                {vendorItems.map((item, i) => (
-                  <div key={i} className="cyber-assessment-item" data-aos="fade-up" data-aos-delay={100 + i * 60}>
-                    <div className="cyber-assessment-icon">
-                      <i className={`bi ${item.icon}`} />
+                    <div className="its-lifecycle-content">
+                      <div className="its-lifecycle-label">Phase {step.num}</div>
+                      <h5>{step.title}</h5>
+                      <p>{step.desc}</p>
                     </div>
-                    <span>{item.label}</span>
                   </div>
                 ))}
               </div>
+
+              <div style={{ flex: '1 1 380px' }} data-aos="fade-up" data-aos-delay="200">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80"
+                  alt="Technology planning and analysis"
+                  style={{ width: '100%', borderRadius: 12, display: 'block', boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Vendor Strategy — dark section with 2×2 glass cards ─ */}
+        <section style={{ padding: '80px 0', background: '#0d1e2e' }}>
+          <div className="container">
+            <div className="section-title mit-dark-title" data-aos="fade-up">
+              <h2>Vendor Strategy and Coordination</h2>
+              <p>Helping organizations evaluate, select, and coordinate their technology vendor relationships</p>
+            </div>
+
+            <div style={{ maxWidth: 680, margin: '0 auto 52px', textAlign: 'center' }} data-aos="fade-up" data-aos-delay="100">
+              <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: 15, lineHeight: 1.85 }}>
+                Organizations often depend on multiple technology vendors, software providers, and service platforms.
+                InfoManage assists organizations by helping evaluate vendors, coordinate services, and ensure that
+                vendor relationships support operational needs.
+              </p>
+            </div>
+
+            <div className="its-vendor-grid">
+              {vendorItems.map((item, i) => (
+                <div key={i} className="its-vendor-card" data-aos="fade-up" data-aos-delay={100 + i * 80}>
+                  <div className="its-vendor-icon">
+                    <i className={`bi ${item.icon}`} />
+                  </div>
+                  <p>{item.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -359,7 +379,7 @@ export default function ITStrategyPage() {
           </div>
         </section>
 
-        {/* ── Final CTA — white section ─────────────────────────── */}
+        {/* ── Final CTA ─────────────────────────────────────────── */}
         <section className="mit-section" style={{ background: '#fff', borderTop: '1px solid #eef0f4' }}>
           <div className="container">
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 60, alignItems: 'center' }}>

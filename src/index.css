@@ -1114,6 +1114,17 @@ a:hover { color: var(--accent-hover); }
 }
 .cyber-assessment-icon i { font-size: 16px; color: #fff; }
 
+/* ---- IT Strategy & Advisory Hero ---- */
+.its-hero {
+  min-height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;
+  background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80');
+  background-size: cover; background-position: center; background-attachment: fixed;
+}
+.its-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(8,20,40,0.88) 0%, rgba(26,108,181,0.48) 100%);
+}
+
 /* Who This Is For — icon card grid */
 .cyber-for-orgs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .cyber-for-org-card {

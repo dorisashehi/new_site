@@ -20,6 +20,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ManagedITPage from "./pages/ManagedITPage";
 import CybersecurityPage from "./pages/CybersecurityPage";
+import ITStrategyPage from "./pages/ITStrategyPage";
 
 function ScrollToHash() {
   const { hash } = useLocation();
@@ -82,6 +83,7 @@ export default function App() {
         <Route path="/" element={<HomePage loaded={loaded} />} />
         <Route path="/managed-it-services" element={<ManagedITPage />} />
         <Route path="/cybersecurity-services" element={<CybersecurityPage />} />
+        <Route path="/it-strategy-advisory" element={<ITStrategyPage />} />
       </Routes>
     </>
   );

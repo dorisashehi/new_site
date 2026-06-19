@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const services = [
   { icon: 'bi-map', label: 'Technology Roadmaps' },
   { icon: 'bi-diagram-3', label: 'Infrastructure Architecture' },
@@ -33,9 +35,9 @@ export default function Partnership() {
               ))}
             </div>
 
-            <a href="#contact" className="btn-learn-more" style={{ marginTop: 32, display: 'inline-block' }}>
+            <Link to="/contact" className="btn-learn-more" style={{ marginTop: 32, display: 'inline-block' }}>
               Schedule a Strategy Session
-            </a>
+            </Link>
           </div>
 
           {/* Right */}

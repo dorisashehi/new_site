@@ -16,13 +16,13 @@ import Trusted from "./components/Trusted";
 import FAQ from "./components/FAQ";
 import Team from "./components/Team";
 import Blog from "./components/Blog";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ManagedITPage from "./pages/ManagedITPage";
 import CybersecurityPage from "./pages/CybersecurityPage";
 import ITStrategyPage from "./pages/ITStrategyPage";
 import AboutPage from "./pages/AboutPage";
 import IndustriesPage from "./pages/IndustriesPage";
+import ContactPage from "./pages/ContactPage";
 
 function ScrollToHash() {
   const { hash } = useLocation();
@@ -57,7 +57,6 @@ function HomePage({ loaded }) {
         <FAQ />
         <Team />
         <Blog />
-        <Contact />
       </main>
       <Footer />
     </>
@@ -88,6 +87,7 @@ export default function App() {
         <Route path="/it-strategy-advisory" element={<ITStrategyPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/industries" element={<IndustriesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </>
   );

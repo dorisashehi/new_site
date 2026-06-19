@@ -114,8 +114,8 @@ export default function CybersecurityPage() {
               their infrastructure while maintaining reliable business systems.
             </p>
             <div className="mit-hero-btns">
-              <Link to="/#contact" className="btn-get-started">Request a Security Assessment</Link>
-              <Link to="/#contact" className="mit-hero-outline-btn">Schedule a Consultation</Link>
+              <Link to="/contact" className="btn-get-started">Request a Security Assessment</Link>
+              <Link to="/contact" className="mit-hero-outline-btn">Schedule a Consultation</Link>
             </div>
           </div>
         </section>
@@ -354,8 +354,8 @@ export default function CybersecurityPage() {
                   ))}
                 </div>
                 <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
-                  <Link to="/#contact" className="btn-get-started" style={{ padding: '12px 32px' }}>Request a Security Assessment</Link>
-                  <Link to="/#contact" style={{ display: 'inline-block', padding: '12px 32px', borderRadius: 50, fontWeight: 600, border: '2px solid var(--accent)', color: 'var(--accent)', transition: '0.3s', fontSize: 15 }}
+                  <Link to="/contact" className="btn-get-started" style={{ padding: '12px 32px' }}>Request a Security Assessment</Link>
+                  <Link to="/contact" style={{ display: 'inline-block', padding: '12px 32px', borderRadius: 50, fontWeight: 600, border: '2px solid var(--accent)', color: 'var(--accent)', transition: '0.3s', fontSize: 15 }}
                     onMouseOver={e => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = '#fff'; }}
                     onMouseOut={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)'; }}>
                     Schedule a Consultation

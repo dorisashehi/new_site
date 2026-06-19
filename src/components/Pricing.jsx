@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const plans = [
   {
     icon: 'bi-shield',
@@ -74,7 +76,7 @@ export default function Pricing() {
                     <li key={j}><i className="bi bi-check2" />{f}</li>
                   ))}
                 </ul>
-                <a href="#contact" className="btn-pricing">{plan.cta}</a>
+                <Link to="/contact" className="btn-pricing">{plan.cta}</Link>
                 <p style={{ fontSize: 11, color: '#aaa', marginTop: 12, textAlign: 'center' }}>
                   Per-user, per-device, or hybrid pricing available
                 </p>
@@ -85,7 +87,7 @@ export default function Pricing() {
 
         <p style={{ textAlign: 'center', color: '#888', fontSize: 14, marginTop: 32 }} data-aos="fade-up" data-aos-delay="400">
           Service plans can be tailored using per-user, per-device, or hybrid pricing models depending on the structure of your environment.
-          <br /><a href="#contact" style={{ color: 'var(--accent)', fontWeight: 600 }}>Contact us to discuss your specific requirements →</a>
+          <br /><Link to="/contact" style={{ color: 'var(--accent)', fontWeight: 600 }}>Contact us to discuss your specific requirements →</Link>
         </p>
       </div>
     </section>

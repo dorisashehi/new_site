@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const coverageItems = [
   { icon: 'bi-headset', text: 'End-user help desk support' },
   { icon: 'bi-laptop', text: 'Endpoint and workstation management' },
@@ -65,9 +67,9 @@ export default function About() {
               ))}
             </ul>
 
-            <a href="#contact" className="btn-learn-more" data-aos="fade-up" data-aos-delay="400">
+            <Link to="/contact" className="btn-learn-more" data-aos="fade-up" data-aos-delay="400">
               Request an Assessment
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -136,8 +136,8 @@ export default function IndustriesPage() {
               while ensuring that systems remain secure, stable, and aligned with business needs.
             </p>
             <div className="mit-hero-btns">
-              <Link to="/#contact" className="btn-get-started">Schedule a Consultation</Link>
-              <Link to="/#contact" className="mit-hero-outline-btn">Contact InfoManage</Link>
+              <Link to="/contact" className="btn-get-started">Schedule a Consultation</Link>
+              <Link to="/contact" className="mit-hero-outline-btn">Contact InfoManage</Link>
             </div>
           </div>
         </section>
@@ -259,8 +259,8 @@ export default function IndustriesPage() {
                 InfoManage can support your infrastructure and operational needs.
               </p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 24 }}>
-                <Link to="/#contact" className="btn-get-started" style={{ padding: '12px 32px' }}>Schedule a Consultation</Link>
-                <Link to="/#contact"
+                <Link to="/contact" className="btn-get-started" style={{ padding: '12px 32px' }}>Schedule a Consultation</Link>
+                <Link to="/contact"
                   style={{ display: 'inline-block', padding: '12px 32px', borderRadius: 50, fontWeight: 600, border: '2px solid var(--accent)', color: 'var(--accent)', transition: '0.3s', fontSize: 15 }}
                   onMouseOver={e => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = '#fff'; }}
                   onMouseOut={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)'; }}>

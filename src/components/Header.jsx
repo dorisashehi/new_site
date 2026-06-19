@@ -30,15 +30,7 @@ const navLinks = [
   { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
   { label: 'IT Strategy', href: '/it-strategy-advisory', internal: true },
   { label: 'Industries', href: '/industries', internal: true },
-  {
-    label: 'Solutions', href: '#', children: [
-      { label: 'Managed IT', href: '/managed-it-services', internal: true },
-      { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
-      { label: 'IT Strategy & Advisory', href: '/it-strategy-advisory', internal: true },
-      { label: 'Cloud Management', href: '/#services', internal: true },
-    ]
-  },
-  { label: 'Contact', href: '/#contact', internal: true },
+  { label: 'Contact', href: '/contact', internal: true },
 ];
 
 function DropdownItems({ items }) {
@@ -101,7 +93,7 @@ export default function Header() {
     { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
     { label: 'IT Strategy & Advisory', href: '/it-strategy-advisory', internal: true },
     { label: 'Industries', href: '/industries', internal: true },
-    { label: 'Contact', href: '/#contact', internal: true },
+    { label: 'Contact', href: '/contact', internal: true },
   ];
 
   return (
@@ -133,7 +125,7 @@ export default function Header() {
             </ul>
           </nav>
 
-          <a href="/#contact" className="cta-btn">Schedule Consultation</a>
+          <a href="/contact" className="cta-btn">Schedule Consultation</a>
           <i className="bi bi-list mobile-nav-toggle" onClick={() => setMobileOpen(true)} />
         </div>
       </header>
@@ -157,7 +149,7 @@ export default function Header() {
               </Link>
             ))}
             <div style={{ padding: '16px 20px' }}>
-              <Link to="/#contact" onClick={() => setMobileOpen(false)} style={{ display: 'inline-block', background: 'var(--accent)', color: '#fff', padding: '10px 24px', borderRadius: 50, fontWeight: 600, fontSize: 14 }}>
+              <Link to="/contact" onClick={() => setMobileOpen(false)} style={{ display: 'inline-block', background: 'var(--accent)', color: '#fff', padding: '10px 24px', borderRadius: 50, fontWeight: 600, fontSize: 14 }}>
                 Schedule Consultation
               </Link>
             </div>

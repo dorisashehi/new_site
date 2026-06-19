@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function CTA() {
   return (
     <section id="call-to-action" className="cta-section">
@@ -44,7 +46,7 @@ export default function CTA() {
 
             <div className="cta-buttons">
               <a href="#pricing" className="btn-cta-primary">View Service Plans</a>
-              <a href="#contact" className="btn-cta-outline">Talk to an Expert</a>
+              <Link to="/contact" className="btn-cta-outline">Talk to an Expert</Link>
             </div>
 
             <div className="trust-indicators">

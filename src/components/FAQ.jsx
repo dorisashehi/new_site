@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const tabs = [
   { id: 'general', label: 'General', icon: 'bi-question-circle' },
@@ -94,7 +95,7 @@ export default function FAQ() {
 
           <div className="faq-cta-wrapper" data-aos="fade-up" data-aos-delay="300">
             <p>Have a question not answered here? We&apos;re happy to help.</p>
-            <a href="#contact" className="btn-contact-support">Contact InfoManage</a>
+            <Link to="/contact" className="btn-contact-support">Contact InfoManage</Link>
           </div>
         </div>
       </div>

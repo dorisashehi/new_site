@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const items = [
   {
@@ -71,8 +72,8 @@ export default function Portfolio() {
               <div className="portfolio-img">
                 <img src={item.img} alt={item.title} />
                 <div className="portfolio-overlay">
-                  <a href="#contact" onClick={e => e.preventDefault()} style={{ pointerEvents: 'none' }}><i className="bi bi-building" /></a>
-                  <a href="#contact"><i className="bi bi-arrow-right" /></a>
+                  <Link to="/contact" onClick={e => e.preventDefault()} style={{ pointerEvents: 'none' }}><i className="bi bi-building" /></Link>
+                  <Link to="/contact"><i className="bi bi-arrow-right" /></Link>
                 </div>
               </div>
               <div className="portfolio-info">
@@ -87,7 +88,7 @@ export default function Portfolio() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 40 }} data-aos="fade-up" data-aos-delay="400">
-          <a href="#contact" className="btn-learn-more">Schedule an Industry Consultation</a>
+          <Link to="/contact" className="btn-learn-more">Schedule an Industry Consultation</Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 
@@ -67,10 +68,10 @@ export default function Services() {
               aligned with business needs — without reactive fire-fighting.
             </p>
             <div style={{ marginTop: 24 }} data-aos="fade-right" data-aos-duration="1100">
-              <a href="#contact" className="btn-consultation">
+              <Link to="/contact" className="btn-consultation">
                 <span>Schedule a Consultation</span>
                 <i className="bi bi-arrow-right" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -108,7 +109,7 @@ export default function Services() {
               <SwiperSlide key={i}>
                 <div className="service-card">
                   <div className="icon-box"><i className={`bi ${s.icon}`} /></div>
-                  <a href="#contact" className="arrow-link"><i className="bi bi-arrow-right" /></a>
+                  <Link to="/contact" className="arrow-link"><i className="bi bi-arrow-right" /></Link>
                   <div>
                     <h4>{s.title}</h4>
                     <p style={{ marginBottom: 12 }}>{s.desc}</p>

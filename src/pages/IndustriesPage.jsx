@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 
 const industries = [
   {
+    slug: 'financial-services',
     icon: 'bi-bank',
     title: 'Financial Services',
     desc: 'Financial services organizations depend on secure, reliable technology environments that support critical operations and protect sensitive client data.',
@@ -21,6 +22,7 @@ const industries = [
     note: 'InfoManage helps financial services firms maintain stable infrastructure while supporting regulatory and operational requirements.',
   },
   {
+    slug: 'legal',
     icon: 'bi-briefcase-fill',
     title: 'Legal',
     desc: 'Law firms rely heavily on secure document management systems, reliable email platforms, and stable infrastructure that supports daily operations.',
@@ -34,6 +36,7 @@ const industries = [
     note: 'InfoManage helps legal organizations maintain reliable systems that support attorneys and staff in their daily work.',
   },
   {
+    slug: 'healthcare',
     icon: 'bi-heart-pulse-fill',
     title: 'Healthcare',
     desc: 'Healthcare organizations require technology environments that support operational reliability, data protection, and secure system access.',
@@ -47,6 +50,7 @@ const industries = [
     note: 'InfoManage supports healthcare environments by maintaining stable infrastructure and helping organizations manage complex technology environments.',
   },
   {
+    slug: 'advertising-media',
     icon: 'bi-megaphone-fill',
     title: 'Advertising and Media',
     desc: 'Creative and media organizations often depend on high-performance systems that support collaboration, large file storage, and creative production workflows.',
@@ -60,6 +64,7 @@ const industries = [
     note: 'InfoManage helps creative organizations maintain reliable technology environments that support production workflows.',
   },
   {
+    slug: 'real-estate',
     icon: 'bi-building-fill',
     title: 'Real Estate',
     desc: 'Real estate organizations rely on technology systems for client communication, document management, and operational coordination across multiple offices.',
@@ -73,6 +78,7 @@ const industries = [
     note: 'InfoManage helps real estate firms maintain reliable systems that support both office and remote operations.',
   },
   {
+    slug: 'manufacturing',
     icon: 'bi-gear-fill',
     title: 'Manufacturing',
     desc: 'Manufacturing organizations depend on reliable infrastructure that supports operations, logistics systems, and communication across facilities.',
@@ -86,6 +92,7 @@ const industries = [
     note: 'InfoManage helps manufacturing organizations maintain stable infrastructure environments that support production operations.',
   },
   {
+    slug: 'non-profit',
     icon: 'bi-people-fill',
     title: 'Non-Profit Organizations',
     desc: 'Non-profit organizations often rely on technology to manage operations, communication, and donor engagement while operating within limited budgets.',
@@ -103,11 +110,28 @@ const industries = [
 export default function IndustriesPage() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const swiperRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     AOS.init({ duration: 700, easing: 'ease-in-out', once: true, mirror: false });
-    window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    const slug = new URLSearchParams(location.search).get('industry');
+    const index = industries.findIndex(ind => ind.slug === slug);
+
+    if (index === -1) {
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      document.getElementById('industries-list')?.scrollIntoView({ behavior: 'smooth' });
+      swiperRef.current?.slideToLoop(index, 0);
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [location.search]);
 
   return (
     <>
@@ -181,6 +205,7 @@ export default function IndustriesPage() {
                 speed={600}
                 autoplay={{ delay: 5000, disableOnInteraction: false }}
                 onInit={swiper => {
+                  swiperRef.current = swiper;
                   swiper.params.navigation.prevEl = prevRef.current;
                   swiper.params.navigation.nextEl = nextRef.current;
                   swiper.navigation.init();

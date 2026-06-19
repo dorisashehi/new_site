@@ -1,17 +1,53 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-const serviceLinks = ['Managed IT Services', 'Help Desk Support', 'Cybersecurity', 'Cloud Management', 'Infrastructure Management', 'vCTO Advisory'];
-const industryLinks = ['Financial Services', 'Legal', 'Healthcare', 'Media & Advertising', 'Real Estate', 'Manufacturing'];
+const serviceLinks = [
+  { label: 'Managed IT Services', href: '/managed-it-services#overview' },
+  { label: 'Help Desk Support', href: '/managed-it-services#operational-support' },
+  { label: 'Cybersecurity', href: '/cybersecurity-services#core-services' },
+  { label: 'Cloud Management', href: '/it-strategy-advisory#infrastructure-architecture' },
+  { label: 'Infrastructure Management', href: '/it-strategy-advisory#infrastructure-architecture' },
+  { label: 'vCTO Advisory', href: '/it-strategy-advisory#vcto' },
+];
+const industryLinks = [
+  { label: 'Financial Services', slug: 'financial-services' },
+  { label: 'Legal', slug: 'legal' },
+  { label: 'Healthcare', slug: 'healthcare' },
+  { label: 'Advertising & Media', slug: 'advertising-media' },
+  { label: 'Real Estate', slug: 'real-estate' },
+  { label: 'Manufacturing', slug: 'manufacturing' },
+];
 
 export default function Footer() {
   const [showTop, setShowTop] = useState(false);
   const [email, setEmail] = useState('');
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY > 400);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const handleFooterLinkClick = href => e => {
+    const [path, hash] = href.split('#');
+    if (location.pathname !== path) return;
+
+    e.preventDefault();
+    if (hash) {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleIndustryLinkClick = slug => e => {
+    if (location.pathname !== '/industries') return;
+    const current = new URLSearchParams(location.search).get('industry');
+    if (current !== slug) return;
+    e.preventDefault();
+    document.getElementById('industries-list')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -39,7 +75,7 @@ export default function Footer() {
               <h4>Services</h4>
               <ul>
                 {serviceLinks.map(l => (
-                  <li key={l}><a href="#services"><i className="bi bi-chevron-right" />{l}</a></li>
+                  <li key={l.label}><Link to={l.href} onClick={handleFooterLinkClick(l.href)}><i className="bi bi-chevron-right" />{l.label}</Link></li>
                 ))}
               </ul>
             </div>
@@ -49,7 +85,11 @@ export default function Footer() {
               <h4>Industries</h4>
               <ul>
                 {industryLinks.map(l => (
-                  <li key={l}><a href="#portfolio"><i className="bi bi-chevron-right" />{l}</a></li>
+                  <li key={l.slug}>
+                    <Link to={`/industries?industry=${l.slug}`} onClick={handleIndustryLinkClick(l.slug)}>
+                      <i className="bi bi-chevron-right" />{l.label}
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </div>

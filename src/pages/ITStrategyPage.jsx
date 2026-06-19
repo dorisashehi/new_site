@@ -192,7 +192,7 @@ export default function ITStrategyPage() {
         </section>
 
         {/* ── vCTO Advisory — HowWeWork-style cards ─────────────── */}
-        <section className="howwework-section">
+        <section id="vcto" className="howwework-section">
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>Virtual Chief Technology Officer (vCTO)</h2>
@@ -257,7 +257,7 @@ export default function ITStrategyPage() {
         </section>
 
         {/* ── Infrastructure Architecture — feature-card grid ───── */}
-        <section className="mit-section" style={{ background: '#fff' }}>
+        <section id="infrastructure-architecture" className="mit-section" style={{ background: '#fff' }}>
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>Infrastructure Architecture</h2>

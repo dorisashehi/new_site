@@ -141,7 +141,7 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── What Managed IT Means — dark section ─────────────── */}
-        <section className="mit-dark-section">
+        <section id="overview" className="mit-dark-section">
           <div className="container">
             <div className="section-title mit-dark-title" data-aos="fade-up">
               <h2>What Managed IT Means at InfoManage</h2>
@@ -210,7 +210,7 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── Ops vs Project Work — dark overlay split ─────────── */}
-        <section className="mit-dark-compare">
+        <section id="operational-support" className="mit-dark-compare">
           <div className="mit-dark-compare-overlay" />
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <div className="section-title" data-aos="fade-up" style={{ paddingBottom: 16 }}>

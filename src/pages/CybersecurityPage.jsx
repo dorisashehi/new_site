@@ -156,7 +156,7 @@ export default function CybersecurityPage() {
         </section>
 
         {/* ── Core Cybersecurity Services — carousel ────────────── */}
-        <section className="mit-section" style={{ background: '#fff' }}>
+        <section id="core-services" className="mit-section" style={{ background: '#fff' }}>
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>Core Cybersecurity Services</h2>

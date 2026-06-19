@@ -15,6 +15,17 @@ const navLinks = [
       { label: 'Insights', href: '/#recent-posts', internal: true },
     ]
   },
+  {
+    label: 'About', href: '/about', internal: true, children: [
+      { label: 'Our Story', href: '/about#our-story', internal: true },
+      { label: 'Our Approach', href: '/about#approach', internal: true },
+      { label: 'Governance', href: '/about#governance', internal: true },
+      { label: 'Client Partnerships', href: '/about#partnerships', internal: true },
+      { label: 'Industries Served', href: '/about#industries', internal: true },
+      { label: 'Leadership', href: '/about#leadership', internal: true },
+      { label: 'Our Values', href: '/about#values', internal: true },
+    ]
+  },
   { label: 'Managed IT', href: '/managed-it-services', internal: true },
   { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
   { label: 'IT Strategy', href: '/it-strategy-advisory', internal: true },
@@ -77,6 +88,14 @@ export default function Header() {
     { label: 'FAQ', href: '/#faq', internal: true, indent: true },
     { label: 'Team', href: '/#team', internal: true, indent: true },
     { label: 'Insights', href: '/#recent-posts', internal: true, indent: true },
+    { label: 'About', href: '/about', internal: true },
+    { label: 'Our Story', href: '/about#our-story', internal: true, indent: true },
+    { label: 'Our Approach', href: '/about#approach', internal: true, indent: true },
+    { label: 'Governance', href: '/about#governance', internal: true, indent: true },
+    { label: 'Client Partnerships', href: '/about#partnerships', internal: true, indent: true },
+    { label: 'Industries Served', href: '/about#industries', internal: true, indent: true },
+    { label: 'Leadership', href: '/about#leadership', internal: true, indent: true },
+    { label: 'Our Values', href: '/about#values', internal: true, indent: true },
     { label: 'Managed IT', href: '/managed-it-services', internal: true },
     { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
     { label: 'IT Strategy & Advisory', href: '/it-strategy-advisory', internal: true },

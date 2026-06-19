@@ -87,8 +87,8 @@ export default function Header() {
     <>
       <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
         <div className="header-inner">
-          <a href="/" className="logo" style={{ display: 'inline-flex', alignItems: 'center' }}>
-            <img src="/logo.png" alt="InfoManage" style={{ height: 68, maxWidth: 240, objectFit: 'contain', display: 'block', filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.5)) brightness(1.08)' }} />
+          <a href="/" className="logo">
+            <img src="/logo.png" alt="InfoManage" style={{ height: 68, maxWidth: 240, objectFit: 'contain', display: 'block' }} />
           </a>
 
           <nav className="navmenu">

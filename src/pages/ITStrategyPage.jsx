@@ -171,8 +171,6 @@ export default function ITStrategyPage() {
                       </p>
                     </div>
                   </div>
-
-                  <Link to="/#contact" className="btn-features">Schedule a Consultation</Link>
                 </div>
               </div>
 
@@ -198,15 +196,7 @@ export default function ITStrategyPage() {
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>Virtual Chief Technology Officer (vCTO)</h2>
-              <p>Experienced technology leadership without the overhead of a dedicated internal executive role</p>
-            </div>
-
-            <div style={{ maxWidth: 700, margin: '0 auto 48px', textAlign: 'center' }} data-aos="fade-up" data-aos-delay="100">
-              <p style={{ color: '#666', fontSize: 15, lineHeight: 1.8 }}>
-                Many organizations benefit from technology leadership but may not require a full-time internal
-                executive responsible for IT strategy. InfoManage provides vCTO advisory services that offer
-                experienced technology guidance without the overhead of a dedicated internal role.
-              </p>
+              <p>Many organizations benefit from technology leadership but may not require a full-time internal executive responsible for IT strategy. InfoManage provides vCTO advisory services that offer experienced technology guidance without the overhead of a dedicated internal role.</p>
             </div>
 
             <div className="hww-grid">
@@ -271,14 +261,7 @@ export default function ITStrategyPage() {
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>Infrastructure Architecture</h2>
-              <p>Planning scalable, secure, and manageable technology environments that support current and future operations</p>
-            </div>
-
-            <div style={{ maxWidth: 700, margin: '0 auto 48px', textAlign: 'center' }} data-aos="fade-up" data-aos-delay="100">
-              <p style={{ color: '#666', fontSize: 15, lineHeight: 1.8 }}>
-                As organizations grow, their technology environments often become more complex. Infrastructure
-                architecture planning ensures that systems remain scalable, secure, and manageable.
-              </p>
+              <p>As organizations grow, their technology environments often become more complex. Infrastructure architecture planning ensures that systems remain scalable, secure, and manageable.</p>
             </div>
 
             <div className="mit-gov-grid">
@@ -333,15 +316,7 @@ export default function ITStrategyPage() {
           <div className="container">
             <div className="section-title mit-dark-title" data-aos="fade-up">
               <h2>Vendor Strategy and Coordination</h2>
-              <p>Helping organizations evaluate, select, and coordinate their technology vendor relationships</p>
-            </div>
-
-            <div style={{ maxWidth: 680, margin: '0 auto 52px', textAlign: 'center' }} data-aos="fade-up" data-aos-delay="100">
-              <p style={{ color: 'rgba(255,255,255,0.72)', fontSize: 15, lineHeight: 1.85 }}>
-                Organizations often depend on multiple technology vendors, software providers, and service platforms.
-                InfoManage assists organizations by helping evaluate vendors, coordinate services, and ensure that
-                vendor relationships support operational needs.
-              </p>
+              <p>Organizations often depend on multiple technology vendors, software providers, and service platforms. InfoManage assists organizations by helping evaluate vendors, coordinate services, and ensure that vendor relationships support operational needs.</p>
             </div>
 
             <div className="its-vendor-grid">
@@ -353,6 +328,26 @@ export default function ITStrategyPage() {
                   <p>{item.label}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Strategic Reviews ─────────────────────────────────── */}
+        <section className="mit-section" style={{ background: '#fff' }}>
+          <div className="container">
+            <div className="section-title" data-aos="fade-up">
+              <h2>Strategic Reviews</h2>
+              <p>Regular technology reviews allow organizations to evaluate their current infrastructure and plan for improvements.</p>
+            </div>
+
+            <div style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }} data-aos="fade-up" data-aos-delay="100">
+              <p style={{ color: '#666', fontSize: 15, lineHeight: 1.8 }}>
+                InfoManage works with organizations to periodically review their technology environment, discuss
+                operational performance, and identify areas for improvement.
+              </p>
+              <p style={{ color: '#666', fontSize: 15, lineHeight: 1.8 }}>
+                These discussions help ensure that technology continues to support evolving business goals.
+              </p>
             </div>
           </div>
         </section>

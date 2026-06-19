@@ -49,7 +49,7 @@ export default function Services() {
     <section id="services" className="services-section">
       <div className="container">
         <div className="section-title" data-aos="fade-up">
-          <h2>Services</h2>
+          <h2>How We Manage IT</h2>
           <p>A structured operational model focused on resolution, prevention, and continuous improvement</p>
         </div>
 
@@ -57,7 +57,6 @@ export default function Services() {
           {/* Left text */}
           <div style={{ flex: '1 1 400px' }} className="services-content" data-aos="fade-left" data-aos-duration="900">
             <span className="subtitle">Structured IT Operations</span>
-            <h2>How We Manage IT</h2>
             <p data-aos="fade-right" data-aos-duration="800">
               InfoManage delivers services through a structured operational model that focuses on
               resolving issues quickly, preventing problems before they occur, and planning
@@ -67,12 +66,6 @@ export default function Services() {
               This structured approach ensures that IT environments remain reliable, secure, and
               aligned with business needs — without reactive fire-fighting.
             </p>
-            <div style={{ marginTop: 24 }} data-aos="fade-right" data-aos-duration="1100">
-              <Link to="/contact" className="btn-consultation">
-                <span>Schedule a Consultation</span>
-                <i className="bi bi-arrow-right" />
-              </Link>
-            </div>
           </div>
 
           {/* Right image */}

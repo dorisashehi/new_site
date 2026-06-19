@@ -52,7 +52,7 @@ export default function Hero() {
         navigation
         loop
         autoplay={{ delay: 6000, disableOnInteraction: false }}
-        speed={1200}
+        speed={500}
       >
         {slides.map((src, i) => (
           <SwiperSlide key={i}>

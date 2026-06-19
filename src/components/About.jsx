@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const coverageItems = [
   { icon: 'bi-headset', text: 'End-user help desk support' },
   { icon: 'bi-laptop', text: 'Endpoint and workstation management' },
@@ -15,7 +13,7 @@ export default function About() {
     <section id="about" className="about-section">
       <div className="container">
         <div className="section-title" data-aos="fade-up">
-          <h2>About</h2>
+          <h2>Your IT Department, Outsourced</h2>
           <p>Your complete operational technology partner — proactively managed, continuously monitored</p>
         </div>
 
@@ -40,9 +38,6 @@ export default function About() {
 
           {/* Right: content */}
           <div style={{ flex: '1 1 400px' }} data-aos="fade-left" data-aos-delay="100">
-            <h2 style={{ fontSize: 32, fontWeight: 700, marginBottom: 20, fontFamily: "'Nunito', sans-serif", color: 'var(--heading-color)' }}>
-              Your IT Department, Outsourced
-            </h2>
             <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 24, fontSize: 15 }}>
               InfoManage acts as a complete operational technology partner for organizations that rely
               on stable, secure, and well-managed infrastructure. Rather than reacting to problems as
@@ -66,10 +61,6 @@ export default function About() {
                 </li>
               ))}
             </ul>
-
-            <Link to="/contact" className="btn-learn-more" data-aos="fade-up" data-aos-delay="400">
-              Request an Assessment
-            </Link>
           </div>
         </div>
       </div>

@@ -325,8 +325,10 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
+  pointer-events: none;
 }
 .hero-info .container {
+  pointer-events: auto;
   max-width: 900px;
   padding: 0 20px;
 }

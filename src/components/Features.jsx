@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const govCards = [
   { icon: 'bi-exclamation-triangle', title: 'Incident Management', desc: 'Structured incident tracking with priority classification ensures critical issues receive immediate attention and appropriate escalation.' },
   { icon: 'bi-arrow-left-right', title: 'Change Management', desc: 'Controlled processes govern all infrastructure modifications, minimizing risk and maintaining environment stability during changes.' },
@@ -35,8 +33,6 @@ export default function Features() {
                   </p>
                 </div>
               </div>
-
-              <Link to="/contact" className="btn-features">Request an Assessment</Link>
             </div>
           </div>
 

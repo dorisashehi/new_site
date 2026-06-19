@@ -3756,6 +3756,29 @@ a:hover {
   }
 }
 
+/* ---- Industries Page Hero ---- */
+.industries-hero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.industries-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 20, 40, 0.88) 0%,
+    rgba(26, 108, 181, 0.48) 100%
+  );
+}
+
 /* ---- About Page Hero ---- */
 .about-hero {
   min-height: 100vh;

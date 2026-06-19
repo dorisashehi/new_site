@@ -29,6 +29,7 @@ const navLinks = [
   { label: 'Managed IT', href: '/managed-it-services', internal: true },
   { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
   { label: 'IT Strategy', href: '/it-strategy-advisory', internal: true },
+  { label: 'Industries', href: '/industries', internal: true },
   {
     label: 'Solutions', href: '#', children: [
       { label: 'Managed IT', href: '/managed-it-services', internal: true },
@@ -99,6 +100,7 @@ export default function Header() {
     { label: 'Managed IT', href: '/managed-it-services', internal: true },
     { label: 'Cybersecurity', href: '/cybersecurity-services', internal: true },
     { label: 'IT Strategy & Advisory', href: '/it-strategy-advisory', internal: true },
+    { label: 'Industries', href: '/industries', internal: true },
     { label: 'Contact', href: '/#contact', internal: true },
   ];
 

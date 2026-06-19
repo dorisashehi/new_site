@@ -4,7 +4,10 @@
       "Bash(npm run *)",
       "Bash(node -e \"const {chromium}=require\\('playwright'\\); \\(async\\(\\)=>{const b=await chromium.launch\\({args:['--no-sandbox']}\\);const p=await b.newPage\\(\\);await p.setViewportSize\\({width:1400,height:900}\\);await p.goto\\('http://localhost:5173',{waitUntil:'networkidle'}\\);await p.waitForTimeout\\(2000\\);await p.evaluate\\(\\(\\)=>document.querySelector\\('#clients'\\).scrollIntoView\\(\\)\\);await p.waitForTimeout\\(1000\\);await p.screenshot\\({path:'/tmp/ind.png'}\\);await b.close\\(\\);console.log\\('done'\\);}\\)\\(\\)\")",
       "Read(//tmp/**)",
-      "Bash(node -e \"const {chromium}=require\\('playwright'\\); console.log\\('ok'\\)\")"
+      "Bash(node -e \"const {chromium}=require\\('playwright'\\); console.log\\('ok'\\)\")",
+      "Bash(curl -s \"http://localhost:5173/src/pages/IndustriesPage.jsx\" -o /tmp/ind.txt -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:5173/src/components/Header.jsx\" -o /tmp/hdr.txt -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:5173/src/App.jsx\" -o /tmp/app.txt -w \"%{http_code}\\\\n\")"
     ]
   }
 }

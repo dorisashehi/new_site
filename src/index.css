@@ -2996,7 +2996,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80");
+  background-image: url("/images/cybersecurity/hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

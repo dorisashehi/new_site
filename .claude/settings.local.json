@@ -7,7 +7,8 @@
       "Bash(node -e \"const {chromium}=require\\('playwright'\\); console.log\\('ok'\\)\")",
       "Bash(curl -s \"http://localhost:5173/src/pages/IndustriesPage.jsx\" -o /tmp/ind.txt -w \"%{http_code}\\\\n\")",
       "Bash(curl -s \"http://localhost:5173/src/components/Header.jsx\" -o /tmp/hdr.txt -w \"%{http_code}\\\\n\")",
-      "Bash(curl -s \"http://localhost:5173/src/App.jsx\" -o /tmp/app.txt -w \"%{http_code}\\\\n\")"
+      "Bash(curl -s \"http://localhost:5173/src/App.jsx\" -o /tmp/app.txt -w \"%{http_code}\\\\n\")",
+      "Bash(pkill -f \"vite --port 5187\")"
     ]
   }
 }

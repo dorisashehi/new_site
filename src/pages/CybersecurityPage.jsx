@@ -211,7 +211,7 @@ export default function CybersecurityPage() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 56, alignItems: 'center' }}>
               <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="150">
                 <img
-                  src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=900&q=80"
+                  src="/images/cybersecurity/security-assessment.jpg"
                   alt="Network security infrastructure"
                   style={{ width: '100%', borderRadius: 10, display: 'block', boxShadow: '0 12px 48px rgba(0,0,0,0.4)' }}
                 />

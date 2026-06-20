@@ -13,6 +13,19 @@ export default function Contact() {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    const subject = `Consultation Request from ${form.name}${form.subject ? ` (${form.subject})` : ''}`;
+    const body = [
+      `Name: ${form.name}`,
+      `Email: ${form.email}`,
+      `Organization: ${form.subject || '—'}`,
+      '',
+      'IT Environment:',
+      form.message,
+    ].join('\n');
+
+    window.open(`mailto:doris.shehi2@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+
     setSent(true);
     setForm({ name: '', email: '', subject: '', message: '' });
     setTimeout(() => setSent(false), 5000);
@@ -75,7 +88,7 @@ export default function Contact() {
 
               {sent && (
                 <div style={{ background: '#0d6efd', color: '#fff', padding: '12px 16px', borderRadius: 8, marginBottom: 16, fontSize: 14 }}>
-                  Thank you. We will contact you within one business day.
+                  Opening your email app to send this request. If it doesn't open, please email us directly.
                 </div>
               )}
 
@@ -83,11 +96,11 @@ export default function Contact() {
                 <div className="form-row">
                   <input className="form-input" type="text" placeholder="Your Name" required
                     value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
-                  <input className="form-input" type="email" placeholder="Work Email" required
+                  <input className="form-input" type="email" placeholder="Email" required
                     value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
                 </div>
                 <div className="form-field">
-                  <input className="form-input" type="text" placeholder="Organization Name" required
+                  <input className="form-input" type="text" placeholder="Organization Name"
                     value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })} />
                 </div>
                 <div className="form-field">

@@ -9,13 +9,12 @@ const serviceLinks = [
   { label: 'Infrastructure Management', href: '/it-strategy-advisory#infrastructure-architecture' },
   { label: 'vCTO Advisory', href: '/it-strategy-advisory#vcto' },
 ];
-const industryLinks = [
-  { label: 'Financial Services', slug: 'financial-services' },
-  { label: 'Legal', slug: 'legal' },
-  { label: 'Healthcare', slug: 'healthcare' },
-  { label: 'Advertising & Media', slug: 'advertising-media' },
-  { label: 'Real Estate', slug: 'real-estate' },
-  { label: 'Manufacturing', slug: 'manufacturing' },
+const companyLinks = [
+  { label: 'About InfoManage', href: '/about' },
+  { label: 'Our Story', href: '/about#our-story' },
+  { label: 'Leadership', href: '/about#leadership' },
+  { label: 'Our Values', href: '/about#values' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Footer() {
@@ -39,14 +38,6 @@ export default function Footer() {
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  };
-
-  const handleIndustryLinkClick = slug => e => {
-    if (location.pathname !== '/industries') return;
-    const current = new URLSearchParams(location.search).get('industry');
-    if (current !== slug) return;
-    e.preventDefault();
-    document.getElementById('industries-list')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -80,16 +71,12 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Industries */}
+            {/* Company */}
             <div className="footer-links-col">
-              <h4>Industries</h4>
+              <h4>Company</h4>
               <ul>
-                {industryLinks.map(l => (
-                  <li key={l.slug}>
-                    <Link to={`/industries?industry=${l.slug}`} onClick={handleIndustryLinkClick(l.slug)}>
-                      <i className="bi bi-chevron-right" />{l.label}
-                    </Link>
-                  </li>
+                {companyLinks.map(l => (
+                  <li key={l.label}><Link to={l.href} onClick={handleFooterLinkClick(l.href)}><i className="bi bi-chevron-right" />{l.label}</Link></li>
                 ))}
               </ul>
             </div>
@@ -114,8 +101,15 @@ export default function Footer() {
                 <p>New York Metro Area<br />Serving clients nationwide</p>
               </div>
               <div className="footer-socials">
-                {['bi-linkedin', 'bi-twitter-x', 'bi-facebook', 'bi-youtube'].map((s, i) => (
-                  <a key={i} href="#"><i className={`bi ${s}`} /></a>
+                {[
+                  { icon: 'bi-linkedin', href: 'https://www.linkedin.com/company/infomanage-corporation/' },
+                  { icon: 'bi-twitter-x', href: '#' },
+                  { icon: 'bi-facebook', href: 'https://www.facebook.com/profile.php?id=100078690196056' },
+                  { icon: 'bi-youtube', href: '#' },
+                ].map((s, i) => (
+                  <a key={i} href={s.href} target={s.href.startsWith('http') ? '_blank' : undefined} rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                    <i className={`bi ${s.icon}`} />
+                  </a>
                 ))}
               </div>
             </div>
@@ -127,11 +121,6 @@ export default function Footer() {
             <div className="footer-bottom-inner">
               <div className="copyright">
                 <p>© <span>Copyright</span> <strong>InfoManage</strong> <span>All Rights Reserved · Established 1995</span></p>
-              </div>
-              <div className="bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Acceptable Use</a>
               </div>
             </div>
           </div>

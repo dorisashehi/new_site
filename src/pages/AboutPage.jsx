@@ -96,7 +96,7 @@ export default function AboutPage() {
               <div style={{ flex: '1 1 400px', position: 'relative', paddingBottom: 30, paddingRight: 20 }} data-aos="fade-right">
                 <div className="about-img">
                   <img
-                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80"
+                    src="/images/about/our-story.jpg"
                     alt="InfoManage team collaborating"
                   />
                 </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 56, alignItems: 'center' }}>
               <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="150">
                 <img
-                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=80"
+                  src="/images/about/governance.jpg"
                   alt="Operational oversight and reporting"
                   style={{ width: '100%', borderRadius: 10, display: 'block', boxShadow: '0 12px 48px rgba(0,0,0,0.4)' }}
                 />
@@ -254,7 +254,7 @@ export default function AboutPage() {
               <div className="team-single-card">
                 <div className="team-single-img">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+                    src="/images/about/leadership-marc-neer.jpg"
                     alt="Marc Neer"
                   />
                 </div>

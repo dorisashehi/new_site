@@ -147,7 +147,7 @@ export default function Header() {
               </Link>
             ))}
             <div style={{ padding: '16px 20px' }}>
-              <Link to="/contact" onClick={() => setMobileOpen(false)} style={{ display: 'inline-block', background: 'var(--accent)', color: '#fff', padding: '10px 24px', borderRadius: 50, fontWeight: 600, fontSize: 14 }}>
+              <Link to="/contact#contact" onClick={() => setMobileOpen(false)} style={{ display: 'inline-block', background: 'var(--accent)', color: '#fff', padding: '10px 24px', borderRadius: 50, fontWeight: 600, fontSize: 14 }}>
                 Schedule Consultation
               </Link>
             </div>

@@ -88,7 +88,7 @@ export default function Portfolio() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 40 }} data-aos="fade-up" data-aos-delay="400">
-          <Link to="/contact" className="btn-learn-more">Schedule an Industry Consultation</Link>
+          <Link to="/contact#contact" className="btn-learn-more">Schedule an Industry Consultation</Link>
         </div>
       </div>
     </section>

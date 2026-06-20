@@ -189,7 +189,7 @@ export default function IndustriesPage() {
               {/* Right image */}
               <div style={{ flex: '1 1 400px' }} className="services-image" data-aos="fade-left" data-aos-delay="200">
                 <img
-                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80"
+                  src="/images/industries/teams-across-industries.jpg"
                   alt="Teams across industries relying on InfoManage"
                 />
                 <div className="shape-circle" />

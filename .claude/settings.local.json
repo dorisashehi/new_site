@@ -18,7 +18,13 @@
       "Bash(curl -s -o /dev/null -w \"page: %{http_code}\\\\n\" http://localhost:5188/it-strategy-advisory)",
       "Bash(curl -s -o /dev/null -w \"hero-bg: %{http_code}\\\\n\" http://localhost:5188/images/it-strategy/hero-bg.jpg)",
       "Bash(curl -s -o /dev/null -w \"roadmap-planning: %{http_code}\\\\n\" http://localhost:5188/images/it-strategy/roadmap-planning.jpg)",
-      "Bash(curl -s -o /dev/null -w \"technology-analysis: %{http_code}\\\\n\" http://localhost:5188/images/it-strategy/technology-analysis.jpg)"
+      "Bash(curl -s -o /dev/null -w \"technology-analysis: %{http_code}\\\\n\" http://localhost:5188/images/it-strategy/technology-analysis.jpg)",
+      "Bash(curl -s -o /dev/null -w \"industries page: %{http_code}\\\\n\" http://localhost:5189/industries)",
+      "Bash(curl -s -o /dev/null -w \"industries hero-bg: %{http_code}\\\\n\" http://localhost:5189/images/industries/hero-bg.jpg)",
+      "Bash(curl -s -o /dev/null -w \"teams-across-industries: %{http_code}\\\\n\" http://localhost:5189/images/industries/teams-across-industries.jpg)",
+      "Bash(curl -s -o /dev/null -w \"contact page: %{http_code}\\\\n\" http://localhost:5189/contact)",
+      "Bash(curl -s -o /dev/null -w \"contact hero-bg: %{http_code}\\\\n\" http://localhost:5189/images/contact/hero-bg.jpg)",
+      "Bash(pkill -f \"vite --port 5189\")"
     ]
   }
 }

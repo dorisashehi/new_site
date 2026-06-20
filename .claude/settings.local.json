@@ -8,7 +8,17 @@
       "Bash(curl -s \"http://localhost:5173/src/pages/IndustriesPage.jsx\" -o /tmp/ind.txt -w \"%{http_code}\\\\n\")",
       "Bash(curl -s \"http://localhost:5173/src/components/Header.jsx\" -o /tmp/hdr.txt -w \"%{http_code}\\\\n\")",
       "Bash(curl -s \"http://localhost:5173/src/App.jsx\" -o /tmp/app.txt -w \"%{http_code}\\\\n\")",
-      "Bash(pkill -f \"vite --port 5187\")"
+      "Bash(pkill -f \"vite --port 5187\")",
+      "Bash(mkdir -p /home/dorisa/Public/new_site/public/images/it-strategy)",
+      "Bash(curl -sL -o hero-bg.jpg \"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80\" -w \"hero-bg: %{http_code} %{size_download} bytes\\\\n\")",
+      "Bash(curl -sL -o roadmap-planning.jpg \"https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&q=80\" -w \"roadmap-planning: %{http_code} %{size_download} bytes\\\\n\")",
+      "Bash(curl -sL -o technology-analysis.jpg \"https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80\" -w \"technology-analysis: %{http_code} %{size_download} bytes\\\\n\")",
+      "Bash(nohup npm run dev -- --port 5188)",
+      "Bash(echo \"started $!\")",
+      "Bash(curl -s -o /dev/null -w \"page: %{http_code}\\\\n\" http://localhost:5188/it-strategy-advisory)",
+      "Bash(curl -s -o /dev/null -w \"hero-bg: %{http_code}\\\\n\" http://localhost:5188/images/it-strategy/hero-bg.jpg)",
+      "Bash(curl -s -o /dev/null -w \"roadmap-planning: %{http_code}\\\\n\" http://localhost:5188/images/it-strategy/roadmap-planning.jpg)",
+      "Bash(curl -s -o /dev/null -w \"technology-analysis: %{http_code}\\\\n\" http://localhost:5188/images/it-strategy/technology-analysis.jpg)"
     ]
   }
 }

@@ -225,7 +225,7 @@ export default function ITStrategyPage() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 56, alignItems: 'center' }}>
               <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="150">
                 <img
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&q=80"
+                  src="/images/it-strategy/roadmap-planning.jpg"
                   alt="Technology roadmap planning board"
                   style={{ width: '100%', borderRadius: 10, display: 'block', boxShadow: '0 12px 48px rgba(0,0,0,0.4)' }}
                 />
@@ -302,7 +302,7 @@ export default function ITStrategyPage() {
 
               <div style={{ flex: '1 1 380px' }} data-aos="fade-up" data-aos-delay="200">
                 <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80"
+                  src="/images/it-strategy/technology-analysis.jpg"
                   alt="Technology planning and analysis"
                   style={{ width: '100%', borderRadius: 12, display: 'block', boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}
                 />

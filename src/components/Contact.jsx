@@ -111,8 +111,15 @@ export default function Contact() {
                 <div className="form-actions">
                   <button type="submit" className="send-btn">Schedule Consultation</button>
                   <div className="social-row">
-                    {['bi-linkedin', 'bi-twitter-x', 'bi-facebook', 'bi-envelope'].map((s, i) => (
-                      <a key={i} href="#"><i className={`bi ${s}`} /></a>
+                    {[
+                      { icon: 'bi-linkedin', href: 'https://www.linkedin.com/company/infomanage-corporation/' },
+                      { icon: 'bi-twitter-x', href: '#' },
+                      { icon: 'bi-facebook', href: 'https://www.facebook.com/profile.php?id=100078690196056' },
+                      { icon: 'bi-envelope', href: 'mailto:info@infomanage.com' },
+                    ].map((s, i) => (
+                      <a key={i} href={s.href} target={s.href.startsWith('http') ? '_blank' : undefined} rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                        <i className={`bi ${s.icon}`} />
+                      </a>
                     ))}
                   </div>
                 </div>

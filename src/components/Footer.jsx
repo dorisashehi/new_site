@@ -19,7 +19,6 @@ const companyLinks = [
 
 export default function Footer() {
   const [showTop, setShowTop] = useState(false);
-  const [email, setEmail] = useState('');
   const location = useLocation();
 
   useEffect(() => {
@@ -51,14 +50,6 @@ export default function Footer() {
                 <img src="/logo.png" alt="InfoManage" style={{ height: 62, objectFit: 'contain', display: 'block', filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.5)) brightness(1.08)' }} />
               </div>
               <p>InfoManage manages day-to-day IT operations while helping organizations plan, secure, and scale their technology environments. Serving organizations since 1995.</p>
-              <p className="newsletter-title" style={{ marginTop: 16 }}>Stay Informed</p>
-              <div className="nl-form">
-                <input className="nl-input" type="email" placeholder="Your work email"
-                  value={email} onChange={e => setEmail(e.target.value)} />
-                <button type="button" className="nl-btn" onClick={() => setEmail('')}>
-                  <i className="bi bi-send" />
-                </button>
-              </div>
             </div>
 
             {/* Services */}

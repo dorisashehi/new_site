@@ -38,7 +38,7 @@ export default function Partnership() {
           <div style={{ flex: '1 1 400px' }} data-aos="fade-left" data-aos-delay="200">
             <div className="partnership-img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                src="/images/home/partnership.jpg"
                 alt="Strategic technology planning"
               />
               <div className="partnership-badge">

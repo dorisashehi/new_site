@@ -71,7 +71,7 @@ export default function Services() {
           {/* Right image */}
           <div style={{ flex: '1 1 400px' }} className="services-image" data-aos="fade-left" data-aos-delay="200">
             <img
-              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
+              src="/images/home/services.jpg"
               alt="IT operations management"
             />
             <div className="shape-circle" />

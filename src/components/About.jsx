@@ -22,7 +22,7 @@ export default function About() {
           <div style={{ flex: '1 1 400px', position: 'relative', paddingBottom: 30, paddingRight: 20 }} data-aos="fade-right">
             <div className="about-img">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
+                src="/images/home/about.jpg"
                 alt="IT team at work"
               />
             </div>

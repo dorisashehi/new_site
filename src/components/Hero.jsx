@@ -4,11 +4,11 @@ import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css/effect-fade';
 
 const slides = [
-  'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80',
-  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80',
-  'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
-  'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1920&q=80',
-  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80',
+  '/images/home/hero-slide-1.jpg',
+  '/images/home/hero-slide-2.jpg',
+  '/images/home/hero-slide-3.jpg',
+  '/images/home/hero-slide-4.jpg',
+  '/images/home/hero-slide-5.jpg',
 ];
 
 export default function Hero() {

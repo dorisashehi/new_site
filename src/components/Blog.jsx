@@ -1,21 +1,21 @@
 const featuredPosts = [
   {
-    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+    img: '/images/home/blog-featured-1.jpg',
     cat: 'IT Operations',
     date: 'May 2025',
     title: 'Why Reactive IT Support Is Costing Your Organization More Than You Think',
     excerpt: 'Organizations that rely on break-fix IT support often underestimate the true cost of downtime, lost productivity, and deferred maintenance. A proactive managed service model changes the economics entirely.',
-    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80',
+    avatar: '/images/home/blog-avatar-1.jpg',
     author: 'InfoManage Team',
     readTime: '5 min read',
   },
   {
-    img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80',
+    img: '/images/home/blog-featured-2.jpg',
     cat: 'Cybersecurity',
     date: 'April 2025',
     title: 'Security Hygiene: The Foundation of a Defensible IT Environment',
     excerpt: 'Patch management, endpoint protection, and access control are not advanced security measures — they are the baseline. Organizations that skip foundational hygiene remain unnecessarily exposed to preventable threats.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
+    avatar: '/images/home/blog-avatar-2.jpg',
     author: 'InfoManage Security Team',
     readTime: '7 min read',
   },
@@ -23,28 +23,28 @@ const featuredPosts = [
 
 const recentPosts = [
   {
-    img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=200&q=80',
+    img: '/images/home/blog-recent-1.jpg',
     cat: 'Strategy',
     title: 'Building a Technology Roadmap That Aligns With Business Goals',
     author: 'InfoManage Advisory',
     date: 'March 2025',
   },
   {
-    img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=200&q=80',
+    img: '/images/home/blog-recent-2.jpg',
     cat: 'Cloud',
     title: 'Managing Microsoft 365 at Scale: What Most Organizations Get Wrong',
     author: 'InfoManage Cloud Team',
     date: 'March 2025',
   },
   {
-    img: 'https://images.unsplash.com/photo-1554224311-9b945703d725?w=200&q=80',
+    img: '/images/home/blog-recent-3.jpg',
     cat: 'Compliance',
     title: 'IT Compliance for Financial Services: A Practical Operational Approach',
     author: 'InfoManage Team',
     date: 'February 2025',
   },
   {
-    img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=200&q=80',
+    img: '/images/home/blog-recent-4.jpg',
     cat: 'Healthcare IT',
     title: 'HIPAA and Managed IT: What Healthcare Organizations Must Know',
     author: 'InfoManage Team',

@@ -172,7 +172,7 @@ export default function ManagedITPage() {
 
               <div style={{ flex: '1 1 400px' }} data-aos="fade-up" data-aos-delay="250">
                 <img
-                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&q=80"
+                  src="/images/managed-it/operations.jpg"
                   alt="IT support and operations team"
                   style={{ width: '100%', borderRadius: 10, display: 'block', boxShadow: '0 12px 48px rgba(0,0,0,0.4)' }}
                 />

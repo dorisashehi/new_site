@@ -1,6 +1,6 @@
 const stats = [
   { value: '30+', label: 'Years in Business' },
-  { value: '500+', label: 'Organizations Supported' },
+  { value: '10+', label: 'Organizations Supported' },
   { value: '99.9%', label: 'Uptime Delivered' },
   { value: '24×7', label: 'Enterprise Support' },
 ];

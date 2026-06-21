@@ -31,7 +31,7 @@ export default function About() {
               <p>Years of<br />Experience</p>
             </div>
             <div className="projects-badge" data-aos="fade-left" data-aos-delay="300">
-              <h2>500<span style={{ fontSize: 18 }}>+</span></h2>
+              <h2>10<span style={{ fontSize: 18 }}>+</span></h2>
               <p>Organizations<br />Supported</p>
             </div>
           </div>

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css/effect-fade';
@@ -32,7 +31,6 @@ export default function Hero() {
             delivered through a governance-driven service model.
           </p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/contact#contact" className="btn-get-started">Schedule a Consultation</Link>
             <a href="#about" style={{
               display: 'inline-block', padding: '14px 36px', borderRadius: 50, fontWeight: 600,
               fontSize: 15, border: '2px solid rgba(255,255,255,0.5)', color: '#fff', transition: '0.3s'

@@ -46,8 +46,14 @@ export default function Footer() {
           <div className="footer-inner">
             {/* Brand */}
             <div className="footer-brand">
-              <div style={{ marginBottom: 16 }}>
-                <img src="/logo.png" alt="InfoManage" style={{ height: 62, objectFit: 'contain', display: 'block', filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.5)) brightness(1.08)' }} />
+              <div style={{ marginBottom: 16, lineHeight: 1 }}>
+                <div style={{ fontSize: 30, fontWeight: 800, color: '#fff', fontFamily: '"Nunito", sans-serif', letterSpacing: -0.5 }}>
+                  Info<span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Manage</span>
+                  <sup style={{ fontSize: 12, marginLeft: 2, fontWeight: 600 }}>&trade;</sup>
+                </div>
+                <div style={{ fontSize: 12, fontStyle: 'italic', color: 'rgba(255,255,255,0.5)', marginTop: 4 }}>
+                  Keeps you&hellip; Up and Running!&trade;
+                </div>
               </div>
               <p>InfoManage manages day-to-day IT operations while helping organizations plan, secure, and scale their technology environments. Serving organizations since 1995.</p>
             </div>

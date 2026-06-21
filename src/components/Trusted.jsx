@@ -20,11 +20,11 @@ export default function Trusted() {
           <div style={{ flex: '1 1 420px' }} data-aos="fade-right" data-aos-delay="100">
             <span className="trusted-eyebrow">Our Track Record</span>
             <h2>Established & Trusted</h2>
-            <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 20, fontSize: 15 }}>
+            <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 20, fontSize: 16 }}>
               Founded in 1995, InfoManage has supported organizations across a wide range of
               industries that rely heavily on technology to operate and grow.
             </p>
-            <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 32, fontSize: 15 }}>
+            <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 32, fontSize: 16 }}>
               Our long-term client partnerships are built on operational discipline, consistent
               service delivery, and a commitment to maintaining reliable technology environments.
             </p>

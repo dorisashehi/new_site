@@ -38,13 +38,13 @@ export default function About() {
 
           {/* Right: content */}
           <div style={{ flex: '1 1 400px' }} data-aos="fade-left" data-aos-delay="100">
-            <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 24, fontSize: 15 }}>
+            <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 24, fontSize: 16 }}>
               InfoManage acts as a complete operational technology partner for organizations that rely
               on stable, secure, and well-managed infrastructure. Rather than reacting to problems as
               they occur, our team continuously monitors, maintains, and improves the systems that
               support your business.
             </p>
-            <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 20, fontSize: 15 }}>
+            <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 20, fontSize: 16 }}>
               From end-user support to infrastructure management, we handle the day-to-day
               responsibilities required to keep your environment running smoothly.
             </p>

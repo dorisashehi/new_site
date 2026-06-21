@@ -16,7 +16,7 @@ export default function Partnership() {
           <div style={{ flex: '1 1 420px' }} data-aos="fade-right" data-aos-delay="150">
             <span className="partnership-eyebrow">Beyond Daily Operations</span>
             <h2>Strategic Technology Partnership</h2>
-            <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 28, fontSize: 15 }}>
+            <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 28, fontSize: 16 }}>
               InfoManage helps organizations plan and evolve their technology environments.
               Through ongoing advisory and strategic planning, we ensure technology decisions
               support long-term business goals.

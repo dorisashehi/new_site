@@ -62,7 +62,7 @@ export default function Services() {
               resolving issues quickly, preventing problems before they occur, and planning
               improvements over time.
             </p>
-            <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 20, fontSize: 14 }}>
+            <p style={{ color: '#666', lineHeight: 1.8, marginBottom: 20, fontSize: 16 }}>
               This structured approach ensures that IT environments remain reliable, secure, and
               aligned with business needs — without reactive fire-fighting.
             </p>

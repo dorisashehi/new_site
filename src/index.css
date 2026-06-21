@@ -1732,6 +1732,14 @@ a:hover {
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (max-width: 480px) {
+  .trusted-stat {
+    padding: 24px 14px;
+  }
+  .trusted-stat-value {
+    font-size: 28px;
+  }
+}
 
 /* ---- Recent Posts ---- */
 .posts-section {
@@ -2274,6 +2282,15 @@ a:hover {
 .scroll-top-btn:hover {
   background: var(--accent-hover);
   color: #fff;
+}
+@media (max-width: 480px) {
+  .scroll-top-btn {
+    width: 38px;
+    height: 38px;
+    bottom: 16px;
+    right: 16px;
+    font-size: 18px;
+  }
 }
 
 /* ---- Preloader ---- */
@@ -3610,6 +3627,19 @@ a:hover {
   }
   .footer-inner {
     grid-template-columns: 1fr 1fr;
+  }
+  .site-header {
+    position: static;
+    background: #0d1e2e;
+  }
+  .logo img {
+    height: 50px !important;
+  }
+  .logo {
+    padding: 8px 14px 14px;
+  }
+  .site-header.scrolled {
+    background: #0d1e2e;
   }
 }
 @media (max-width: 991px) {

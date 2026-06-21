@@ -24,7 +24,29 @@
       "Bash(curl -s -o /dev/null -w \"teams-across-industries: %{http_code}\\\\n\" http://localhost:5189/images/industries/teams-across-industries.jpg)",
       "Bash(curl -s -o /dev/null -w \"contact page: %{http_code}\\\\n\" http://localhost:5189/contact)",
       "Bash(curl -s -o /dev/null -w \"contact hero-bg: %{http_code}\\\\n\" http://localhost:5189/images/contact/hero-bg.jpg)",
-      "Bash(pkill -f \"vite --port 5189\")"
+      "Bash(pkill -f \"vite --port 5189\")",
+      "Bash(google-chrome --version)",
+      "Bash(nohup npm run dev -- --port 5190 > /tmp/vite_mobile.log 2>&1 & echo \"started $!\"; sleep 3; cat /tmp/vite_mobile.log)",
+      "Bash(python3 -c \"import playwright\")",
+      "Bash(pip show *)",
+      "Bash(npm ls *)",
+      "Bash(node -e \"require\\('playwright'\\)\")",
+      "Bash(python3 -c 'from playwright.sync_api import sync_playwright; *)",
+      "Bash(rm -f /tmp/mobile-shots/*.png)",
+      "Bash(python3 /tmp/mobile_shots.py)",
+      "Bash(python3 /tmp/find_overflow.py)",
+      "Bash(python3 /tmp/find_overflow2.py)",
+      "Bash(python3 /tmp/debug_overflow.py)",
+      "Bash(python3 /tmp/debug_overflow2.py)",
+      "Bash(python3 /tmp/debug_overflow3.py)",
+      "Bash(python3 /tmp/debug_trusted.py)",
+      "Bash(python3 /tmp/debug_industries.py)",
+      "Bash(python3 /tmp/shot_trusted.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 /tmp/find_overflow3.py)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
     ]
   }
 }

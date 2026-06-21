@@ -127,12 +127,12 @@ a:hover {
   display: flex;
   align-items: center;
   background: #ffffffde;
-  padding: 10px 20px 18px;
+  padding: 8px 18px 13px;
   align-self: flex-start;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 .site-header.scrolled .logo {
-  padding: 8px 16px;
+  padding: 6px 14px;
   box-shadow: none;
 }
 .logo h1 {

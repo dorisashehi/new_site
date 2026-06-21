@@ -99,13 +99,13 @@ export default function Header() {
       <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
         <div className="header-inner">
           <a href="/" className="logo">
-            <img src="/logo.png" alt="InfoManage" style={{ height: 68, maxWidth: 240, objectFit: 'contain', display: 'block' }} />
+            <img src="/logo.png" alt="InfoManage" style={{ height: 56, maxWidth: 240, objectFit: 'contain', display: 'block' }} />
           </a>
 
           <nav className="navmenu">
             <ul>
               {navLinks.map((link, i) => (
-                <li key={i} style={{ position: 'relative', padding: '15px 14px' }}
+                <li key={i} style={{ position: 'relative', padding: '10px 14px' }}
                     className={link.children ? 'dropdown' : ''}>
                   {link.internal
                     ? <Link to={link.href}>

@@ -2,19 +2,24 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const serviceLinks = [
-  { label: 'Managed IT Services', href: '/managed-it-services#overview' },
-  { label: 'Help Desk Support', href: '/managed-it-services#operational-support' },
-  { label: 'Cybersecurity', href: '/cybersecurity-services#core-services' },
-  { label: 'Cloud Management', href: '/it-strategy-advisory#infrastructure-architecture' },
-  { label: 'Infrastructure Management', href: '/it-strategy-advisory#infrastructure-architecture' },
-  { label: 'vCTO Advisory', href: '/it-strategy-advisory#vcto' },
+  { label: 'Managed IT', href: '/managed-it-services' },
+  { label: 'Cybersecurity', href: '/cybersecurity-services' },
+  { label: 'IT Strategy', href: '/it-strategy-advisory' },
+  { label: 'Cloud Solutions', href: '/it-strategy-advisory#infrastructure-architecture' },
+  { label: 'IT Consulting', href: '/it-strategy-advisory' },
 ];
 const companyLinks = [
-  { label: 'About InfoManage', href: '/about' },
-  { label: 'Our Story', href: '/about#our-story' },
-  { label: 'Leadership', href: '/about#leadership' },
-  { label: 'Our Values', href: '/about#values' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Our Team', href: '/about#leadership' },
+  { label: 'Careers', href: '#' },
+  { label: 'Blog', href: '#' },
   { label: 'Contact', href: '/contact' },
+];
+const resourceLinks = [
+  { label: 'Case Studies', href: '#' },
+  { label: 'Partners', href: '#' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Support Center', href: '/contact' },
 ];
 
 export default function Footer() {
@@ -78,9 +83,19 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Resources */}
+            <div className="footer-links-col">
+              <h4>Resources</h4>
+              <ul>
+                {resourceLinks.map(l => (
+                  <li key={l.label}><Link to={l.href} onClick={handleFooterLinkClick(l.href)}><i className="bi bi-chevron-right" />{l.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Connect */}
             <div className="footer-contact-col">
-              <h4>Contact InfoManage</h4>
+              <h4>Connect</h4>
               <div className="contact-entry">
                 <i className="bi bi-telephone" />
                 <p>+1 (800) 555-0195</p>
@@ -89,20 +104,11 @@ export default function Footer() {
                 <i className="bi bi-envelope" />
                 <p><a href="mailto:info@infomanage.com">info@infomanage.com</a></p>
               </div>
-              <div className="contact-entry">
-                <i className="bi bi-clock" />
-                <p>Mon–Fri: 8AM – 6PM<br />Enterprise 24×7 support available</p>
-              </div>
-              <div className="contact-entry">
-                <i className="bi bi-geo-alt" />
-                <p>New York Metro Area<br />Serving clients nationwide</p>
-              </div>
               <div className="footer-socials">
                 {[
                   { icon: 'bi-linkedin', href: 'https://www.linkedin.com/company/infomanage-corporation/' },
                   { icon: 'bi-twitter-x', href: '#' },
                   { icon: 'bi-facebook', href: 'https://www.facebook.com/profile.php?id=100078690196056' },
-                  { icon: 'bi-youtube', href: '#' },
                 ].map((s, i) => (
                   <a key={i} href={s.href} target={s.href.startsWith('http') ? '_blank' : undefined} rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
                     <i className={`bi ${s.icon}`} />
@@ -117,7 +123,11 @@ export default function Footer() {
           <div className="container">
             <div className="footer-bottom-inner">
               <div className="copyright">
-                <p>© <span>Copyright</span> <strong>InfoManage</strong> <span>All Rights Reserved · Established 1995</span></p>
+                <p>© 2024 InfoManage, LLC. All rights reserved.</p>
+              </div>
+              <div className="bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
               </div>
             </div>
           </div>

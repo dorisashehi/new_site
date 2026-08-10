@@ -318,12 +318,7 @@ a:hover {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    90deg,
-    rgba(10, 22, 40, 0.78) 0%,
-    rgba(10, 22, 40, 0.5) 40%,
-    rgba(10, 22, 40, 0.1) 75%
-  );
+  background: rgba(10, 22, 40, 0.55);
   pointer-events: none;
 }
 .hero-swiper {
@@ -341,16 +336,15 @@ a:hover {
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  text-align: left;
+  justify-content: center;
+  text-align: center;
   pointer-events: none;
 }
 .hero-info .container {
   pointer-events: auto;
   max-width: 700px;
-  margin-left: max(20px, calc((100vw - 1200px) / 2 + 20px));
-  margin-right: 0;
-  padding: 0 20px 0 0;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 .hero-info h2 {
   font-size: 52px;
@@ -380,23 +374,11 @@ a:hover {
   margin-bottom: 10px;
 }
 .hero-cta-row {
-  justify-content: flex-start;
+  justify-content: center;
 }
 @media (max-width: 768px) {
-  .hero-info {
-    justify-content: center;
-    text-align: center;
-  }
   .hero-info .container {
     max-width: 600px;
-    margin-left: 0;
-    padding: 0 20px;
-  }
-  .hero-section::before {
-    background: rgba(10, 22, 40, 0.6);
-  }
-  .hero-cta-row {
-    justify-content: center;
   }
 }
 .btn-get-started {
@@ -1979,11 +1961,11 @@ a:hover {
 .site-footer {
   background: var(--dark-bg);
   color: rgba(255, 255, 255, 0.7);
-  padding: 60px 0 0;
+  padding: 48px 0 0;
 }
 .footer-inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 2fr;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr 1.3fr;
   gap: 40px;
   margin-bottom: 20px;
 }
@@ -2120,8 +2102,8 @@ a:hover {
   color: #fff;
 }
 .footer-bottom-bar {
-  background: rgba(0, 0, 0, 0.3);
-  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 32px;
   padding: 20px 0;
 }
 .footer-bottom-inner {

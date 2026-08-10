@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom';
-
 const plans = [
   {
-    icon: 'bi-person',
+    icon: 'bi-person-fill',
     name: 'Essential',
     desc: 'Website and monitoring for small teams.',
     features: [
@@ -12,10 +10,9 @@ const plans = [
       'Monthly reporting',
     ],
     featured: false,
-    cta: 'Learn More',
   },
   {
-    icon: 'bi-shield-check',
+    icon: 'bi-shield-fill-check',
     name: 'Professional',
     desc: 'Comprehensive IT management for growing organizations.',
     features: [
@@ -26,10 +23,9 @@ const plans = [
       'Vendor management',
     ],
     featured: true,
-    cta: 'Learn More',
   },
   {
-    icon: 'bi-building',
+    icon: 'bi-building-fill',
     name: 'Enterprise',
     desc: 'Advanced IT management for complex environments.',
     features: [
@@ -39,7 +35,6 @@ const plans = [
       'Custom solutions',
     ],
     featured: false,
-    cta: 'Contact Us',
   },
 ];
 
@@ -56,21 +51,24 @@ export default function Pricing() {
           </h2>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 28, justifyContent: 'center', alignItems: 'flex-start' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 28, justifyContent: 'center' }}>
           {plans.map((plan, i) => (
             <div key={i} style={{ flex: '1 1 280px', maxWidth: 360 }}
               data-aos="fade-up" data-aos-delay={100 + i * 100}>
               <div className={`pricing-item${plan.featured ? ' featured' : ''}`}>
-                {plan.featured && <div className="pricing-badge">Most Popular</div>}
-                <div className="pricing-icon"><i className={`bi ${plan.icon}`} /></div>
-                <h3>{plan.name}</h3>
-                <p className="description">{plan.desc}</p>
-                <ul className="features-list">
-                  {plan.features.map((f, j) => (
-                    <li key={j}><i className="bi bi-check2" />{f}</li>
-                  ))}
-                </ul>
-                <Link to="/contact" className="btn-pricing">{plan.cta}</Link>
+                {plan.featured && <div className="pricing-ribbon">Most Popular</div>}
+                <div className="pricing-item-body">
+                  <div className="pricing-header-row">
+                    <i className={`bi ${plan.icon} pricing-icon`} />
+                    <h3>{plan.name}</h3>
+                  </div>
+                  <p className="description">{plan.desc}</p>
+                  <ul className="features-list">
+                    {plan.features.map((f, j) => (
+                      <li key={j}><i className="bi bi-check2" />{f}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           ))}

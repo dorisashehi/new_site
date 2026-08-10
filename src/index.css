@@ -1157,11 +1157,10 @@ a:hover {
 }
 .pricing-item {
   background: #fff;
-  border-radius: 12px;
-  padding: 40px 32px;
-  text-align: center;
+  border-radius: 16px;
+  overflow: hidden;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-  border: 2px solid transparent;
+  border: 1px solid #e8edf4;
   transition: 0.3s;
   position: relative;
   height: 100%;
@@ -1176,44 +1175,42 @@ a:hover {
 .pricing-item.featured {
   border-color: var(--accent);
   box-shadow: 0 10px 40px rgba(26, 108, 181, 0.2);
-  transform: scale(1.05);
 }
 .pricing-item.featured:hover {
-  transform: scale(1.05) translateY(-5px);
+  transform: translateY(-5px);
 }
-.pricing-badge {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
+.pricing-ribbon {
   background: var(--accent);
   color: #fff;
+  text-align: center;
   font-size: 12px;
   font-weight: 700;
-  padding: 4px 18px;
-  border-radius: 50px;
+  padding: 12px 18px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  white-space: nowrap;
+  letter-spacing: 1.5px;
 }
-.pricing-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: rgba(26, 108, 181, 0.1);
+.pricing-item-body {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+}
+.pricing-header-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
+  gap: 14px;
+  margin-bottom: 20px;
 }
-.pricing-icon i {
-  font-size: 30px;
+.pricing-header-row .pricing-icon {
+  font-size: 34px;
   color: var(--accent);
+  flex-shrink: 0;
 }
-.pricing-item h3 {
+.pricing-item-body h3 {
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin: 0;
 }
 .price {
   margin-bottom: 16px;
@@ -1240,18 +1237,18 @@ a:hover {
 .pricing-item .description {
   color: #777;
   font-size: 14px;
-  margin-bottom: 24px;
+  line-height: 1.6;
+  margin-bottom: 26px;
 }
 .features-list {
   list-style: none;
   padding: 0;
-  margin-bottom: 32px;
+  margin: 0 0 30px;
   text-align: left;
   flex: 1;
 }
 .features-list li {
-  padding: 9px 0;
-  border-bottom: 1px solid #f0f0f0;
+  padding: 7px 0;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1264,8 +1261,9 @@ a:hover {
   flex-shrink: 0;
 }
 .btn-pricing {
+  align-self: center;
   display: inline-block;
-  padding: 12px 36px;
+  padding: 13px 40px;
   border: 2px solid var(--accent);
   color: var(--accent);
   border-radius: 50px;

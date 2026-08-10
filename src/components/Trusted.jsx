@@ -1,6 +1,6 @@
 const stats = [
   { icon: 'bi-person', value: '30+', label: 'Years of Experience' },
-  { icon: 'bi-building', value: '10+', label: 'Organizations Supported' },
+  { icon: 'bi-award', value: '98%', label: 'Client Retention' },
   { icon: 'bi-shield-check', value: '99.9%', label: 'System Uptime' },
   { icon: 'bi-clock-history', value: '24×7', label: 'Monitoring & Support' },
 ];

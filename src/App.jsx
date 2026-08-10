@@ -13,7 +13,7 @@ import Pricing from "./components/Pricing";
 import Partnership from "./components/Partnership";
 import Trusted from "./components/Trusted";
 import FAQ from "./components/FAQ";
-import Blog from "./components/Blog";
+// import Blog from "./components/Blog";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 import ManagedITPage from "./pages/ManagedITPage";
@@ -53,7 +53,7 @@ function HomePage({ loaded }) {
         <Partnership />
         <Trusted />
         <FAQ />
-        <Blog />
+        {/* <Blog /> */}
         <FinalCTA />
       </main>
       <Footer />

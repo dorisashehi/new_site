@@ -2,82 +2,14 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const navLinks = [
-  {
-    label: "Home",
-    href: "/",
-    internal: true,
-    children: [
-      { label: "About", href: "/#about", internal: true },
-      { label: "Services", href: "/#services", internal: true },
-      { label: "How We Work", href: "/#how-we-work", internal: true },
-      { label: "IT Governance", href: "/#features", internal: true },
-      { label: "Industries", href: "/industries", internal: true },
-      { label: "Pricing", href: "/#pricing", internal: true },
-      { label: "FAQ", href: "/#faq", internal: true },
-      { label: "Insights", href: "/#recent-posts", internal: true },
-    ],
-  },
-  {
-    label: "About",
-    href: "/about",
-    internal: true,
-    children: [
-      { label: "Our Story", href: "/about#our-story", internal: true },
-      { label: "Our Approach", href: "/about#approach", internal: true },
-      { label: "Governance", href: "/about#governance", internal: true },
-      {
-        label: "Client Partnerships",
-        href: "/about#partnerships",
-        internal: true,
-      },
-      { label: "Industries Served", href: "/about#industries", internal: true },
-      { label: "Leadership", href: "/about#leadership", internal: true },
-      { label: "Our Values", href: "/about#values", internal: true },
-    ],
-  },
+  { label: "Home", href: "/", internal: true },
+  { label: "About", href: "/about", internal: true },
   { label: "Managed IT", href: "/managed-it-services", internal: true },
   { label: "Cybersecurity", href: "/cybersecurity-services", internal: true },
   { label: "IT Strategy", href: "/it-strategy-advisory", internal: true },
   { label: "Industries", href: "/industries", internal: true },
   { label: "Contact", href: "/contact", internal: true },
 ];
-
-function DropdownItems({ items }) {
-  return (
-    <ul className="dropdown-menu">
-      {items.map((item, i) => (
-        <li
-          key={i}
-          style={{ position: "relative" }}
-          className={item.children ? "dropdown" : ""}
-        >
-          {item.internal ? (
-            <Link to={item.href}>
-              {item.label}
-              {item.children && (
-                <i
-                  className="bi bi-chevron-down"
-                  style={{ marginLeft: 6, fontSize: 11 }}
-                />
-              )}
-            </Link>
-          ) : (
-            <a href={item.href}>
-              {item.label}
-              {item.children && (
-                <i
-                  className="bi bi-chevron-down"
-                  style={{ marginLeft: 6, fontSize: 11 }}
-                />
-              )}
-            </a>
-          )}
-          {item.children && <DropdownItems items={item.children} />}
-        </li>
-      ))}
-    </ul>
-  );
-}
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -106,67 +38,7 @@ export default function Header() {
 
   const mobileLinks = [
     { label: "Home", href: "/", internal: true },
-    { label: "About", href: "/#about", internal: true, indent: true },
-    { label: "Services", href: "/#services", internal: true, indent: true },
-    {
-      label: "How We Work",
-      href: "/#how-we-work",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "IT Governance",
-      href: "/#features",
-      internal: true,
-      indent: true,
-    },
-    { label: "Industries", href: "/industries", internal: true, indent: true },
-    { label: "Pricing", href: "/#pricing", internal: true, indent: true },
-    { label: "FAQ", href: "/#faq", internal: true, indent: true },
-    { label: "Insights", href: "/#recent-posts", internal: true, indent: true },
     { label: "About", href: "/about", internal: true },
-    {
-      label: "Our Story",
-      href: "/about#our-story",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Our Approach",
-      href: "/about#approach",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Governance",
-      href: "/about#governance",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Client Partnerships",
-      href: "/about#partnerships",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Industries Served",
-      href: "/about#industries",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Leadership",
-      href: "/about#leadership",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Our Values",
-      href: "/about#values",
-      internal: true,
-      indent: true,
-    },
     { label: "Managed IT", href: "/managed-it-services", internal: true },
     { label: "Cybersecurity", href: "/cybersecurity-services", internal: true },
     {
@@ -188,7 +60,7 @@ export default function Header() {
               alt="InfoManage"
               style={{
                 height: "100%",
-                maxWidth: "100%",
+                maxWidth: "85%",
                 objectFit: "cover",
                 display: "block",
                 transform: "scale(1.0)",
@@ -199,21 +71,9 @@ export default function Header() {
           <nav className="navmenu">
             <ul>
               {navLinks.map((link, i) => (
-                <li
-                  key={i}
-                  style={{ position: "relative", padding: "10px 14px" }}
-                  className={link.children ? "dropdown" : ""}
-                >
+                <li key={i} style={{ padding: "10px 14px" }}>
                   {link.internal ? (
-                    <Link to={link.href}>
-                      {link.label}
-                      {link.children && (
-                        <i
-                          className="bi bi-chevron-down toggle-dropdown"
-                          style={{ fontSize: 12, marginLeft: 4 }}
-                        />
-                      )}
-                    </Link>
+                    <Link to={link.href}>{link.label}</Link>
                   ) : (
                     <a
                       href={link.href}
@@ -224,15 +84,8 @@ export default function Header() {
                       }
                     >
                       {link.label}
-                      {link.children && (
-                        <i
-                          className="bi bi-chevron-down toggle-dropdown"
-                          style={{ fontSize: 12, marginLeft: 4 }}
-                        />
-                      )}
                     </a>
                   )}
-                  {link.children && <DropdownItems items={link.children} />}
                 </li>
               ))}
             </ul>
@@ -267,7 +120,7 @@ export default function Header() {
                 alt="InfoManage"
                 style={{
                   height: "100%",
-                  maxWidth: "100%",
+                  maxWidth: "85%",
                   objectFit: "cover",
                   display: "block",
                   transform: "scale(1.0)",

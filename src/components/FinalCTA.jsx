@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function FinalCTA() {
   return (
-    <section id="final-cta" className="mit-dark-section" style={{ padding: "56px 0 0" }}>
+    <section id="final-cta" className="mit-dark-section" style={{ padding: "40px 0 0" }}>
       <div className="container">
         <div
           style={{
@@ -11,7 +11,7 @@ export default function FinalCTA() {
             gap: 24,
             alignItems: "center",
             justifyContent: "space-between",
-            paddingBottom: 32,
+            paddingBottom: 22,
             borderBottom: "1px solid rgba(255,255,255,0.1)",
           }}
           data-aos="fade-up"

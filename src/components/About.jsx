@@ -26,10 +26,6 @@ export default function About() {
               <h2>30<span style={{ fontSize: 22 }}>+</span></h2>
               <p>Years of<br />Experience</p>
             </div>
-            <div className="projects-badge" data-aos="fade-left" data-aos-delay="300">
-              <h2>10<span style={{ fontSize: 18 }}>+</span></h2>
-              <p>Organizations<br />Supported</p>
-            </div>
           </div>
 
           {/* Right: content */}

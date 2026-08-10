@@ -55,6 +55,11 @@ a:hover {
   color: var(--accent-hover);
 }
 
+/* ---- Home Page Icons (bolder) ---- */
+.home-page .bi {
+  -webkit-text-stroke: 1px currentColor;
+}
+
 /* ---- Section Title ---- */
 .section-title {
   text-align: center;

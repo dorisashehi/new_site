@@ -39,7 +39,7 @@ function HomePage({ loaded }) {
     <>
       <div id="preloader" className={loaded ? "done" : ""} />
       <Header />
-      <main className="main">
+      <main className="main home-page">
         <Hero />
         <About />
         <HowWeWork />

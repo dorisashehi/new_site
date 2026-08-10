@@ -5,6 +5,7 @@ import AOS from "aos";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Services from "./components/Services";
 import CTA from "./components/CTA";
 import HowWeWork from "./components/HowWeWork";
 import Pricing from "./components/Pricing";
@@ -42,6 +43,7 @@ function HomePage({ loaded }) {
       <main className="main home-page">
         <Hero />
         <About />
+        <Services />
         <HowWeWork />
         <CTA />
         <Pricing />

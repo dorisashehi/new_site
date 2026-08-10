@@ -915,6 +915,16 @@ a:hover {
   line-height: 1.6;
   margin: 0;
 }
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media (max-width: 560px) {
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
 
 /* ---- Industries Slider ---- */
 .clients-section {

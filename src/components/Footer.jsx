@@ -123,11 +123,7 @@ export default function Footer() {
           <div className="container">
             <div className="footer-bottom-inner">
               <div className="copyright">
-                <p>© 2024 InfoManage, LLC. All rights reserved.</p>
-              </div>
-              <div className="bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <p>© 2026 InfoManage, LLC. All rights reserved.</p>
               </div>
             </div>
           </div>

@@ -925,6 +925,11 @@ a:hover {
     grid-template-columns: 1fr !important;
   }
 }
+@media (max-width: 700px) {
+  .benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
 
 /* ---- Industries Slider ---- */
 .clients-section {

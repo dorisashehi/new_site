@@ -8,6 +8,7 @@ import About from "./components/About";
 import Services from "./components/Services";
 import CTA from "./components/CTA";
 import HowWeWork from "./components/HowWeWork";
+import ClientBenefits from "./components/ClientBenefits";
 import Pricing from "./components/Pricing";
 import Trusted from "./components/Trusted";
 import FAQ from "./components/FAQ";
@@ -46,6 +47,7 @@ function HomePage({ loaded }) {
         <Services />
         <HowWeWork />
         <CTA />
+        <ClientBenefits />
         <Pricing />
         <Trusted />
         <FAQ />

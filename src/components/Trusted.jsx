@@ -26,20 +26,20 @@ export default function Trusted() {
           </div>
 
           {/* Right: stats */}
-          <div style={{ flex: '2 1 500px', display: 'flex', flexWrap: 'wrap', gap: 24 }}>
+          <div style={{ flex: '2 1 500px', display: 'flex', flexWrap: 'wrap' }}>
             {stats.map((s, i) => (
-              <div key={i} style={{ flex: '1 1 110px', textAlign: 'center' }} data-aos="zoom-in" data-aos-delay={150 + i * 80}>
-                <div style={{
-                  width: 52, height: 52, borderRadius: '50%',
-                  background: 'rgba(26, 108, 181, 0.1)', display: 'flex',
-                  alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px',
-                }}>
-                  <i className={`bi ${s.icon}`} style={{ fontSize: 22, color: 'var(--accent)' }} />
-                </div>
-                <span style={{ display: 'block', fontSize: 26, fontWeight: 900, color: 'var(--heading-color)', fontFamily: '"Nunito", sans-serif', lineHeight: 1, marginBottom: 8 }}>
+              <div
+                key={i}
+                className="trusted-stat-item"
+                style={{ flex: '1 1 110px', textAlign: 'center', padding: '0 16px' }}
+                data-aos="zoom-in"
+                data-aos-delay={150 + i * 80}
+              >
+                <i className={`bi ${s.icon}`} style={{ display: 'block', fontSize: 40, color: 'var(--accent)', marginBottom: 12 }} />
+                <span style={{ display: 'block', fontSize: 30, fontWeight: 900, color: 'var(--heading-color)', fontFamily: '"Nunito", sans-serif', lineHeight: 1, marginBottom: 8 }}>
                   {s.value}
                 </span>
-                <span style={{ fontSize: 13, color: '#777', fontWeight: 600 }}>{s.label}</span>
+                <span style={{ fontSize: 13, color: '#777', fontWeight: 600, lineHeight: 1.4 }}>{s.label}</span>
               </div>
             ))}
           </div>

@@ -1697,97 +1697,18 @@ a:hover {
 
 /* ---- Established & Trusted ---- */
 .trusted-section {
-  padding: 80px 0;
+  padding: 48px 0;
   background: var(--light-bg);
 }
-.trusted-eyebrow {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 14px;
-  background: rgba(26, 108, 181, 0.08);
-  padding: 4px 14px;
-  border-radius: 50px;
+.trusted-stat-item {
+  border-left: 1px solid rgba(26, 46, 68, 0.12);
 }
-.trusted-section h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.trusted-stat-item:first-child {
+  border-left: none;
 }
-.trusted-industries {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.trusted-industry-tag {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #555;
-  background: #fff;
-  border: 1px solid #dde4ee;
-  border-radius: 50px;
-  padding: 6px 14px;
-  transition: 0.3s;
-}
-.trusted-industry-tag:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(26, 108, 181, 0.05);
-}
-.trusted-industry-tag i {
-  color: var(--accent);
-  font-size: 14px;
-}
-.trusted-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-.trusted-stat {
-  background: #fff;
-  border-radius: 14px;
-  padding: 36px 28px;
-  text-align: center;
-  border: 1px solid #e8edf4;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
-}
-.trusted-stat:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(26, 108, 181, 0.1);
-  border-color: rgba(26, 108, 181, 0.2);
-}
-.trusted-stat-value {
-  display: block;
-  font-size: 44px;
-  font-weight: 900;
-  color: var(--accent);
-  font-family: "Nunito", sans-serif;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.trusted-stat-label {
-  font-size: 13px;
-  color: #777;
-  font-weight: 600;
-}
-@media (max-width: 768px) {
-  .trusted-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 480px) {
-  .trusted-stat {
-    padding: 24px 14px;
-  }
-  .trusted-stat-value {
-    font-size: 28px;
+@media (max-width: 640px) {
+  .trusted-stat-item {
+    border-left: none;
   }
 }
 

@@ -1489,104 +1489,40 @@ a:hover {
 
 /* ---- How We Work ---- */
 .howwework-section {
-  padding: 80px 0;
+  padding: 56px 0;
   background: var(--light-bg);
 }
-.hww-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-bottom: 40px;
-}
-.hww-card {
+.hww-step-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
   background: #fff;
-  border-radius: 14px;
-  padding: 36px 28px;
-  border: 1px solid #e8edf4;
-  position: relative;
-  overflow: hidden;
-  transition: 0.3s;
-}
-.hww-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 48px rgba(26, 108, 181, 0.1);
-  border-color: rgba(26, 108, 181, 0.25);
-}
-.hww-num {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  font-size: 52px;
-  font-weight: 900;
-  color: rgba(26, 108, 181, 0.06);
-  font-family: "Nunito", sans-serif;
-  line-height: 1;
-}
-.hww-icon-wrap {
-  width: 60px;
-  height: 60px;
-  border-radius: 14px;
-  background: rgba(26, 108, 181, 0.08);
+  box-shadow: 0 6px 20px rgba(26, 108, 181, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  transition: 0.3s;
-}
-.hww-card:hover .hww-icon-wrap {
-  background: var(--accent);
-}
-.hww-icon-wrap i {
-  font-size: 26px;
-  color: var(--accent);
-  transition: 0.3s;
-}
-.hww-card:hover .hww-icon-wrap i {
-  color: #fff;
-}
-.hww-card h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.hww-card > p {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.75;
-  margin-bottom: 20px;
-}
-.hww-points {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.hww-points li {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 13px;
-  color: #555;
-}
-.hww-points li i {
-  color: var(--accent);
-  font-size: 15px;
   flex-shrink: 0;
-  margin-top: 1px;
 }
-.hww-footer {
-  text-align: center;
-  color: #777;
-  font-size: 14px;
-  font-style: italic;
-  max-width: 600px;
-  margin: 0 auto;
+.hww-step-icon i {
+  font-size: 28px;
+  color: var(--accent);
+}
+.hww-image {
+  height: 100%;
+  min-height: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+.hww-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 @media (max-width: 900px) {
-  .hww-grid {
-    grid-template-columns: 1fr;
+  .hww-image {
+    min-height: 260px;
   }
 }
 

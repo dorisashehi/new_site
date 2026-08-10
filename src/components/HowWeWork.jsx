@@ -23,7 +23,7 @@ export default function HowWeWork() {
   return (
     <section id="how-we-work" className="howwework-section">
       <div className="container">
-        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 56px' }} data-aos="fade-up">
+        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 40px' }} data-aos="fade-up">
           <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 14 }}>
             How We Manage It
           </span>
@@ -32,33 +32,31 @@ export default function HowWeWork() {
           </h2>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 48, alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 48, alignItems: 'stretch' }}>
           {/* Left: steps */}
-          <div style={{ flex: '1 1 500px', display: 'flex', alignItems: 'flex-start' }} data-aos="fade-right" data-aos-delay="100">
+          <div style={{ flex: '1 1 560px', display: 'flex', alignItems: 'flex-start' }} data-aos="fade-right" data-aos-delay="100">
             {steps.map((s, i) => (
               <div key={i} style={{ display: 'contents' }}>
-                <div style={{ flex: '1 1 0', textAlign: 'center', padding: '0 8px' }} data-aos="zoom-in" data-aos-delay={150 + i * 100}>
-                  <div style={{
-                    width: 64, height: 64, borderRadius: '50%',
-                    background: 'rgba(26, 108, 181, 0.1)', display: 'flex',
-                    alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px',
-                  }}>
-                    <i className={`bi ${s.icon}`} style={{ fontSize: 26, color: 'var(--accent)' }} />
+                <div style={{ flex: '1 1 0', padding: '0 8px' }} data-aos="zoom-in" data-aos-delay={150 + i * 100}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
+                    <div className="hww-step-icon">
+                      <i className={`bi ${s.icon}`} />
+                    </div>
+                    <span style={{ fontSize: 26, fontWeight: 900, color: 'var(--accent)', fontFamily: '"Nunito", sans-serif' }}>{s.num}</span>
                   </div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--accent)', letterSpacing: 1, marginBottom: 8 }}>{s.num}</div>
-                  <h4 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 0.5 }}>{s.title}</h4>
-                  <p style={{ fontSize: 13, color: '#666', lineHeight: 1.6 }}>{s.desc}</p>
+                  <h4 style={{ fontSize: 15, fontWeight: 700, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 0.5 }}>{s.title}</h4>
+                  <p style={{ fontSize: 14, color: '#666', lineHeight: 1.6 }}>{s.desc}</p>
                 </div>
                 {i < steps.length - 1 && (
-                  <i className="bi bi-arrow-right" style={{ fontSize: 20, color: '#ccc', marginTop: 22, flexShrink: 0 }} />
+                  <i className="bi bi-arrow-right" style={{ fontSize: 22, color: 'var(--accent)', marginTop: 26, flexShrink: 0 }} />
                 )}
               </div>
             ))}
           </div>
 
           {/* Right: image */}
-          <div style={{ flex: '1 1 380px' }} data-aos="fade-left" data-aos-delay="200">
-            <div className="about-img">
+          <div style={{ flex: '1 1 340px' }} data-aos="fade-left" data-aos-delay="200">
+            <div className="hww-image">
               <img src="/images/home/services.jpg" alt="IT operations dashboard" />
             </div>
           </div>

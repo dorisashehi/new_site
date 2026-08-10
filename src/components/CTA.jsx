@@ -1,64 +1,60 @@
-import { Link } from 'react-router-dom';
+const checklist = [
+  'Proactive monitoring and issue prevention',
+  'Clear reporting and performance insights',
+  'Security-first approach to protect your business',
+];
 
 export default function CTA() {
   return (
-    <section id="call-to-action" className="cta-section">
+    <section id="call-to-action" className="mit-dark-section">
       <div className="container">
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40, alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 48, alignItems: 'center' }}>
           {/* Left */}
           <div style={{ flex: '1 1 400px' }} data-aos="fade-right" data-aos-delay="200">
-            <div className="cta-badge">
-              <i className="bi bi-check-circle" />
-              No Surprise Invoices
-            </div>
-            <h2>Predictable IT Operations</h2>
-            <p className="lead">
-              InfoManage provides unlimited operational support through clearly defined service plans
-              designed to eliminate surprise invoices and reactive support models. Daily IT operations
-              are fully covered within the service plan scope.
+            <span className="mit-split-label">Predictable IT Operations</span>
+            <h2 style={{ fontSize: 32, fontWeight: 700, color: '#fff', marginBottom: 18 }}>
+              Proactive. Predictable. Protected.
+            </h2>
+            <p style={{ color: 'rgba(255,255,255,0.72)', lineHeight: 1.8, marginBottom: 24, fontSize: 15 }}>
+              We deliver consistent, high-quality IT operations that reduce downtime,
+              minimize risk, and help your business run more efficiently.
             </p>
-            <p style={{ color: 'rgba(255,255,255,0.65)', marginTop: 14, fontSize: 14, lineHeight: 1.7 }}>
-              This predictable approach allows organizations to focus on running their business while
-              knowing their technology environment is being continuously managed and maintained.
-            </p>
+            <ul className="mit-split-list">
+              {checklist.map((item, i) => (
+                <li key={i}>
+                  <i className="bi bi-check-circle-fill" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Right */}
-          <div style={{ flex: '1 1 400px' }} data-aos="fade-left" data-aos-delay="300">
-            <div style={{ marginBottom: 28 }}>
-              <div className="cta-feature">
-                <i className="bi bi-check-circle-fill" />
-                <span>Daily IT operations fully covered within service plan scope</span>
+          {/* Right: testimonial */}
+          <div style={{ flex: '1 1 380px' }} data-aos="fade-left" data-aos-delay="300">
+            <div style={{
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              borderRadius: 14,
+              padding: '36px 32px',
+            }}>
+              <p style={{
+                color: 'rgba(255,255,255,0.9)',
+                fontSize: 18,
+                lineHeight: 1.7,
+                fontStyle: 'italic',
+                marginBottom: 24,
+              }}>
+                &ldquo;InfoManage gives us peace of mind knowing our systems are secure,
+                monitored, and managed by a team we can trust.&rdquo;
+              </p>
+              <div style={{ display: 'flex', gap: 4, marginBottom: 10 }}>
+                {[1, 2, 3, 4, 5].map(s => (
+                  <i key={s} className="bi bi-star-fill" style={{ color: '#ffc107', fontSize: 14 }} />
+                ))}
               </div>
-              <div className="cta-feature">
-                <i className="bi bi-check-circle-fill" />
-                <span>Monitoring, troubleshooting, and system administration included</span>
-              </div>
-              <div className="cta-feature">
-                <i className="bi bi-check-circle-fill" />
-                <span>Routine maintenance and security hygiene — no extras</span>
-              </div>
-              <div className="cta-feature">
-                <i className="bi bi-check-circle-fill" />
-                <span>Structured service plans with defined scope and deliverables</span>
-              </div>
-            </div>
-
-            <div className="cta-buttons">
-              <a href="#pricing" className="btn-cta-primary">View Service Plans</a>
-              <Link to="/contact" className="btn-cta-outline">Talk to an Expert</Link>
-            </div>
-
-            <div className="trust-indicators">
-              <small>Trusted by organizations across financial services, legal, healthcare, and more</small>
-              <div className="rating" style={{ marginTop: 8 }}>
-                <i className="bi bi-star-fill" />
-                <i className="bi bi-star-fill" />
-                <i className="bi bi-star-fill" />
-                <i className="bi bi-star-fill" />
-                <i className="bi bi-star-fill" />
-                <span>Established 1995 · 30+ years of service</span>
-              </div>
+              <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14, fontWeight: 600 }}>
+                — Director of Operations
+              </span>
             </div>
           </div>
         </div>

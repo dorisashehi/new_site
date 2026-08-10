@@ -1,22 +1,18 @@
 const coverageItems = [
   { icon: 'bi-headset', text: 'End-user help desk support' },
-  { icon: 'bi-laptop', text: 'Endpoint and workstation management' },
-  { icon: 'bi-server', text: 'Server and network administration' },
-  { icon: 'bi-activity', text: 'Monitoring and alert response' },
   { icon: 'bi-shield-lock', text: 'Security management and protection' },
+  { icon: 'bi-laptop', text: 'Endpoint and workstation management' },
   { icon: 'bi-people', text: 'Vendor coordination and escalation' },
-  { icon: 'bi-arrow-repeat', text: 'Routine maintenance and system updates' },
+  { icon: 'bi-server', text: 'Server and network administration' },
+  { icon: 'bi-arrow-repeat', text: 'Routine maintenance and updates' },
+  { icon: 'bi-activity', text: 'Monitoring and alert response' },
+  { icon: 'bi-cloud-arrow-up', text: 'Backup and disaster recovery' },
 ];
 
 export default function About() {
   return (
     <section id="about" className="about-section">
       <div className="container">
-        <div className="section-title" data-aos="fade-up">
-          <h2>Your IT Department, Outsourced</h2>
-          <p>Your complete operational technology partner — proactively managed, continuously monitored</p>
-        </div>
-
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 60, alignItems: 'center' }}>
           {/* Left: image + badges */}
           <div style={{ flex: '1 1 400px', position: 'relative', paddingBottom: 30, paddingRight: 20 }} data-aos="fade-right">
@@ -38,22 +34,31 @@ export default function About() {
 
           {/* Right: content */}
           <div style={{ flex: '1 1 400px' }} data-aos="fade-left" data-aos-delay="100">
+            <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 14 }}>
+              Your IT Department, Outsourced
+            </span>
+            <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--heading-color)', lineHeight: 1.3, marginBottom: 22 }}>
+              Enterprise-level IT operations without the overhead.
+            </h2>
             <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 24, fontSize: 16 }}>
-              InfoManage acts as a complete operational technology partner for organizations that rely
-              on stable, secure, and well-managed infrastructure. Rather than reacting to problems as
-              they occur, our team continuously monitors, maintains, and improves the systems that
-              support your business.
+              Rather than reacting to problems as they occur, our team continuously
+              monitors, maintains, and improves the systems that support your business.
             </p>
             <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 20, fontSize: 16 }}>
-              From end-user support to infrastructure management, we handle the day-to-day
-              responsibilities required to keep your environment running smoothly.
+              From end-user support to infrastructure management, we handle the day-
+              to-day responsibilities required to keep your environment running smoothly.
             </p>
 
             <p style={{ fontWeight: 700, color: 'var(--heading-color)', marginBottom: 14, fontSize: 14, textTransform: 'uppercase', letterSpacing: 1 }}>
               Our operational coverage includes:
             </p>
 
-            <ul className="check-list" style={{ marginBottom: 32 }} data-aos="fade-up" data-aos-delay="300">
+            <ul
+              className="check-list"
+              style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: 20, marginBottom: 0 }}
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               {coverageItems.map((item, i) => (
                 <li key={i}>
                   <i className={`bi ${item.icon}`} style={{ color: 'var(--accent)', fontSize: 16, flexShrink: 0, marginTop: 2 }} />

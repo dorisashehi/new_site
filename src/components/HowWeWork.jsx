@@ -1,24 +1,21 @@
 const steps = [
   {
-    icon: 'bi-display',
-    title: 'Operate',
-    desc: 'We manage daily IT operations, ensuring systems remain reliable and users stay productive.',
-    points: ['Help desk & end-user support', 'System monitoring & alerts', 'Incident response & escalation'],
     num: '01',
+    icon: 'bi-search',
+    title: 'Assess',
+    desc: 'We evaluate your environment, identify risks, and understand your business goals.',
   },
   {
-    icon: 'bi-arrow-up-circle',
-    title: 'Improve',
-    desc: 'We continuously enhance infrastructure through maintenance, optimization, and security improvements.',
-    points: ['Patch & vulnerability management', 'Security hardening', 'Performance optimization'],
     num: '02',
+    icon: 'bi-gear',
+    title: 'Manage',
+    desc: 'We monitor, maintain, and secure your systems 24/7 to ensure maximum reliability.',
   },
   {
-    icon: 'bi-compass',
-    title: 'Plan',
-    desc: 'We guide long-term technology decisions through strategic planning and advisory.',
-    points: ['Technology roadmaps', 'Lifecycle planning', 'vCTO advisory & budget guidance'],
     num: '03',
+    icon: 'bi-graph-up-arrow',
+    title: 'Improve',
+    desc: 'We continuously optimize performance, security, and alignment with your goals.',
   },
 ];
 
@@ -26,32 +23,46 @@ export default function HowWeWork() {
   return (
     <section id="how-we-work" className="howwework-section">
       <div className="container">
-        <div className="section-title" data-aos="fade-up">
-          <h2>How We Work With Clients</h2>
-          <p>InfoManage works as a long-term operational partner, managing technology environments while helping organizations plan and improve their infrastructure over time</p>
+        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 56px' }} data-aos="fade-up">
+          <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 14 }}>
+            How We Manage It
+          </span>
+          <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--heading-color)' }}>
+            A proven process for reliable IT.
+          </h2>
         </div>
 
-        <div className="hww-grid">
-          {steps.map((s, i) => (
-            <div key={i} className="hww-card" data-aos="fade-up" data-aos-delay={150 + i * 100}>
-              <div className="hww-num">{s.num}</div>
-              <div className="hww-icon-wrap">
-                <i className={`bi ${s.icon}`} />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 48, alignItems: 'center' }}>
+          {/* Left: steps */}
+          <div style={{ flex: '1 1 500px', display: 'flex', alignItems: 'flex-start' }} data-aos="fade-right" data-aos-delay="100">
+            {steps.map((s, i) => (
+              <div key={i} style={{ display: 'contents' }}>
+                <div style={{ flex: '1 1 0', textAlign: 'center', padding: '0 8px' }} data-aos="zoom-in" data-aos-delay={150 + i * 100}>
+                  <div style={{
+                    width: 64, height: 64, borderRadius: '50%',
+                    background: 'rgba(26, 108, 181, 0.1)', display: 'flex',
+                    alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px',
+                  }}>
+                    <i className={`bi ${s.icon}`} style={{ fontSize: 26, color: 'var(--accent)' }} />
+                  </div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--accent)', letterSpacing: 1, marginBottom: 8 }}>{s.num}</div>
+                  <h4 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 0.5 }}>{s.title}</h4>
+                  <p style={{ fontSize: 13, color: '#666', lineHeight: 1.6 }}>{s.desc}</p>
+                </div>
+                {i < steps.length - 1 && (
+                  <i className="bi bi-arrow-right" style={{ fontSize: 20, color: '#ccc', marginTop: 22, flexShrink: 0 }} />
+                )}
               </div>
-              <h4>{s.title}</h4>
-              <p>{s.desc}</p>
-              <ul className="hww-points">
-                {s.points.map((p, j) => (
-                  <li key={j}><i className="bi bi-check2-circle" />{p}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <p className="hww-footer" data-aos="fade-up" data-aos-delay="400">
-          This partnership approach allows organizations to benefit from both operational management and strategic technology leadership.
-        </p>
+          {/* Right: image */}
+          <div style={{ flex: '1 1 380px' }} data-aos="fade-left" data-aos-delay="200">
+            <div className="about-img">
+              <img src="/images/home/services.jpg" alt="IT operations dashboard" />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

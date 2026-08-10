@@ -5,12 +5,9 @@ import AOS from "aos";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Services from "./components/Services";
 import CTA from "./components/CTA";
-import Features from "./components/Features";
 import HowWeWork from "./components/HowWeWork";
 import Pricing from "./components/Pricing";
-import Partnership from "./components/Partnership";
 import Trusted from "./components/Trusted";
 import FAQ from "./components/FAQ";
 // import Blog from "./components/Blog";
@@ -45,12 +42,9 @@ function HomePage({ loaded }) {
       <main className="main">
         <Hero />
         <About />
-        <Services />
-        <CTA />
-        <Features />
         <HowWeWork />
+        <CTA />
         <Pricing />
-        <Partnership />
         <Trusted />
         <FAQ />
         {/* <Blog /> */}

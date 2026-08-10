@@ -1,63 +1,30 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const tabs = [
-  { id: 'general', label: 'General', icon: 'bi-question-circle' },
-  { id: 'services', label: 'Services', icon: 'bi-gear' },
-  { id: 'support', label: 'Support', icon: 'bi-headset' },
+const faqData = [
+  {
+    q: 'What makes InfoManage different from other IT providers?',
+    a: 'Rather than billing by the hour when something breaks, InfoManage operates as a proactive partner using a structured service model. We monitor, maintain, and continuously improve your environment under a fixed service plan — eliminating surprise invoices and reactive-only support.',
+  },
+  {
+    q: 'Do you support businesses in our industry?',
+    a: 'InfoManage serves organizations across a wide range of industries including financial services, legal, healthcare, media, real estate, and manufacturing. Our service plans scale to fit environments of varying size and complexity.',
+  },
+  {
+    q: 'How do you ensure data security?',
+    a: 'Security management is integrated into every service plan. This includes endpoint protection, patch management, security monitoring, threat response, and security baseline management, backed by regular audits and compliance support.',
+  },
+  {
+    q: 'What are your response times?',
+    a: 'Standard support hours are Monday through Friday, 8AM to 6PM, with extended coverage on our Professional plan and 24×7 help desk availability on Enterprise. All requests are tracked and prioritized so critical issues are escalated immediately.',
+  },
 ];
 
-const faqData = {
-  general: [
-    {
-      q: 'What is managed IT services?',
-      a: 'Managed IT services means outsourcing your day-to-day technology management to a professional firm. InfoManage handles monitoring, maintenance, help desk support, security, and strategic planning — so your team can focus on the business, not the technology.',
-    },
-    {
-      q: 'How is InfoManage different from a traditional IT company?',
-      a: 'Rather than billing by the hour when something breaks, InfoManage operates as a proactive partner using a structured service model. We monitor, maintain, and continuously improve your environment under a fixed service plan — eliminating surprise invoices and reactive-only support.',
-    },
-    {
-      q: 'What size organizations does InfoManage typically support?',
-      a: 'InfoManage serves small to mid-market organizations across a wide range of industries including financial services, legal, healthcare, media, real estate, and manufacturing. Our service plans scale to fit environments of varying complexity.',
-    },
-  ],
-  services: [
-    {
-      q: 'What is included in a managed IT service plan?',
-      a: 'Our Professional plan includes unlimited remote help desk support, 24×7 monitoring, patch management, security hygiene, vendor management, and monthly operational reporting. Enterprise plans add on-site support and vCTO advisory. All plans have clearly defined scope with no hidden charges.',
-    },
-    {
-      q: 'Do you offer cybersecurity services?',
-      a: 'Yes. Security management is integrated into all service plans. This includes endpoint protection, patch management, security monitoring, threat response, and security baseline management. We also offer standalone security assessments and enhanced security coverage.',
-    },
-    {
-      q: 'Can InfoManage support cloud environments?',
-      a: 'Absolutely. InfoManage manages hybrid and cloud-based environments including Microsoft 365, Azure, and other cloud platforms. Cloud administration, licensing management, and cloud infrastructure oversight are included within our service plans.',
-    },
-  ],
-  support: [
-    {
-      q: 'How do users submit support requests?',
-      a: 'Users can submit requests via phone, email, or our support portal. All requests are tracked through our ITSM system with priority classification, ensuring critical issues are escalated immediately and routine requests are managed efficiently.',
-    },
-    {
-      q: 'What are your support hours?',
-      a: 'Standard support hours are Monday through Friday, 8AM to 6PM. Our Professional plan includes extended coverage, and our Enterprise plan includes 24×7 help desk availability. Emergency escalation paths are available across all plans.',
-    },
-    {
-      q: 'Do you provide on-site support?',
-      a: 'On-site support is included in our Enterprise plan and available as an add-on for Professional plan clients. We coordinate on-site visits for situations that cannot be resolved remotely, including hardware replacement and infrastructure installation.',
-    },
-  ],
-};
-
-function FaqItem({ num, question, answer }) {
+function FaqItem({ question, answer }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="faq-item">
       <div className="faq-header" onClick={() => setOpen(!open)}>
-        <span className="faq-num">{num}</span>
         <span className="faq-question">{question}</span>
         <i className={`bi bi-plus-lg faq-toggle-icon${open ? ' open' : ''}`} />
       </div>
@@ -67,35 +34,46 @@ function FaqItem({ num, question, answer }) {
 }
 
 export default function FAQ() {
-  const [activeTab, setActiveTab] = useState('general');
-
   return (
     <section id="faq" className="faq-section">
       <div className="container">
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <div className="section-title" data-aos="fade-up">
-            <h2>FAQ</h2>
-            <p>Common questions about managed IT services, service plans, and how InfoManage works</p>
-          </div>
+        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 50px' }} data-aos="fade-up">
+          <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 14 }}>
+            FAQ
+          </span>
+          <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--heading-color)' }}>
+            Frequently Asked Questions
+          </h2>
+        </div>
 
-          <div className="faq-tabs" data-aos="fade-up" data-aos-delay="100">
-            {tabs.map(tab => (
-              <button key={tab.id} className={`faq-tab-btn${activeTab === tab.id ? ' active' : ''}`}
-                onClick={() => setActiveTab(tab.id)}>
-                <i className={`bi ${tab.icon}`} />{tab.label}
-              </button>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40, alignItems: 'flex-start' }}>
+          <div style={{ flex: '2 1 460px' }} data-aos="fade-up" data-aos-delay="100">
+            {faqData.map((item, i) => (
+              <FaqItem key={i} question={item.q} answer={item.a} />
             ))}
           </div>
 
-          <div>
-            {faqData[activeTab].map((item, i) => (
-              <FaqItem key={`${activeTab}-${i}`} num={i + 1} question={item.q} answer={item.a} />
-            ))}
-          </div>
-
-          <div className="faq-cta-wrapper" data-aos="fade-up" data-aos-delay="300">
-            <p>Have a question not answered here? We&apos;re happy to help.</p>
-            <Link to="/contact" className="btn-contact-support">Contact InfoManage</Link>
+          <div
+            style={{
+              flex: '1 1 260px',
+              background: 'var(--light-bg)',
+              borderRadius: 14,
+              padding: '32px 28px',
+              textAlign: 'center',
+            }}
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div style={{
+              width: 56, height: 56, borderRadius: '50%',
+              background: 'rgba(26, 108, 181, 0.1)', display: 'flex',
+              alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px',
+            }}>
+              <i className="bi bi-headset" style={{ fontSize: 24, color: 'var(--accent)' }} />
+            </div>
+            <p style={{ fontWeight: 700, color: 'var(--heading-color)', marginBottom: 6 }}>Have more questions?</p>
+            <p style={{ color: '#777', fontSize: 14, marginBottom: 20 }}>Our team is here to help.</p>
+            <Link to="/contact" className="btn-pricing" style={{ display: 'inline-block' }}>Contact Us</Link>
           </div>
         </div>
       </div>

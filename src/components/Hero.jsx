@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css/effect-fade";
@@ -93,36 +94,29 @@ export default function Hero() {
             {slide.subtext}
           </p>
           <div
+            className="hero-cta-row"
             style={{
               display: "flex",
               gap: 14,
-              justifyContent: "center",
               flexWrap: "wrap",
             }}
           >
             <a
               href="#about"
-              style={{
-                display: "inline-block",
-                padding: "14px 36px",
-                borderRadius: 50,
-                fontWeight: 600,
-                fontSize: 15,
-                border: "2px solid rgba(255,255,255,0.5)",
-                color: "#fff",
-                transition: "0.3s",
-              }}
-              onMouseOver={(e) => {
-                e.target.style.borderColor = "#fff";
-                e.target.style.background = "rgba(255,255,255,0.1)";
-              }}
-              onMouseOut={(e) => {
-                e.target.style.borderColor = "rgba(255,255,255,0.5)";
-                e.target.style.background = "transparent";
-              }}
+              className="btn-cta-primary"
+              style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
             >
               Request an IT Risk Assessment
+              <i className="bi bi-arrow-right" />
             </a>
+            <Link
+              to="/managed-it-services"
+              className="btn-cta-outline"
+              style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+            >
+              Our Services
+              <i className="bi bi-arrow-right" />
+            </Link>
           </div>
         </div>
       </div>

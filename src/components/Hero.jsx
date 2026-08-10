@@ -85,9 +85,9 @@ export default function Hero() {
           <p
             key={`subtext-${active}`}
             style={{
-              fontSize: 15,
-              color: "rgba(255,255,255,0.7)",
-              marginTop: -16,
+              fontSize: 16,
+              fontWeight: 300,
+              color: "rgba(255,255,255,0.75)",
               marginBottom: 32,
             }}
           >

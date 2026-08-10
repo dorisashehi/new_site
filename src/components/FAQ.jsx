@@ -58,22 +58,21 @@ export default function FAQ() {
               flex: '1 1 260px',
               background: 'var(--light-bg)',
               borderRadius: 14,
-              padding: '32px 28px',
-              textAlign: 'center',
+              padding: '28px 24px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 20,
+              textAlign: 'left',
             }}
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div style={{
-              width: 56, height: 56, borderRadius: '50%',
-              background: 'rgba(26, 108, 181, 0.1)', display: 'flex',
-              alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px',
-            }}>
-              <i className="bi bi-headset" style={{ fontSize: 24, color: 'var(--accent)' }} />
+            <i className="bi bi-headset" style={{ fontSize: 64, color: 'var(--accent)', flexShrink: 0 }} />
+            <div>
+              <p style={{ fontWeight: 700, color: 'var(--heading-color)', marginBottom: 4, fontSize: 15 }}>Have more questions?</p>
+              <p style={{ color: '#777', fontSize: 13, marginBottom: 14 }}>Our team is here to help.</p>
+              <Link to="/contact" className="btn-pricing" style={{ display: 'inline-block', padding: '8px 22px', fontSize: 13 }}>Contact Us</Link>
             </div>
-            <p style={{ fontWeight: 700, color: 'var(--heading-color)', marginBottom: 6 }}>Have more questions?</p>
-            <p style={{ color: '#777', fontSize: 14, marginBottom: 20 }}>Our team is here to help.</p>
-            <Link to="/contact" className="btn-pricing" style={{ display: 'inline-block' }}>Contact Us</Link>
           </div>
         </div>
       </div>

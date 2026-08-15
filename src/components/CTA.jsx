@@ -33,6 +33,12 @@ const testimonials = [
     role: 'Operations Director',
     industry: 'Legal Services',
   },
+  {
+    initials: 'ME',
+    quote: "Our production schedule doesn't leave room for tech delays. InfoManage keeps everything running so we never miss a deadline.",
+    role: 'Managing Editor',
+    industry: 'Media',
+  },
 ];
 
 export default function CTA() {

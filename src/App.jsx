@@ -9,7 +9,6 @@ import Services from "./components/Services";
 import CTA from "./components/CTA";
 import HowWeWork from "./components/HowWeWork";
 import ClientBenefits from "./components/ClientBenefits";
-import Pricing from "./components/Pricing";
 import Trusted from "./components/Trusted";
 import FAQ from "./components/FAQ";
 // import Blog from "./components/Blog";
@@ -48,7 +47,6 @@ function HomePage({ loaded }) {
         <HowWeWork />
         <ClientBenefits />
         <CTA />
-        <Pricing />
         <Trusted />
         <FAQ />
         {/* <Blog /> */}

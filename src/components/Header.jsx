@@ -9,6 +9,7 @@ const navLinks = [
     children: [
       { label: "Managed IT", href: "/managed-it-services" },
       { label: "Cybersecurity", href: "/cybersecurity-services" },
+      { label: "VoIP Phone Systems", href: "/voip-phone-systems" },
     ],
   },
   { label: "IT Strategy", href: "/it-strategy-advisory", internal: true },
@@ -54,6 +55,12 @@ export default function Header() {
     {
       label: "Cybersecurity",
       href: "/cybersecurity-services",
+      internal: true,
+      indent: true,
+    },
+    {
+      label: "VoIP Phone Systems",
+      href: "/voip-phone-systems",
       internal: true,
       indent: true,
     },

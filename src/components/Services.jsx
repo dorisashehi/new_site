@@ -59,7 +59,7 @@ const services = [
       'Built-in screen sharing and collaboration',
     ],
     cta: 'Explore VoIP',
-    to: '/contact',
+    to: '/voip-phone-systems',
   },
   {
     icon: 'bi-person-workspace',

@@ -10,6 +10,47 @@ const avatarPhotos = [
   "/images/avatars/client-5.jpg",
 ];
 
+/* Previous testimonial set (initials-based avatar style)
+const testimonials = [
+  {
+    initials: 'DO',
+    quote: 'InfoManage feels like an extension of our own team. Every ticket gets solved fast, and nothing falls through the cracks.',
+    role: 'Director of Operations',
+    industry: 'Financial Services',
+  },
+  {
+    initials: 'ITM',
+    quote: 'They caught a security gap before it became a real problem. That kind of proactive attention is rare.',
+    role: 'IT Manager',
+    industry: 'Healthcare',
+  },
+  {
+    initials: 'FM',
+    quote: 'Our office move could have been a nightmare. InfoManage planned every cable and connection ahead of time, so we were up and running day one.',
+    role: 'Facilities Manager',
+    industry: 'Real Estate',
+  },
+  {
+    initials: 'VP',
+    quote: "Response times are fast, and it's always the same technicians—nobody makes us re-explain the problem.",
+    role: 'VP of Technology',
+    industry: 'Manufacturing',
+  },
+  {
+    initials: 'OD',
+    quote: 'Flat monthly pricing means no surprise invoices—we finally know what IT actually costs us each month.',
+    role: 'Operations Director',
+    industry: 'Legal Services',
+  },
+  {
+    initials: 'ME',
+    quote: "Our production schedule doesn't leave room for tech delays. InfoManage keeps everything running so we never miss a deadline.",
+    role: 'Managing Editor',
+    industry: 'Media',
+  },
+];
+*/
+
 const testimonials = [
   {
     quote:
@@ -128,16 +169,16 @@ export default function CTA() {
             <Swiper
               modules={[Autoplay, Pagination]}
               loop
-              speed={600}
-              autoplay={{ delay: 6000, disableOnInteraction: false }}
+              speed={900}
+              autoplay={{ delay: 9000, disableOnInteraction: false }}
               pagination={{ clickable: true }}
               slidesPerView={1}
               slidesPerGroup={1}
               spaceBetween={20}
               breakpoints={{
                 320: { slidesPerView: 1, slidesPerGroup: 1 },
-                768: { slidesPerView: 2, slidesPerGroup: 2 },
-                992: { slidesPerView: 3, slidesPerGroup: 3 },
+                768: { slidesPerView: 2, slidesPerGroup: 1 },
+                992: { slidesPerView: 3, slidesPerGroup: 1 },
               }}
               style={{ paddingBottom: 44 }}
             >

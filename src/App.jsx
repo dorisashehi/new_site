@@ -45,9 +45,9 @@ function HomePage({ loaded }) {
         <Hero />
         <About />
         <Services />
+        <ClientBenefits />
         <HowWeWork />
         <CTA />
-        <ClientBenefits />
         <Pricing />
         <Trusted />
         <FAQ />

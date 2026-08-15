@@ -23,7 +23,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" style={{ padding: '64px 0', background: '#fff' }}>
+    <section id="services" style={{ padding: '64px 0', background: 'var(--light-bg)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 44px' }} data-aos="fade-up">
           <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 14 }}>

@@ -27,7 +27,7 @@ export default function ClientBenefits() {
       <div className="container">
         <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 44px' }} data-aos="fade-up">
           <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 14 }}>
-            Why Clients Choose Us
+            What Sets Us Apart
           </span>
           <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--heading-color)' }}>
             As an InfoManage Client, You&apos;ll Enjoy

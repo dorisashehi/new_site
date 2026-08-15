@@ -29,9 +29,12 @@ export default function ClientBenefits() {
           <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 14 }}>
             What Sets Us Apart
           </span>
-          <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--heading-color)' }}>
+          <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--heading-color)', marginBottom: 14 }}>
             As an InfoManage Client, You&apos;ll Enjoy
           </h2>
+          <p style={{ color: '#666', fontSize: 15 }}>
+            The right expertise, flexible support, and predictable costs—all from one technology partner.
+          </p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }} className="benefits-grid">

@@ -11,9 +11,9 @@ const coverageItems = [
 
 export default function About() {
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about-section" style={{ padding: '56px 0' }}>
       <div className="container">
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 60, alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 44, alignItems: 'center' }}>
           {/* Left: image + badges */}
           <div style={{ flex: '1 1 400px', position: 'relative', paddingBottom: 30, paddingRight: 20 }} data-aos="fade-right">
             <div className="about-img">
@@ -33,19 +33,19 @@ export default function About() {
             <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 14 }}>
               Your IT Department, Outsourced
             </span>
-            <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--heading-color)', lineHeight: 1.3, marginBottom: 22 }}>
+            <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--heading-color)', lineHeight: 1.3, marginBottom: 16 }}>
               Enterprise-level IT operations without the overhead.
             </h2>
-            <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 24, fontSize: 16 }}>
+            <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 14, fontSize: 16 }}>
               Rather than reacting to problems as they occur, our team continuously
               monitors, maintains, and improves the systems that support your business.
             </p>
-            <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 20, fontSize: 16 }}>
+            <p style={{ color: '#555', lineHeight: 1.8, marginBottom: 14, fontSize: 16 }}>
               From end-user support to infrastructure management, we handle the day-
               to-day responsibilities required to keep your environment running smoothly.
             </p>
 
-            <p style={{ fontWeight: 700, color: 'var(--heading-color)', marginBottom: 14, fontSize: 14, textTransform: 'uppercase', letterSpacing: 1 }}>
+            <p style={{ fontWeight: 700, color: 'var(--heading-color)', marginBottom: 10, fontSize: 14, textTransform: 'uppercase', letterSpacing: 1 }}>
               Our operational coverage includes:
             </p>
 

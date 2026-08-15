@@ -694,14 +694,14 @@ export default function ManagedITPage() {
         {/* ── Final CTA — white section ─────────────────────────── */}
         <section
           className="mit-section"
-          style={{ background: "#fff", borderTop: "1px solid #eef0f4" }}
+          style={{ padding: "56px 0", background: "#fff", borderTop: "1px solid #eef0f4" }}
         >
           <div className="container">
             <div
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 60,
+                gap: 44,
                 alignItems: "center",
               }}
             >
@@ -720,7 +720,7 @@ export default function ManagedITPage() {
                     textTransform: "uppercase",
                     letterSpacing: 2,
                     color: "var(--accent)",
-                    marginBottom: 16,
+                    marginBottom: 12,
                   }}
                 >
                   <i className="bi bi-rocket-takeoff" />
@@ -731,7 +731,7 @@ export default function ManagedITPage() {
                     fontSize: 34,
                     fontWeight: 700,
                     color: "var(--heading-color)",
-                    marginBottom: 18,
+                    marginBottom: 14,
                   }}
                 >
                   Ready to Improve Your IT Operations?
@@ -741,7 +741,7 @@ export default function ManagedITPage() {
                     color: "#666",
                     lineHeight: 1.8,
                     fontSize: 16,
-                    marginBottom: 14,
+                    marginBottom: 10,
                   }}
                 >
                   Schedule a consultation to discuss your environment and learn
@@ -759,7 +759,7 @@ export default function ManagedITPage() {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                <div style={{ marginBottom: 28 }}>
+                <div style={{ marginBottom: 20 }}>
                   {[
                     "Proactive monitoring and maintenance — 24×7",
                     "Unlimited operational support within service plan scope",
@@ -772,7 +772,7 @@ export default function ManagedITPage() {
                         display: "flex",
                         alignItems: "center",
                         gap: 12,
-                        padding: "10px 0",
+                        padding: "7px 0",
                         borderBottom: "1px solid #f0f2f5",
                         color: "#444",
                         fontSize: 15,
@@ -795,7 +795,7 @@ export default function ManagedITPage() {
                     display: "flex",
                     gap: 12,
                     flexWrap: "wrap",
-                    marginBottom: 24,
+                    marginBottom: 18,
                   }}
                 >
                   {/* <Link

@@ -43,9 +43,9 @@ const testimonials = [
 
 export default function CTA() {
   return (
-    <section id="call-to-action" className="mit-dark-section">
+    <section id="call-to-action" className="mit-dark-section" style={{ padding: '56px 0' }}>
       <div className="container">
-        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 44px' }} data-aos="fade-up">
+        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 32px' }} data-aos="fade-up">
           <span className="mit-split-label" style={{ textAlign: 'center' }}>Client Relationships</span>
           <h2 style={{ fontSize: 32, fontWeight: 700, color: '#fff' }}>
             The Trust We&apos;ve Earned, One Client at a Time

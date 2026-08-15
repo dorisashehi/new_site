@@ -23,13 +23,13 @@ const benefits = [
 
 export default function ClientBenefits() {
   return (
-    <section style={{ padding: '64px 0', background: '#fff' }}>
+    <section style={{ padding: '48px 0', background: '#fff' }}>
       <div className="container">
-        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 44px' }} data-aos="fade-up">
-          <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 14 }}>
+        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 32px' }} data-aos="fade-up">
+          <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 10 }}>
             What Sets Us Apart
           </span>
-          <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--heading-color)', marginBottom: 14 }}>
+          <h2 style={{ fontSize: 32, fontWeight: 700, color: 'var(--heading-color)', marginBottom: 10 }}>
             As an InfoManage Client, You&apos;ll Enjoy
           </h2>
           <p style={{ color: '#666', fontSize: 15 }}>
@@ -37,17 +37,17 @@ export default function ClientBenefits() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }} className="benefits-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="benefits-grid">
           {benefits.map((b, i) => (
             <div
               key={i}
               style={{
                 display: 'flex',
-                gap: 20,
+                gap: 18,
                 alignItems: 'flex-start',
                 background: 'var(--light-bg)',
                 borderRadius: 14,
-                padding: '28px 26px',
+                padding: '22px 22px',
               }}
               data-aos="fade-up"
               data-aos-delay={100 + i * 80}

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -146,104 +147,101 @@ export default function ManagedITPage() {
           </div>
         </section>
 
-        {/* ── What Managed IT Means — dark section ─────────────── */}
-        <section id="overview" className="mit-dark-section" style={{ padding: "56px 0" }}>
+        {/* ── What We Handle — light section, 3-column ──────────── */}
+        <section id="overview" style={{ padding: "56px 0", background: "#fff" }}>
           <div className="container">
-            <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
-              data-aos="fade-up"
-            >
-              <span className="mit-split-label" style={{ textAlign: "center" }}>
-                What We Handle
-              </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "#fff", marginBottom: 10 }}>
-                Your Technology, Fully Covered
-              </h2>
-              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 15 }}>
-                Desktops to servers: the systems your business runs on, managed
-                end to end.
-              </p>
-            </div>
-
             <div
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 44,
-                alignItems: "center",
+                gap: 48,
+                alignItems: "flex-start",
               }}
             >
+              {/* Text */}
               <div
-                style={{ flex: "1 1 400px" }}
+                style={{ flex: "1 1 280px" }}
                 data-aos="fade-up"
-                data-aos-delay="150"
               >
-                <p
+                <span
                   style={{
-                    color: "rgba(255,255,255,0.72)",
-                    lineHeight: 1.8,
+                    display: "block",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: 2,
+                    color: "var(--accent)",
                     marginBottom: 10,
-                    fontSize: 15,
                   }}
                 >
-                  Managed IT services at InfoManage go beyond traditional
-                  support. We take operational responsibility for maintaining
-                  the stability, performance, and security of your technology
-                  environment.
+                  What We Handle
+                </span>
+                <h2 style={{ fontSize: 28, fontWeight: 700, color: "var(--heading-color)", lineHeight: 1.3, marginBottom: 14 }}>
+                  Your Technology, Fully Covered
+                </h2>
+                <div style={{ width: 46, height: 3, background: "var(--accent)", marginBottom: 18 }} />
+                <p style={{ color: "#555", lineHeight: 1.8, fontSize: 14.5, marginBottom: 14 }}>
+                  Desktops to servers: the systems your business runs on, managed
+                  end to end.
                 </p>
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.72)",
-                    lineHeight: 1.8,
-                    marginBottom: 16,
-                    fontSize: 15,
-                  }}
-                >
+                <p style={{ color: "#555", lineHeight: 1.8, fontSize: 14.5, marginBottom: 20 }}>
                   Our team manages the core infrastructure that businesses
-                  depend on every day, ensuring that systems remain reliable and
-                  users remain productive.
+                  depend on every day, ensuring that systems remain reliable,
+                  secure, and productive.
                 </p>
-                <p className="mit-split-list-label">
-                  Operational coverage includes:
-                </p>
-                <ul className="mit-split-list">
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 12,
+                    alignItems: "flex-start",
+                    background: "var(--light-bg)",
+                    borderRadius: 10,
+                    padding: "16px 18px",
+                  }}
+                >
+                  <i className="bi bi-shield-check" style={{ color: "var(--accent)", fontSize: 18, marginTop: 2, flexShrink: 0 }} />
+                  <p style={{ color: "#555", fontSize: 13, lineHeight: 1.7, margin: 0 }}>
+                    By continuously managing these responsibilities, InfoManage
+                    helps organizations maintain stable and secure technology
+                    environments.
+                  </p>
+                </div>
+              </div>
+
+              {/* Checklist */}
+              <div
+                style={{ flex: "1 1 320px" }}
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    columnGap: 24,
+                  }}
+                >
                   {coverageItems.map((item, i) => (
-                    <li key={i}>
-                      <i className="bi bi-check2" />
+                    <li
+                      key={i}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        padding: "9px 0",
+                        borderBottom: "1px solid #eef0f4",
+                        color: "#444",
+                        fontSize: 14,
+                      }}
+                    >
+                      <i className="bi bi-check-circle-fill" style={{ color: "var(--accent)", fontSize: 15, flexShrink: 0 }} />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.55)",
-                    lineHeight: 1.8,
-                    marginTop: 20,
-                    fontSize: 14,
-                    fontStyle: "italic",
-                  }}
-                >
-                  By continuously managing these responsibilities, InfoManage
-                  helps organizations maintain stable and secure technology
-                  environments.
-                </p>
-              </div>
-
-              <div
-                style={{ flex: "1 1 400px" }}
-                data-aos="fade-up"
-                data-aos-delay="250"
-              >
-                <img
-                  src="/images/managed-it/operations.jpg"
-                  alt="IT support and operations team"
-                  style={{
-                    width: "100%",
-                    borderRadius: 10,
-                    display: "block",
-                    boxShadow: "0 12px 48px rgba(0,0,0,0.4)",
-                  }}
-                />
               </div>
             </div>
           </div>
@@ -287,8 +285,8 @@ export default function ManagedITPage() {
                   data-aos-delay={150 + i * 100}
                 >
                   <div className="hww-num">{card.num}</div>
-                  <div className="hww-icon-wrap">
-                    <i className={`bi ${card.icon}`} />
+                  <div className="hww-icon-wrap" style={{ borderRadius: "50%", background: "var(--accent)" }}>
+                    <i className={`bi ${card.icon}`} style={{ color: "#fff" }} />
                   </div>
                   <h4>{card.title}</h4>
                   <p>{card.desc}</p>
@@ -347,7 +345,7 @@ export default function ManagedITPage() {
                   data-aos="fade-up"
                   data-aos-delay={150 + i * 50}
                 >
-                  <div className="icon-wrapper">
+                  <div className="icon-wrapper" style={{ background: "transparent", border: "2px solid var(--accent)", borderRadius: "50%" }}>
                     <i className={`bi ${item.icon}`} />
                   </div>
                   <h5>{item.title}</h5>
@@ -358,12 +356,25 @@ export default function ManagedITPage() {
           </div>
         </section>
 
-        {/* ── Who This Is For — numbered full-width criteria ──────── */}
-        <section
-          className="mit-section"
-          style={{ padding: "48px 0", background: "var(--light-bg)" }}
-        >
-          <div className="container">
+        {/* ── Who This Is For — background image + overlay ──────── */}
+        <section style={{ position: "relative", padding: "56px 0", overflow: "hidden" }}>
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              backgroundImage: "url(/images/industries/teams-across-industries.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "rgba(240, 244, 249, 0.68)",
+            }}
+          />
+          <div className="container" style={{ position: "relative", zIndex: 1 }}>
             <div
               style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
               data-aos="fade-up"
@@ -389,16 +400,25 @@ export default function ManagedITPage() {
               </p>
             </div>
 
-            <div className="mit-criteria-list">
+            <div
+              className="mit-criteria-list"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                gap: 16,
+                maxWidth: 900,
+                margin: "0 auto",
+              }}
+            >
               {idealForItems.map((item, i) => (
                 <div
                   key={i}
                   className="mit-criteria-item"
+                  style={{ padding: "16px 20px" }}
                   data-aos="fade-up"
                   data-aos-delay={80 + i * 70}
                 >
-                  <div className="mit-criteria-num">0{i + 1}</div>
-                  <div className="mit-criteria-icon">
+                  <div className="mit-criteria-icon" style={{ width: 42, height: 42 }}>
                     <i
                       className={
                         [
@@ -410,15 +430,74 @@ export default function ManagedITPage() {
                           "bi-building",
                         ][i]
                       }
+                      style={{ fontSize: 18 }}
                     />
                   </div>
-                  <p>{item}</p>
+                  <p style={{ fontSize: 14.5 }}>{item}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* ── Final CTA — blue banner ────────────────────────────── */}
+        <section style={{ padding: "48px 0" }}>
+          <div className="container">
+            <div
+              style={{
+                background: "var(--accent)",
+                borderRadius: 16,
+                padding: "36px 40px",
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 24,
+                overflow: "hidden",
+              }}
+              data-aos="fade-up"
+            >
+              <div style={{ flex: "1 1 320px" }}>
+                <h2 style={{ fontSize: 24, fontWeight: 700, color: "#fff", marginBottom: 8 }}>
+                  Ready to stop reacting and start preventing?
+                </h2>
+                <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, marginBottom: 20 }}>
+                  Let&apos;s build a smarter, more secure, and more reliable IT
+                  environment, together.
+                </p>
+                <Link
+                  to="/contact"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                    background: "#fff",
+                    color: "var(--accent)",
+                    padding: "12px 28px",
+                    borderRadius: 50,
+                    fontWeight: 600,
+                    fontSize: 15,
+                  }}
+                >
+                  Schedule a Consultation
+                  <i className="bi bi-arrow-right" />
+                </Link>
+              </div>
+              <img
+                src="/images/about/support-team.jpg"
+                alt="InfoManage team ready to help"
+                style={{
+                  width: 220,
+                  height: 160,
+                  objectFit: "cover",
+                  borderRadius: 12,
+                  display: "block",
+                  flexShrink: 0,
+                }}
+              />
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

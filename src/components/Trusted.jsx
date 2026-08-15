@@ -44,7 +44,7 @@ export default function Trusted() {
                 marginBottom: 16,
               }}
             >
-              Keeping Your Business Up and Running. Since 1995
+              Keeping Your Business Up and Running
             </h2>
             <p style={{ color: "#666", lineHeight: 1.8, fontSize: 15 }}>
               For over 30 years, InfoManage has helped businesses keep their

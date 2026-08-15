@@ -1,137 +1,211 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css/pagination";
+
+const avatarPhotos = [
+  "/images/avatars/client-1.jpg",
+  "/images/avatars/client-2.jpg",
+  "/images/avatars/client-3.jpg",
+  "/images/avatars/client-4.jpg",
+  "/images/avatars/client-5.jpg",
+];
 
 const testimonials = [
   {
-    initials: 'DO',
-    quote: 'InfoManage feels like an extension of our own team. Every ticket gets solved fast, and nothing falls through the cracks.',
-    role: 'Director of Operations',
-    industry: 'Financial Services',
+    quote:
+      "InfoManage feels like an extension of our own team. Every ticket gets solved fast, and nothing falls through the cracks.",
+    role: "Director of Operations",
+    industry: "Financial Services",
   },
   {
-    initials: 'ITM',
-    quote: 'They caught a security gap before it became a real problem. That kind of proactive attention is rare.',
-    role: 'IT Manager',
-    industry: 'Healthcare',
+    quote:
+      "They caught a security gap before it became a real problem. That kind of proactive attention is rare.",
+    role: "IT Manager",
+    industry: "Healthcare",
   },
   {
-    initials: 'FM',
-    quote: 'Our office move could have been a nightmare. InfoManage planned every cable and connection ahead of time, so we were up and running day one.',
-    role: 'Facilities Manager',
-    industry: 'Real Estate',
+    quote:
+      "Our office move could have been a nightmare. InfoManage planned every cable and connection ahead of time, so we were up and running day one.",
+    role: "Facilities Manager",
+    industry: "Real Estate",
   },
   {
-    initials: 'VP',
-    quote: "Response times are fast, and it's always the same technicians—nobody makes us re-explain the problem.",
-    role: 'VP of Technology',
-    industry: 'Manufacturing',
+    quote:
+      "Response times are fast, and it's always the same technicians—nobody makes us re-explain the problem.",
+    role: "VP of Technology",
+    industry: "Manufacturing",
   },
   {
-    initials: 'OD',
-    quote: 'Flat monthly pricing means no surprise invoices—we finally know what IT actually costs us each month.',
-    role: 'Operations Director',
-    industry: 'Legal Services',
+    quote:
+      "Flat monthly pricing means no surprise invoices—we finally know what IT actually costs us each month.",
+    role: "Operations Director",
+    industry: "Legal Services",
   },
   {
-    initials: 'ME',
-    quote: "Our production schedule doesn't leave room for tech delays. InfoManage keeps everything running so we never miss a deadline.",
-    role: 'Managing Editor',
-    industry: 'Media',
+    quote:
+      "Our production schedule doesn't leave room for tech delays. InfoManage keeps everything running so we never miss a deadline.",
+    role: "Managing Editor",
+    industry: "Media",
   },
 ];
 
 export default function CTA() {
   return (
-    <section id="call-to-action" className="mit-dark-section" style={{ padding: '56px 0' }}>
+    <section
+      id="call-to-action"
+      className="mit-dark-section"
+      style={{ padding: "56px 0" }}
+    >
       <div className="container">
-        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 32px' }} data-aos="fade-up">
-          <span className="mit-split-label" style={{ textAlign: 'center' }}>Client Relationships</span>
-          <h2 style={{ fontSize: 32, fontWeight: 700, color: '#fff' }}>
-            The Trust We&apos;ve Earned, One Client at a Time
-          </h2>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="100">
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            loop
-            speed={600}
-            autoplay={{ delay: 6000, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            slidesPerView={1}
-            slidesPerGroup={1}
-            spaceBetween={24}
-            breakpoints={{
-              320: { slidesPerView: 1, slidesPerGroup: 1 },
-              768: { slidesPerView: 2, slidesPerGroup: 2 },
-              992: { slidesPerView: 3, slidesPerGroup: 3 },
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 32,
+            alignItems: "stretch",
+          }}
+        >
+          {/* Left: eyebrow, headline, avatar stack */}
+          <div
+            style={{
+              flex: "0 1 340px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              borderRight: "1px solid rgba(255,255,255,0.12)",
+              paddingRight: 32,
             }}
-            style={{ paddingBottom: 48 }}
+            data-aos="fade-up"
           >
-            {testimonials.map((t, i) => (
-              <SwiperSlide key={i}>
-                <div
-                  style={{
-                    height: '100%',
-                    background: 'rgba(255,255,255,0.06)',
-                    border: '1px solid rgba(255,255,255,0.12)',
-                    borderRadius: 14,
-                    padding: '32px 28px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 16 }}>
-                    <div style={{ display: 'flex', gap: 4 }}>
-                      {[1, 2, 3, 4, 5].map((s) => (
-                        <i key={s} className="bi bi-star-fill" style={{ color: '#ffc107', fontSize: 13 }} />
-                      ))}
-                    </div>
-                    <i
-                      className="bi bi-quote"
-                      style={{ fontSize: 38, color: 'var(--accent)', opacity: 0.35, lineHeight: 1 }}
-                    />
-                  </div>
-                  <p
+            <span className="mit-split-label">Client Reviews</span>
+            <h2
+              style={{
+                fontSize: 28,
+                fontWeight: 700,
+                color: "#fff",
+                lineHeight: 1.3,
+                marginBottom: 20,
+              }}
+            >
+              The Trust We&apos;ve Earned, One Client at a Time
+            </h2>
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <div style={{ display: "flex" }}>
+                {avatarPhotos.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt=""
                     style={{
-                      color: 'rgba(255,255,255,0.88)',
-                      fontSize: 15,
-                      lineHeight: 1.7,
-                      fontStyle: 'italic',
-                      marginBottom: 24,
-                      flexGrow: 1,
+                      width: 36,
+                      height: 36,
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      border: "2px solid #0d1e2e",
+                      marginLeft: i === 0 ? 0 : -12,
+                    }}
+                  />
+                ))}
+              </div>
+              <span
+                style={{
+                  color: "rgba(255,255,255,0.75)",
+                  fontSize: 13,
+                  fontWeight: 600,
+                }}
+              >
+                100+ Happy Clients
+              </span>
+            </div>
+          </div>
+
+          {/* Right: testimonial carousel */}
+          <div
+            style={{ flex: "1 1 500px", minWidth: 0 }}
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              loop
+              speed={600}
+              autoplay={{ delay: 6000, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              slidesPerView={1}
+              slidesPerGroup={1}
+              spaceBetween={20}
+              breakpoints={{
+                320: { slidesPerView: 1, slidesPerGroup: 1 },
+                768: { slidesPerView: 2, slidesPerGroup: 2 },
+                992: { slidesPerView: 3, slidesPerGroup: 3 },
+              }}
+              style={{ paddingBottom: 44 }}
+            >
+              {testimonials.map((t, i) => (
+                <SwiperSlide key={i}>
+                  <div
+                    style={{
+                      height: "100%",
+                      background: "rgba(255,255,255,0.03)",
+                      border: "1px solid rgba(26, 108, 181, 0.35)",
+                      borderRadius: 12,
+                      padding: "24px 22px",
+                      display: "flex",
+                      flexDirection: "column",
                     }}
                   >
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <div
+                    <div style={{ display: "flex", gap: 3, marginBottom: 14 }}>
+                      {[1, 2, 3, 4, 5].map((s) => (
+                        <i
+                          key={s}
+                          className="bi bi-star-fill"
+                          style={{ color: "#ffc107", fontSize: 12 }}
+                        />
+                      ))}
+                    </div>
+                    <p
                       style={{
-                        width: 40,
-                        height: 40,
-                        borderRadius: '50%',
-                        background: 'rgba(26, 108, 181, 0.25)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#fff',
-                        fontSize: 13,
-                        fontWeight: 700,
-                        flexShrink: 0,
+                        color: "rgba(255,255,255,0.8)",
+                        fontSize: 13.5,
+                        lineHeight: 1.7,
+                        marginBottom: 18,
+                        flexGrow: 1,
                       }}
                     >
-                      {t.initials}
-                    </div>
-                    <div>
-                      <div style={{ color: '#fff', fontSize: 13, fontWeight: 700 }}>{t.role}</div>
-                      <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12 }}>{t.industry}</div>
+                      &ldquo;{t.quote}&rdquo;
+                    </p>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 8 }}
+                    >
+                      <i
+                        className="bi bi-quote"
+                        style={{ color: "var(--accent)", fontSize: 16 }}
+                      />
+                      <div>
+                        <div
+                          style={{
+                            color: "#fff",
+                            fontSize: 13,
+                            fontWeight: 700,
+                          }}
+                        >
+                          {t.role}
+                        </div>
+                        <div
+                          style={{
+                            color: "rgba(255,255,255,0.5)",
+                            fontSize: 11.5,
+                          }}
+                        >
+                          {t.industry}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </div>
     </section>

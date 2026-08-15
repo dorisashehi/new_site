@@ -43,7 +43,8 @@
       "Bash(python3 /tmp/debug_industries.py)",
       "Bash(python3 /tmp/shot_trusted.py)",
       "Bash(python3 -c ' *)",
-      "Bash(python3 /tmp/find_overflow3.py)"
+      "Bash(python3 /tmp/find_overflow3.py)",
+      "WebFetch(domain:www.pexels.com)"
     ],
     "additionalDirectories": [
       "/tmp"

@@ -8,9 +8,9 @@ const navLinks = [
     label: "Services",
     children: [
       { label: "Managed IT", href: "/managed-it-services" },
+      { label: "Cybersecurity", href: "/cybersecurity-services" },
     ],
   },
-  { label: "Cybersecurity", href: "/cybersecurity-services", internal: true },
   { label: "IT Strategy", href: "/it-strategy-advisory", internal: true },
   { label: "Industries", href: "/industries", internal: true },
   { label: "Contact", href: "/contact", internal: true },
@@ -51,7 +51,12 @@ export default function Header() {
       internal: true,
       indent: true,
     },
-    { label: "Cybersecurity", href: "/cybersecurity-services", internal: true },
+    {
+      label: "Cybersecurity",
+      href: "/cybersecurity-services",
+      internal: true,
+      indent: true,
+    },
     {
       label: "IT Strategy & Advisory",
       href: "/it-strategy-advisory",

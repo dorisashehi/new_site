@@ -1520,6 +1520,100 @@ a:hover {
   padding: 56px 0;
   background: var(--light-bg);
 }
+.hww-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 900px) {
+  .hww-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .hww-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.hww-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 32px 30px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.hww-card:hover {
+  box-shadow: 0 10px 40px rgba(26, 108, 181, 0.12);
+  transform: translateY(-3px);
+  border-color: rgba(26, 108, 181, 0.3);
+}
+.hww-num {
+  position: absolute;
+  top: 24px;
+  right: 26px;
+  font-size: 46px;
+  font-weight: 900;
+  color: rgba(26, 108, 181, 0.1);
+  font-family: "Nunito", sans-serif;
+  line-height: 1;
+  z-index: 0;
+}
+.hww-icon-wrap {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(26, 108, 181, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.hww-icon-wrap i {
+  font-size: 24px;
+  color: var(--accent);
+}
+.hww-card h4 {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+.hww-card > p {
+  position: relative;
+  z-index: 1;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.hww-points {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hww-points li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #444;
+}
+.hww-points li i {
+  color: var(--accent);
+  font-size: 16px;
+  flex-shrink: 0;
+}
 .hww-step-icon {
   width: 72px;
   height: 72px;

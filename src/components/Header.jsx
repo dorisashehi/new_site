@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 const navLinks = [
   { label: "Home", href: "/", internal: true },
   { label: "About", href: "/about", internal: true },
-  { label: "Managed IT", href: "/managed-it-services", internal: true },
+  {
+    label: "Services",
+    children: [
+      { label: "Managed IT", href: "/managed-it-services" },
+    ],
+  },
   { label: "Cybersecurity", href: "/cybersecurity-services", internal: true },
   { label: "IT Strategy", href: "/it-strategy-advisory", internal: true },
   { label: "Industries", href: "/industries", internal: true },
@@ -39,7 +44,13 @@ export default function Header() {
   const mobileLinks = [
     { label: "Home", href: "/", internal: true },
     { label: "About", href: "/about", internal: true },
-    { label: "Managed IT", href: "/managed-it-services", internal: true },
+    { label: "Services", heading: true },
+    {
+      label: "Managed IT",
+      href: "/managed-it-services",
+      internal: true,
+      indent: true,
+    },
     { label: "Cybersecurity", href: "/cybersecurity-services", internal: true },
     {
       label: "IT Strategy & Advisory",
@@ -70,24 +81,40 @@ export default function Header() {
 
           <nav className="navmenu">
             <ul>
-              {navLinks.map((link, i) => (
-                <li key={i} style={{ padding: "10px 14px" }}>
-                  {link.internal ? (
-                    <Link to={link.href}>{link.label}</Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className={
-                        activeSection === link.href.replace("#", "")
-                          ? "active"
-                          : ""
-                      }
-                    >
-                      {link.label}
+              {navLinks.map((link, i) =>
+                link.children ? (
+                  <li key={i} className="dropdown" style={{ padding: "10px 14px" }}>
+                    <a href="#">
+                      <span>{link.label}</span>
+                      <i className="bi bi-chevron-down toggle-dropdown" />
                     </a>
-                  )}
-                </li>
-              ))}
+                    <ul className="dropdown-menu">
+                      {link.children.map((child, j) => (
+                        <li key={j}>
+                          <Link to={child.href}>{child.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  <li key={i} style={{ padding: "10px 14px" }}>
+                    {link.internal ? (
+                      <Link to={link.href}>{link.label}</Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className={
+                          activeSection === link.href.replace("#", "")
+                            ? "active"
+                            : ""
+                        }
+                      >
+                        {link.label}
+                      </a>
+                    )}
+                  </li>
+                ),
+              )}
             </ul>
           </nav>
 
@@ -132,37 +159,53 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
               />
             </div>
-            {mobileLinks.map((link, i) => (
-              <Link
-                key={i}
-                to={link.href}
-                onClick={() => setMobileOpen(false)}
-                style={
-                  link.indent
-                    ? {
-                        paddingLeft: 36,
-                        fontSize: 14,
-                        color: "#666",
-                        borderBottom: "1px solid #f5f5f5",
-                        display: "flex",
-                        alignItems: "center",
-                      }
-                    : {}
-                }
-              >
-                {link.indent && (
-                  <i
-                    className="bi bi-chevron-right"
-                    style={{
-                      fontSize: 10,
-                      marginRight: 6,
-                      color: "var(--accent)",
-                    }}
-                  />
-                )}
-                {link.label}
-              </Link>
-            ))}
+            {mobileLinks.map((link, i) =>
+              link.heading ? (
+                <div
+                  key={i}
+                  style={{
+                    padding: "12px 20px 4px",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: 1,
+                    color: "#999",
+                  }}
+                >
+                  {link.label}
+                </div>
+              ) : (
+                <Link
+                  key={i}
+                  to={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  style={
+                    link.indent
+                      ? {
+                          paddingLeft: 36,
+                          fontSize: 14,
+                          color: "#666",
+                          borderBottom: "1px solid #f5f5f5",
+                          display: "flex",
+                          alignItems: "center",
+                        }
+                      : {}
+                  }
+                >
+                  {link.indent && (
+                    <i
+                      className="bi bi-chevron-right"
+                      style={{
+                        fontSize: 10,
+                        marginRight: 6,
+                        color: "var(--accent)",
+                      }}
+                    />
+                  )}
+                  {link.label}
+                </Link>
+              ),
+            )}
             <div style={{ padding: "16px 20px" }}>
               <Link
                 to="/contact#contact"

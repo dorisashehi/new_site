@@ -652,6 +652,30 @@ a:hover {
   background: var(--accent);
   color: #fff;
 }
+.service-card .arrow-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--heading-color, #14213d);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: 0.25s;
+  pointer-events: none;
+  z-index: 10;
+}
+.service-card .arrow-link:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 .service-card h4 {
   font-size: 17px;
   font-weight: 700;

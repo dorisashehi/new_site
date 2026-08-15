@@ -90,6 +90,48 @@ const frameworkCards = [
   },
 ];
 
+const maintenanceCycle = [
+  {
+    key: "tl",
+    label: "Monitoring",
+    corner: "topLeft",
+    bullets: [
+      "Desktops, servers, network devices — switches, firewalls, access points",
+      "Firmware updates",
+      "Tickets automatically created",
+      "Log, performance, and disk space checks",
+      "Reboots and missed updates",
+      "Becomes part of the book of work",
+    ],
+  },
+  {
+    key: "tr",
+    label: "Review of All Tickets",
+    corner: "topRight",
+    bullets: [
+      "Automated, user, and insourced initiated",
+      "Book of work review",
+      "Review and prioritize",
+    ],
+  },
+  {
+    key: "br",
+    label: "Patch Management",
+    corner: "bottomRight",
+    bullets: [
+      "Desktops, servers, switches, firewalls, access points",
+      "Review process",
+      "Email reminders",
+    ],
+  },
+  {
+    key: "bl",
+    label: "Endpoint Protection",
+    corner: "bottomLeft",
+    bullets: ["Review process", "Automatic updates"],
+  },
+];
+
 const idealForItems = [
   "Depend heavily on technology to operate",
   "Prefer proactive infrastructure management rather than reactive support",
@@ -300,6 +342,141 @@ export default function ManagedITPage() {
                   </ul>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── The Maintain Cycle — circular diagram ─────────────── */}
+        <section className="mit-section" style={{ padding: "48px 0", background: "#fff" }}>
+          <div className="container">
+            <div
+              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}
+              data-aos="fade-up"
+            >
+              <span
+                style={{
+                  display: "block",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: 2,
+                  color: "var(--accent)",
+                  marginBottom: 10,
+                }}
+              >
+                Behind the Scenes
+              </span>
+              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+                How We Keep Systems Running
+              </h2>
+              <p style={{ color: "#666", fontSize: 15 }}>
+                A closer look at the Maintain cycle: the proactive work that happens
+                before you ever notice a problem.
+              </p>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 260px 1fr",
+                gridTemplateRows: "auto auto",
+                gap: 20,
+                alignItems: "center",
+                maxWidth: 1000,
+                margin: "0 auto",
+              }}
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              {/* Callout boxes */}
+              {maintenanceCycle.map((item) => (
+                <div
+                  key={item.key}
+                  style={{
+                    gridColumn:
+                      item.corner === "topLeft" || item.corner === "bottomLeft" ? 1 : 3,
+                    gridRow: item.corner === "topLeft" || item.corner === "topRight" ? 1 : 2,
+                    border: "1px solid rgba(26, 108, 181, 0.3)",
+                    borderRadius: 12,
+                    padding: "16px 18px",
+                  }}
+                >
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                    {item.bullets.map((b, j) => (
+                      <li
+                        key={j}
+                        style={{
+                          fontSize: 13,
+                          color: "#555",
+                          lineHeight: 1.6,
+                          marginBottom: j < item.bullets.length - 1 ? 6 : 0,
+                          paddingLeft: 14,
+                          position: "relative",
+                        }}
+                      >
+                        <span style={{ position: "absolute", left: 0, color: "var(--accent)" }}>•</span>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+
+              {/* Circle */}
+              <div
+                style={{
+                  gridColumn: 2,
+                  gridRow: "1 / 3",
+                  position: "relative",
+                  width: 260,
+                  height: 260,
+                  margin: "0 auto",
+                }}
+              >
+                <div style={{ position: "absolute", top: 0, left: 0, width: "50%", height: "50%", background: "var(--accent)", borderTopLeftRadius: "100%", border: "2px solid #fff" }} />
+                <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: "50%", background: "var(--accent)", borderTopRightRadius: "100%", border: "2px solid #fff" }} />
+                <div style={{ position: "absolute", bottom: 0, right: 0, width: "50%", height: "50%", background: "var(--accent)", borderBottomRightRadius: "100%", border: "2px solid #fff" }} />
+                <div style={{ position: "absolute", bottom: 0, left: 0, width: "50%", height: "50%", background: "var(--accent)", borderBottomLeftRadius: "100%", border: "2px solid #fff" }} />
+
+                {maintenanceCycle.map((item) => (
+                  <span
+                    key={item.key}
+                    style={{
+                      position: "absolute",
+                      top: item.corner === "topLeft" || item.corner === "topRight" ? "30%" : "70%",
+                      left: item.corner === "topLeft" || item.corner === "bottomLeft" ? "30%" : "70%",
+                      transform: "translate(-50%, -50%)",
+                      color: "#fff",
+                      fontWeight: 700,
+                      fontSize: 14,
+                      textAlign: "center",
+                      width: 100,
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {item.label}
+                  </span>
+                ))}
+
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: 34,
+                    height: 34,
+                    borderRadius: "50%",
+                    background: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                  }}
+                >
+                  <i className="bi bi-arrow-repeat" style={{ color: "var(--accent)", fontSize: 18 }} />
+                </div>
+              </div>
             </div>
           </div>
         </section>

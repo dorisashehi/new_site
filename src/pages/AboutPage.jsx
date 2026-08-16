@@ -3,6 +3,24 @@ import AOS from "aos";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+const businessStages = [
+  {
+    icon: "bi-rocket-takeoff",
+    title: "Growth Startups",
+    desc: "Lean, right-sized systems that scale with you, without the overhead of enterprise tooling.",
+  },
+  {
+    icon: "bi-speedometer2",
+    title: "Mid-Market",
+    desc: "Managed IT built around how your business actually operates, not a generic template.",
+  },
+  {
+    icon: "bi-diagram-3",
+    title: "Enterprise",
+    desc: "Infrastructure stability and strategic guidance for complex, multi-site environments.",
+  },
+];
+
 export default function AboutPage() {
   useEffect(() => {
     AOS.init({
@@ -221,12 +239,60 @@ export default function AboutPage() {
                 Built for Businesses at Every Stage
               </h2>
               <p style={{ color: "#666", fontSize: 15.5, lineHeight: 1.8 }}>
-                From the small but fast-growing startup to the larger,
-                established company that just needs more resources than it
-                has internally, InfoManage scales its support to match where
-                a business actually is, not a fixed plan that doesn&apos;t
-                fit.
+                InfoManage scales its support to match where a business
+                actually is, not a fixed plan that doesn&apos;t fit.
               </p>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: 20,
+                maxWidth: 980,
+                margin: "36px auto 0",
+              }}
+            >
+              {businessStages.map((stage, i) => (
+                <div
+                  key={i}
+                  style={{
+                    position: "relative",
+                    background: "#fff",
+                    border: "1px solid #e8edf4",
+                    borderRadius: 12,
+                    padding: "26px 24px 22px",
+                  }}
+                  data-aos="fade-up"
+                  data-aos-delay={100 + i * 80}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 24,
+                      right: 22,
+                      color: "var(--accent)",
+                      fontSize: 20,
+                    }}
+                  >
+                    <i className={`bi ${stage.icon}`} />
+                  </div>
+                  <h4
+                    style={{
+                      fontSize: 17,
+                      fontWeight: 700,
+                      color: "var(--heading-color)",
+                      marginBottom: 10,
+                      paddingRight: 30,
+                    }}
+                  >
+                    {stage.title}
+                  </h4>
+                  <p style={{ fontSize: 13.5, color: "#666", lineHeight: 1.7, margin: 0 }}>
+                    {stage.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

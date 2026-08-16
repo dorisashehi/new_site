@@ -50,9 +50,34 @@ export default function Contact() {
   return (
     <section id="contact" className="contact-section">
       <div className="container">
-        <div className="section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <p>
+        <div
+          style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
+          data-aos="fade-up"
+        >
+          <span
+            style={{
+              display: "block",
+              fontSize: 12,
+              fontWeight: 700,
+              textTransform: "uppercase",
+              letterSpacing: 2,
+              color: "var(--accent)",
+              marginBottom: 10,
+            }}
+          >
+            Get In Touch
+          </span>
+          <h2
+            style={{
+              fontSize: 32,
+              fontWeight: 700,
+              color: "var(--heading-color)",
+              marginBottom: 10,
+            }}
+          >
+            Contact InfoManage
+          </h2>
+          <p style={{ color: "#666", fontSize: 15 }}>
             Ready to improve your IT operations? Schedule a consultation to
             discuss your environment.
           </p>
@@ -144,7 +169,7 @@ export default function Contact() {
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              <h3>Schedule a Consultation</h3>
+              <h3>Let's Talk</h3>
               <p>
                 Tell us about your environment and we will be in touch to
                 discuss how InfoManage can help.
@@ -213,7 +238,7 @@ export default function Contact() {
                 </div>
                 <div className="form-actions">
                   <button type="submit" className="send-btn">
-                    Schedule Consultation
+                    Submit
                   </button>
                   <div className="social-row">
                     {[

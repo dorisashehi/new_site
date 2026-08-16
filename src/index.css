@@ -4247,7 +4247,7 @@ a:hover {
 
 /* ---- Contact Page Hero ---- */
 .contact-hero {
-  min-height: 60vh;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;

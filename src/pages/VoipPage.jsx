@@ -175,25 +175,32 @@ export default function VoipPage() {
             </div>
             <h1>You Manage Your Business. We&apos;ll Manage the Phones.</h1>
             <p className="mit-hero-sub">
-              Cloud calling that&apos;s more flexible, and more affordable,
-              than a traditional office phone system.
+              Cloud calling that&apos;s more flexible, and more affordable, than
+              a traditional office phone system.
             </p>
             <p className="mit-hero-body">
-              Voice, video, messaging, and conferencing in one platform, so
-              your team stays connected from anywhere, on any device.
+              Voice, video, messaging, and conferencing in one platform, so your
+              team stays connected from anywhere, on any device.
             </p>
             <p className="mit-hero-note">
-              No phone closet, no maintenance contract, no waiting on hold
-              with an overseas call center.
+              No phone closet, no maintenance contract, no waiting on hold with
+              an overseas call center.
             </p>
           </div>
         </section>
 
         {/* ── Unified Communications — feature-card grid ────────── */}
-        <section className="mit-section" style={{ padding: "56px 0", background: "#fff" }}>
+        <section
+          className="mit-section"
+          style={{ padding: "56px 0", background: "#fff" }}
+        >
           <div className="container">
             <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 32px",
+              }}
               data-aos="fade-up"
             >
               <span
@@ -209,7 +216,14 @@ export default function VoipPage() {
               >
                 One Platform
               </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
                 Every Way You Communicate, Unified
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
@@ -245,7 +259,11 @@ export default function VoipPage() {
         <section className="howwework-section" style={{ padding: "48px 0" }}>
           <div className="container">
             <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 32px",
+              }}
               data-aos="fade-up"
             >
               <span
@@ -261,12 +279,19 @@ export default function VoipPage() {
               >
                 What You Gain
               </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
                 Benefits to Your Business
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
-                What switching to cloud communications actually changes for
-                your team and your budget.
+                What switching to cloud communications actually changes for your
+                team and your budget.
               </p>
             </div>
 
@@ -279,8 +304,14 @@ export default function VoipPage() {
                   data-aos-delay={150 + i * 100}
                 >
                   <div className="hww-num">{card.num}</div>
-                  <div className="hww-icon-wrap" style={{ borderRadius: "50%", background: "var(--accent)" }}>
-                    <i className={`bi ${card.icon}`} style={{ color: "#fff" }} />
+                  <div
+                    className="hww-icon-wrap"
+                    style={{ borderRadius: "50%", background: "var(--accent)" }}
+                  >
+                    <i
+                      className={`bi ${card.icon}`}
+                      style={{ color: "#fff" }}
+                    />
                   </div>
                   <h4>{card.title}</h4>
                   <p>{card.desc}</p>
@@ -308,7 +339,15 @@ export default function VoipPage() {
                 style={{ textAlign: "center", marginBottom: 24 }}
                 data-aos="fade-up"
               >
-                <span style={{ fontSize: 13, fontWeight: 600, color: "#888", textTransform: "uppercase", letterSpacing: 1 }}>
+                <span
+                  style={{
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: "#888",
+                    textTransform: "uppercase",
+                    letterSpacing: 1,
+                  }}
+                >
                   Works With the Hardware You Already Trust
                 </span>
               </div>
@@ -348,7 +387,15 @@ export default function VoipPage() {
                         margin: "0 auto 14px",
                       }}
                     />
-                    <span style={{ fontSize: 15, fontWeight: 700, color: "var(--heading-color)" }}>{item.brand}</span>
+                    <span
+                      style={{
+                        fontSize: 15,
+                        fontWeight: 700,
+                        color: "var(--heading-color)",
+                      }}
+                    >
+                      {item.brand}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -382,10 +429,25 @@ export default function VoipPage() {
                 >
                   Why It&apos;s Different
                 </span>
-                <h2 style={{ fontSize: 30, fontWeight: 700, color: "#fff", lineHeight: 1.3, marginBottom: 14 }}>
+                <h2
+                  style={{
+                    fontSize: 30,
+                    fontWeight: 700,
+                    color: "#fff",
+                    lineHeight: 1.3,
+                    marginBottom: 14,
+                  }}
+                >
                   Real Support, From Real People
                 </h2>
-                <p style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.8, fontSize: 14.5, marginBottom: 20 }}>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.65)",
+                    lineHeight: 1.8,
+                    fontSize: 14.5,
+                    marginBottom: 20,
+                  }}
+                >
                   When something goes wrong with your phones, you talk to a
                   local, state-side technician who picks up the phone, not a
                   script-reading call center on the other side of the world.
@@ -403,16 +465,34 @@ export default function VoipPage() {
                     border: "1px solid rgba(255,255,255,0.1)",
                   }}
                 >
-                  <i className="bi bi-headset" style={{ color: "var(--accent)", fontSize: 26, flexShrink: 0 }} />
-                  <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 13.5, lineHeight: 1.6, margin: 0 }}>
-                    Local, state-side support, not an overseas help desk
-                    reading from a script.
+                  <i
+                    className="bi bi-headset"
+                    style={{
+                      color: "var(--accent)",
+                      fontSize: 26,
+                      flexShrink: 0,
+                    }}
+                  />
+                  <p
+                    style={{
+                      color: "rgba(255,255,255,0.85)",
+                      fontSize: 13.5,
+                      lineHeight: 1.6,
+                      margin: 0,
+                    }}
+                  >
+                    Local, state-side support, not an overseas help desk reading
+                    from a script.
                   </p>
                 </div>
               </div>
 
               {/* Right: checklist */}
-              <div style={{ flex: "1 1 360px", minWidth: 0 }} data-aos="fade-left" data-aos-delay="100">
+              <div
+                style={{ flex: "1 1 360px", minWidth: 0 }}
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {whyDifferentItems.map((item, i) => (
                     <li
@@ -433,7 +513,12 @@ export default function VoipPage() {
                     >
                       <i
                         className="bi bi-check-circle-fill"
-                        style={{ color: "var(--accent)", fontSize: 15, marginTop: 2, flexShrink: 0 }}
+                        style={{
+                          color: "var(--accent)",
+                          fontSize: 15,
+                          marginTop: 2,
+                          flexShrink: 0,
+                        }}
                       />
                       {item}
                     </li>
@@ -445,10 +530,17 @@ export default function VoipPage() {
         </section>
 
         {/* ── Is This You? — criteria grid ──────────────────────── */}
-        <section className="mit-section" style={{ padding: "48px 0 56px", background: "var(--light-bg)" }}>
+        <section
+          className="mit-section"
+          style={{ padding: "48px 0 56px", background: "var(--light-bg)" }}
+        >
           <div className="container">
             <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 32px",
+              }}
               data-aos="fade-up"
             >
               <span
@@ -464,7 +556,14 @@ export default function VoipPage() {
               >
                 Is This You?
               </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
                 Built for Teams That Can&apos;t Afford Dropped Calls
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
@@ -492,7 +591,10 @@ export default function VoipPage() {
                   data-aos="fade-up"
                   data-aos-delay={80 + i * 70}
                 >
-                  <div className="mit-criteria-icon" style={{ width: 42, height: 42 }}>
+                  <div
+                    className="mit-criteria-icon"
+                    style={{ width: 42, height: 42 }}
+                  >
                     <i
                       className={
                         [
@@ -515,10 +617,17 @@ export default function VoipPage() {
         </section>
 
         {/* ── Our Process — vertical numbered timeline ──────────── */}
-        <section className="mit-section" style={{ padding: "48px 0 56px", background: "#fff" }}>
+        <section
+          className="mit-section"
+          style={{ padding: "48px 0 56px", background: "#fff" }}
+        >
           <div className="container">
             <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 40px",
+              }}
               data-aos="fade-up"
             >
               <span
@@ -534,12 +643,19 @@ export default function VoipPage() {
               >
                 Getting Started
               </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
                 Our Process
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
-                A clear, five-step path from signed agreement to a fully
-                working phone system, no surprises along the way.
+                A clear, five-step path from signed agreement to a fully working
+                phone system, no surprises along the way.
               </p>
             </div>
 
@@ -567,7 +683,10 @@ export default function VoipPage() {
                         </ul>
                       </div>
                     )}
-                    <div className="voip-process-node" style={{ background: step.color }}>
+                    <div
+                      className="voip-process-node"
+                      style={{ background: step.color }}
+                    >
                       <span>{step.num}</span>
                     </div>
                     {side === "right" && (
@@ -609,10 +728,23 @@ export default function VoipPage() {
               data-aos="fade-up"
             >
               <div style={{ flex: "1 1 320px" }}>
-                <h2 style={{ fontSize: 24, fontWeight: 700, color: "#fff", marginBottom: 8 }}>
+                <h2
+                  style={{
+                    fontSize: 24,
+                    fontWeight: 700,
+                    color: "#fff",
+                    marginBottom: 8,
+                  }}
+                >
                   Ready to move your phones to the cloud?
                 </h2>
-                <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, marginBottom: 20 }}>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.85)",
+                    fontSize: 15,
+                    marginBottom: 20,
+                  }}
+                >
                   Let&apos;s find the right VoIP setup for how your team
                   actually works.
                 </p>
@@ -630,7 +762,7 @@ export default function VoipPage() {
                     fontSize: 15,
                   }}
                 >
-                  Schedule a Consultation
+                  Contact Us
                   <i className="bi bi-arrow-right" />
                 </Link>
               </div>

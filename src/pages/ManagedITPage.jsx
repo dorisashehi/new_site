@@ -174,9 +174,9 @@ export default function ManagedITPage() {
             </p>
             <p className="mit-hero-body">
               InfoManage takes operational responsibility for the technology
-              your business depends on: desktops, laptops, servers,
-              printers, firewalls, switches, and networks, so your team can
-              focus on growth instead of troubleshooting.
+              your business depends on: desktops, laptops, servers, printers,
+              firewalls, switches, and networks, so your team can focus on
+              growth instead of troubleshooting.
             </p>
             <p className="mit-hero-note">
               Rather than reacting to problems as they occur, we proactively
@@ -190,7 +190,10 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── What We Handle — light section, 3-column ──────────── */}
-        <section id="overview" style={{ padding: "56px 0", background: "#fff" }}>
+        <section
+          id="overview"
+          style={{ padding: "56px 0", background: "#fff" }}
+        >
           <div className="container">
             <div
               style={{
@@ -201,10 +204,7 @@ export default function ManagedITPage() {
               }}
             >
               {/* Text */}
-              <div
-                style={{ flex: "1 1 280px" }}
-                data-aos="fade-up"
-              >
+              <div style={{ flex: "1 1 280px" }} data-aos="fade-up">
                 <span
                   style={{
                     display: "block",
@@ -218,15 +218,44 @@ export default function ManagedITPage() {
                 >
                   What We Handle
                 </span>
-                <h2 style={{ fontSize: 28, fontWeight: 700, color: "var(--heading-color)", lineHeight: 1.3, marginBottom: 14 }}>
+                <h2
+                  style={{
+                    fontSize: 28,
+                    fontWeight: 700,
+                    color: "var(--heading-color)",
+                    lineHeight: 1.3,
+                    marginBottom: 14,
+                  }}
+                >
                   Your Technology, Fully Covered
                 </h2>
-                <div style={{ width: 46, height: 3, background: "var(--accent)", marginBottom: 18 }} />
-                <p style={{ color: "#555", lineHeight: 1.8, fontSize: 14.5, marginBottom: 14 }}>
-                  Desktops to servers: the systems your business runs on, managed
-                  end to end.
+                <div
+                  style={{
+                    width: 46,
+                    height: 3,
+                    background: "var(--accent)",
+                    marginBottom: 18,
+                  }}
+                />
+                <p
+                  style={{
+                    color: "#555",
+                    lineHeight: 1.8,
+                    fontSize: 14.5,
+                    marginBottom: 14,
+                  }}
+                >
+                  Desktops to servers: the systems your business runs on,
+                  managed end to end.
                 </p>
-                <p style={{ color: "#555", lineHeight: 1.8, fontSize: 14.5, marginBottom: 20 }}>
+                <p
+                  style={{
+                    color: "#555",
+                    lineHeight: 1.8,
+                    fontSize: 14.5,
+                    marginBottom: 20,
+                  }}
+                >
                   Our team manages the core infrastructure that businesses
                   depend on every day, ensuring that systems remain reliable,
                   secure, and productive.
@@ -241,8 +270,23 @@ export default function ManagedITPage() {
                     padding: "16px 18px",
                   }}
                 >
-                  <i className="bi bi-shield-check" style={{ color: "var(--accent)", fontSize: 18, marginTop: 2, flexShrink: 0 }} />
-                  <p style={{ color: "#555", fontSize: 13, lineHeight: 1.7, margin: 0 }}>
+                  <i
+                    className="bi bi-shield-check"
+                    style={{
+                      color: "var(--accent)",
+                      fontSize: 18,
+                      marginTop: 2,
+                      flexShrink: 0,
+                    }}
+                  />
+                  <p
+                    style={{
+                      color: "#555",
+                      fontSize: 13,
+                      lineHeight: 1.7,
+                      margin: 0,
+                    }}
+                  >
                     By continuously managing these responsibilities, InfoManage
                     helps organizations maintain stable and secure technology
                     environments.
@@ -279,7 +323,14 @@ export default function ManagedITPage() {
                         fontSize: 14,
                       }}
                     >
-                      <i className="bi bi-check-circle-fill" style={{ color: "var(--accent)", fontSize: 15, flexShrink: 0 }} />
+                      <i
+                        className="bi bi-check-circle-fill"
+                        style={{
+                          color: "var(--accent)",
+                          fontSize: 15,
+                          flexShrink: 0,
+                        }}
+                      />
                       {item}
                     </li>
                   ))}
@@ -293,7 +344,11 @@ export default function ManagedITPage() {
         <section className="howwework-section" style={{ padding: "48px 0" }}>
           <div className="container">
             <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 32px",
+              }}
               data-aos="fade-up"
             >
               <span
@@ -309,7 +364,14 @@ export default function ManagedITPage() {
               >
                 How We Work
               </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
                 Fix It. Maintain It. Make It Better.
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
@@ -327,8 +389,14 @@ export default function ManagedITPage() {
                   data-aos-delay={150 + i * 100}
                 >
                   <div className="hww-num">{card.num}</div>
-                  <div className="hww-icon-wrap" style={{ borderRadius: "50%", background: "var(--accent)" }}>
-                    <i className={`bi ${card.icon}`} style={{ color: "#fff" }} />
+                  <div
+                    className="hww-icon-wrap"
+                    style={{ borderRadius: "50%", background: "var(--accent)" }}
+                  >
+                    <i
+                      className={`bi ${card.icon}`}
+                      style={{ color: "#fff" }}
+                    />
                   </div>
                   <h4>{card.title}</h4>
                   <p>{card.desc}</p>
@@ -347,10 +415,17 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── The Maintain Cycle — circular diagram ─────────────── */}
-        <section className="mit-section" style={{ padding: "48px 0", background: "#fff" }}>
+        <section
+          className="mit-section"
+          style={{ padding: "48px 0", background: "#fff" }}
+        >
           <div className="container">
             <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 40px",
+              }}
               data-aos="fade-up"
             >
               <span
@@ -366,12 +441,19 @@ export default function ManagedITPage() {
               >
                 Behind the Scenes
               </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
                 How We Keep Systems Running
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
-                A closer look at the Maintain cycle: the proactive work that happens
-                before you ever notice a problem.
+                A closer look at the Maintain cycle: the proactive work that
+                happens before you ever notice a problem.
               </p>
             </div>
 
@@ -394,8 +476,13 @@ export default function ManagedITPage() {
                   key={item.key}
                   style={{
                     gridColumn:
-                      item.corner === "topLeft" || item.corner === "bottomLeft" ? 1 : 3,
-                    gridRow: item.corner === "topLeft" || item.corner === "topRight" ? 1 : 2,
+                      item.corner === "topLeft" || item.corner === "bottomLeft"
+                        ? 1
+                        : 3,
+                    gridRow:
+                      item.corner === "topLeft" || item.corner === "topRight"
+                        ? 1
+                        : 2,
                     border: "1px solid rgba(26, 108, 181, 0.3)",
                     borderRadius: 12,
                     padding: "16px 18px",
@@ -414,7 +501,15 @@ export default function ManagedITPage() {
                           position: "relative",
                         }}
                       >
-                        <span style={{ position: "absolute", left: 0, color: "var(--accent)" }}>•</span>
+                        <span
+                          style={{
+                            position: "absolute",
+                            left: 0,
+                            color: "var(--accent)",
+                          }}
+                        >
+                          •
+                        </span>
                         {b}
                       </li>
                     ))}
@@ -433,18 +528,69 @@ export default function ManagedITPage() {
                   margin: "0 auto",
                 }}
               >
-                <div style={{ position: "absolute", top: 0, left: 0, width: "50%", height: "50%", background: "var(--accent)", borderTopLeftRadius: "100%", border: "2px solid #fff" }} />
-                <div style={{ position: "absolute", top: 0, right: 0, width: "50%", height: "50%", background: "var(--accent)", borderTopRightRadius: "100%", border: "2px solid #fff" }} />
-                <div style={{ position: "absolute", bottom: 0, right: 0, width: "50%", height: "50%", background: "var(--accent)", borderBottomRightRadius: "100%", border: "2px solid #fff" }} />
-                <div style={{ position: "absolute", bottom: 0, left: 0, width: "50%", height: "50%", background: "var(--accent)", borderBottomLeftRadius: "100%", border: "2px solid #fff" }} />
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "50%",
+                    height: "50%",
+                    background: "var(--accent)",
+                    borderTopLeftRadius: "100%",
+                    border: "2px solid #fff",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    width: "50%",
+                    height: "50%",
+                    background: "var(--accent)",
+                    borderTopRightRadius: "100%",
+                    border: "2px solid #fff",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    width: "50%",
+                    height: "50%",
+                    background: "var(--accent)",
+                    borderBottomRightRadius: "100%",
+                    border: "2px solid #fff",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "50%",
+                    height: "50%",
+                    background: "var(--accent)",
+                    borderBottomLeftRadius: "100%",
+                    border: "2px solid #fff",
+                  }}
+                />
 
                 {maintenanceCycle.map((item) => (
                   <span
                     key={item.key}
                     style={{
                       position: "absolute",
-                      top: item.corner === "topLeft" || item.corner === "topRight" ? "30%" : "70%",
-                      left: item.corner === "topLeft" || item.corner === "bottomLeft" ? "30%" : "70%",
+                      top:
+                        item.corner === "topLeft" || item.corner === "topRight"
+                          ? "30%"
+                          : "70%",
+                      left:
+                        item.corner === "topLeft" ||
+                        item.corner === "bottomLeft"
+                          ? "30%"
+                          : "70%",
                       transform: "translate(-50%, -50%)",
                       color: "#fff",
                       fontWeight: 700,
@@ -474,7 +620,10 @@ export default function ManagedITPage() {
                     boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
                   }}
                 >
-                  <i className="bi bi-arrow-repeat" style={{ color: "var(--accent)", fontSize: 18 }} />
+                  <i
+                    className="bi bi-arrow-repeat"
+                    style={{ color: "var(--accent)", fontSize: 18 }}
+                  />
                 </div>
               </div>
             </div>
@@ -482,10 +631,17 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── Results You Can Expect — outcome grid ─────────────── */}
-        <section className="mit-section" style={{ padding: "48px 0", background: "var(--light-bg)" }}>
+        <section
+          className="mit-section"
+          style={{ padding: "48px 0", background: "var(--light-bg)" }}
+        >
           <div className="container">
             <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 32px",
+              }}
               data-aos="fade-up"
             >
               <span
@@ -501,7 +657,14 @@ export default function ManagedITPage() {
               >
                 What You Get
               </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
                 The Difference You&apos;ll Actually Notice
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
@@ -522,7 +685,14 @@ export default function ManagedITPage() {
                   data-aos="fade-up"
                   data-aos-delay={150 + i * 50}
                 >
-                  <div className="icon-wrapper" style={{ background: "transparent", border: "2px solid var(--accent)", borderRadius: "50%" }}>
+                  <div
+                    className="icon-wrapper"
+                    style={{
+                      background: "transparent",
+                      border: "2px solid var(--accent)",
+                      borderRadius: "50%",
+                    }}
+                  >
                     <i className={`bi ${item.icon}`} />
                   </div>
                   <h5>{item.title}</h5>
@@ -534,12 +704,19 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── Who This Is For — background image + overlay ──────── */}
-        <section style={{ position: "relative", padding: "56px 0", overflow: "hidden" }}>
+        <section
+          style={{
+            position: "relative",
+            padding: "56px 0",
+            overflow: "hidden",
+          }}
+        >
           <div
             style={{
               position: "absolute",
               inset: 0,
-              backgroundImage: "url(/images/industries/teams-across-industries.jpg)",
+              backgroundImage:
+                "url(/images/industries/teams-across-industries.jpg)",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -551,9 +728,16 @@ export default function ManagedITPage() {
               background: "rgba(240, 244, 249, 0.68)",
             }}
           />
-          <div className="container" style={{ position: "relative", zIndex: 1 }}>
+          <div
+            className="container"
+            style={{ position: "relative", zIndex: 1 }}
+          >
             <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 32px",
+              }}
               data-aos="fade-up"
             >
               <span
@@ -569,7 +753,14 @@ export default function ManagedITPage() {
               >
                 Is This You?
               </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
                 Built for Businesses Like Yours
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
@@ -595,7 +786,10 @@ export default function ManagedITPage() {
                   data-aos="fade-up"
                   data-aos-delay={80 + i * 70}
                 >
-                  <div className="mit-criteria-icon" style={{ width: 42, height: 42 }}>
+                  <div
+                    className="mit-criteria-icon"
+                    style={{ width: 42, height: 42 }}
+                  >
                     <i
                       className={
                         [
@@ -635,10 +829,23 @@ export default function ManagedITPage() {
               data-aos="fade-up"
             >
               <div style={{ flex: "1 1 320px" }}>
-                <h2 style={{ fontSize: 24, fontWeight: 700, color: "#fff", marginBottom: 8 }}>
+                <h2
+                  style={{
+                    fontSize: 24,
+                    fontWeight: 700,
+                    color: "#fff",
+                    marginBottom: 8,
+                  }}
+                >
                   Ready to stop reacting and start preventing?
                 </h2>
-                <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, marginBottom: 20 }}>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.85)",
+                    fontSize: 15,
+                    marginBottom: 20,
+                  }}
+                >
                   Let&apos;s build a smarter, more secure, and more reliable IT
                   environment, together.
                 </p>
@@ -656,7 +863,7 @@ export default function ManagedITPage() {
                     fontSize: 15,
                   }}
                 >
-                  Schedule a Consultation
+                  Contact Us
                   <i className="bi bi-arrow-right" />
                 </Link>
               </div>

@@ -458,6 +458,7 @@ export default function ManagedITPage() {
             </div>
 
             <div
+              className="mit-maintain-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 260px 1fr",
@@ -474,6 +475,7 @@ export default function ManagedITPage() {
               {maintenanceCycle.map((item) => (
                 <div
                   key={item.key}
+                  className="mit-maintain-item"
                   style={{
                     gridColumn:
                       item.corner === "topLeft" || item.corner === "bottomLeft"
@@ -519,6 +521,7 @@ export default function ManagedITPage() {
 
               {/* Circle */}
               <div
+                className="mit-maintain-circle"
                 style={{
                   gridColumn: 2,
                   gridRow: "1 / 3",

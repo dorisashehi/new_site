@@ -1,25 +1,20 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const serviceLinks = [
-  { label: 'Managed IT', href: '/managed-it-services' },
-  { label: 'Cybersecurity', href: '/cybersecurity-services' },
-  { label: 'IT Strategy', href: '/it-strategy-advisory' },
-  { label: 'Cloud Solutions', href: '/it-strategy-advisory#infrastructure-architecture' },
-  { label: 'IT Consulting', href: '/it-strategy-advisory' },
+  { label: "Managed IT", href: "/managed-it-services" },
+  { label: "Cybersecurity", href: "/cybersecurity-services" },
+  { label: "VoIP Phone Systems", href: "/voip-phone-systems" },
 ];
 const companyLinks = [
-  { label: 'About Us', href: '/about' },
-  { label: 'Our Team', href: '/about#leadership' },
-  { label: 'Careers', href: '#' },
-  { label: 'Blog', href: '#' },
-  { label: 'Contact', href: '/contact' },
+  { label: "About Us", href: "/about" },
+  { label: "Leadership", href: "/about#our-story" },
+  { label: "Industries", href: "/industries" },
+  { label: "Contact", href: "/contact" },
 ];
 const resourceLinks = [
-  { label: 'Case Studies', href: '#' },
-  { label: 'Partners', href: '#' },
-  { label: 'FAQ', href: '/#faq' },
-  { label: 'Support Center', href: '/contact' },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Support Center", href: "/contact" },
 ];
 
 export default function Footer() {
@@ -28,19 +23,19 @@ export default function Footer() {
 
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY > 400);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleFooterLinkClick = href => e => {
-    const [path, hash] = href.split('#');
+  const handleFooterLinkClick = (href) => (e) => {
+    const [path, hash] = href.split("#");
     if (location.pathname !== path) return;
 
     e.preventDefault();
     if (hash) {
-      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -48,27 +43,94 @@ export default function Footer() {
     <>
       <footer id="footer" className="site-footer">
         <div className="container">
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 24,
+              alignItems: "center",
+              justifyContent: "space-between",
+              paddingBottom: 40,
+              marginBottom: 40,
+              borderBottom: "1px solid rgba(255,255,255,0.1)",
+            }}
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div style={{ flex: "1 1 420px" }}>
+              <h2
+                style={{
+                  fontSize: 30,
+                  fontWeight: 700,
+                  color: "#fff",
+                  marginBottom: 14,
+                }}
+              >
+                Ready to Improve Your IT Operations?
+              </h2>
+              <p
+                style={{
+                  color: "rgba(255,255,255,0.65)",
+                  lineHeight: 1.7,
+                  fontSize: 16,
+                }}
+              >
+                Let&apos;s build a more secure, reliable, and efficient
+                technology environment together.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0 }}>
+              <Link
+                to="/contact"
+                className="cta-btn"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  padding: "14px 32px",
+                  fontSize: 15,
+                }}
+              >
+                Schedule a Consultation
+                <i className="bi bi-arrow-right" />
+              </Link>
+            </div>
+          </div>
+
           <div className="footer-inner">
             {/* Brand */}
             <div className="footer-brand">
               <div style={{ marginBottom: 16, lineHeight: 1 }}>
-                <div style={{ fontSize: 30, fontWeight: 800, color: '#fff', fontFamily: '"Nunito", sans-serif', letterSpacing: -0.5 }}>
-                  Info<span style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Manage</span>
-                  <sup style={{ fontSize: 12, marginLeft: 2, fontWeight: 600 }}>&trade;</sup>
-                </div>
-                <div style={{ fontSize: 12, fontStyle: 'italic', color: 'rgba(255,255,255,0.5)', marginTop: 4 }}>
-                  Keeps you&hellip; Up and Running!&trade;
+                <div
+                  style={{
+                    fontSize: 24,
+                    fontWeight: 800,
+                    color: "#fff",
+                    fontFamily: '"Nunito", sans-serif',
+                    letterSpacing: -0.3,
+                  }}
+                >
+                  InfoManage Corporation
                 </div>
               </div>
-              <p>InfoManage manages day-to-day IT operations while helping organizations plan, secure, and scale their technology environments. Serving organizations since 1995.</p>
+              <p>
+                InfoManage manages day-to-day IT operations while helping
+                organizations plan, secure, and scale their technology
+                environments. Serving organizations since 1995.
+              </p>
             </div>
 
             {/* Services */}
             <div className="footer-links-col">
               <h4>Services</h4>
               <ul>
-                {serviceLinks.map(l => (
-                  <li key={l.label}><Link to={l.href} onClick={handleFooterLinkClick(l.href)}><i className="bi bi-chevron-right" />{l.label}</Link></li>
+                {serviceLinks.map((l) => (
+                  <li key={l.label}>
+                    <Link to={l.href} onClick={handleFooterLinkClick(l.href)}>
+                      <i className="bi bi-chevron-right" />
+                      {l.label}
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -77,8 +139,13 @@ export default function Footer() {
             <div className="footer-links-col">
               <h4>Company</h4>
               <ul>
-                {companyLinks.map(l => (
-                  <li key={l.label}><Link to={l.href} onClick={handleFooterLinkClick(l.href)}><i className="bi bi-chevron-right" />{l.label}</Link></li>
+                {companyLinks.map((l) => (
+                  <li key={l.label}>
+                    <Link to={l.href} onClick={handleFooterLinkClick(l.href)}>
+                      <i className="bi bi-chevron-right" />
+                      {l.label}
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -87,8 +154,13 @@ export default function Footer() {
             <div className="footer-links-col">
               <h4>Resources</h4>
               <ul>
-                {resourceLinks.map(l => (
-                  <li key={l.label}><Link to={l.href} onClick={handleFooterLinkClick(l.href)}><i className="bi bi-chevron-right" />{l.label}</Link></li>
+                {resourceLinks.map((l) => (
+                  <li key={l.label}>
+                    <Link to={l.href} onClick={handleFooterLinkClick(l.href)}>
+                      <i className="bi bi-chevron-right" />
+                      {l.label}
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -98,19 +170,39 @@ export default function Footer() {
               <h4>Connect</h4>
               <div className="contact-entry">
                 <i className="bi bi-telephone" />
-                <p>+1 (800) 555-0195</p>
+                <p>212-931-0705</p>
               </div>
               <div className="contact-entry">
                 <i className="bi bi-envelope" />
-                <p><a href="mailto:info@infomanage.com">info@infomanage.com</a></p>
+                <p>
+                  <a href="mailto:sales@infomanage.net">sales@infomanage.net</a>
+                </p>
               </div>
               <div className="footer-socials">
                 {[
-                  { icon: 'bi-linkedin', href: 'https://www.linkedin.com/company/infomanage-corporation/' },
-                  { icon: 'bi-twitter-x', href: '#' },
-                  { icon: 'bi-facebook', href: 'https://www.facebook.com/profile.php?id=100078690196056' },
+                  {
+                    icon: "bi-linkedin",
+                    href: "https://www.linkedin.com/company/infomanage-corporation/",
+                  },
+                  {
+                    icon: "bi-twitter-x",
+                    href: "https://x.com/infomanagecorp",
+                  },
+                  {
+                    icon: "bi-facebook",
+                    href: "https://www.facebook.com/profile.php?id=100078690196056",
+                  },
                 ].map((s, i) => (
-                  <a key={i} href={s.href} target={s.href.startsWith('http') ? '_blank' : undefined} rel={s.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                  <a
+                    key={i}
+                    href={s.href}
+                    target={s.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      s.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                  >
                     <i className={`bi ${s.icon}`} />
                   </a>
                 ))}
@@ -132,9 +224,12 @@ export default function Footer() {
 
       <a
         href="#hero"
-        className={`scroll-top-btn${showTop ? ' visible' : ''}`}
+        className={`scroll-top-btn${showTop ? " visible" : ""}`}
         aria-label="Back to top"
-        onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
       >
         <i className="bi bi-arrow-up-short" />
       </a>

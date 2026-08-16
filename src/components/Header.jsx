@@ -12,7 +12,6 @@ const navLinks = [
       { label: "VoIP Phone Systems", href: "/voip-phone-systems" },
     ],
   },
-  { label: "IT Strategy", href: "/it-strategy-advisory", internal: true },
   { label: "Industries", href: "/industries", internal: true },
   { label: "Contact", href: "/contact", internal: true },
 ];
@@ -63,11 +62,6 @@ export default function Header() {
       href: "/voip-phone-systems",
       internal: true,
       indent: true,
-    },
-    {
-      label: "IT Strategy & Advisory",
-      href: "/it-strategy-advisory",
-      internal: true,
     },
     { label: "Industries", href: "/industries", internal: true },
     { label: "Contact", href: "/contact", internal: true },

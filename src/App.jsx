@@ -12,7 +12,6 @@ import ClientBenefits from "./components/ClientBenefits";
 import Trusted from "./components/Trusted";
 import FAQ from "./components/FAQ";
 // import Blog from "./components/Blog";
-import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 import ManagedITPage from "./pages/ManagedITPage";
 import CybersecurityPage from "./pages/CybersecurityPage";
@@ -51,7 +50,6 @@ function HomePage({ loaded }) {
         <Trusted />
         <FAQ />
         {/* <Blog /> */}
-        <FinalCTA />
       </main>
       <Footer />
     </>

@@ -32,20 +32,11 @@ export default function AboutPage() {
             </div>
             <h1>About InfoManage</h1>
             <p className="mit-hero-sub">
-              Providing structured IT operations and infrastructure support for
-              organizations that depend on reliable technology.
+              Reliable Technology. Proven Experience.
             </p>
             <p className="mit-hero-body">
-              InfoManage helps organizations manage the technology systems that
-              support their daily operations. By combining proactive
-              infrastructure management with strategic technology guidance, we
-              help businesses maintain stable, secure, and scalable technology
-              environments.
-            </p>
-            <p className="mit-hero-body">
-              Since 1995, InfoManage has partnered with organizations across a
-              wide range of industries to manage and support the systems they
-              rely on every day.
+              IT operations and infrastructure support designed to keep your
+              business secure, stable, and running smoothly.
             </p>
             {/* <div className="mit-hero-btns">
               <Link to="/contact#contact" className="btn-get-started">Schedule a Consultation</Link>
@@ -114,36 +105,41 @@ export default function AboutPage() {
                       margin: "-10px 0 16px",
                     }}
                   >
-                    Founded by Marc Neer
+                    Built on Experience. Driven by Partnership.
                   </span>
                   <p>
-                    In 1995, Marc Neer took the technology expertise he&apos;d
-                    built working at the fast, intense pace of Wall Street and
-                    set out to build a different kind of IT support company,
-                    one that offered scalable, flexible solutions for
-                    businesses of every size, from small, rapidly growing
-                    startups to larger, established companies that simply
-                    needed more resources.
+                    Founded by Marc Neer in 1995, InfoManage was created with
+                    a straightforward vision: provide businesses with
+                    reliable, flexible technology support that could grow
+                    alongside them.
                   </p>
                   <p>
-                    That vision shaped how InfoManage operates to this day.
-                    Rather than emerging from the consulting side of the
-                    industry, we built our reputation working in the trenches
-                    as a hands-on support provider, which is why our
-                    solutions are custom-designed around each client&apos;s
-                    actual technology requirements, not a one-size-fits-all
-                    package.
+                    Drawing on his experience supporting technology in the
+                    demanding environment of Wall Street, Marc recognized
+                    that businesses needed more than reactive IT support.
+                    They needed a technology partner who understood their
+                    operations, anticipated challenges, and could adapt
+                    solutions to their evolving needs.
                   </p>
                   <p>
-                    Over the years, we have worked with organizations across
-                    many industries, supporting environments ranging from small
-                    offices to multi-site infrastructure deployments.
+                    From the beginning, InfoManage took a hands-on approach.
+                    Rather than relying on standardized packages, we built
+                    our reputation by working directly with clients to
+                    understand their environments, solve immediate
+                    challenges, and develop technology solutions around
+                    their specific requirements.
                   </p>
                   <p>
-                    Today, that same vision is still led by Marc Neer, who
-                    works closely with clients to guide infrastructure
-                    decisions, operational improvements, and long-term
-                    technology planning.
+                    Over the years, that approach has allowed us to support
+                    organizations across a wide range of industries, from
+                    growing businesses with lean IT teams to established
+                    organizations managing complex, multi-site environments.
+                  </p>
+                  <p>
+                    Today, Marc continues to work closely with clients,
+                    helping them make informed infrastructure decisions,
+                    strengthen day-to-day operations, and plan for the
+                    technology needs of tomorrow.
                   </p>
                   <blockquote
                     style={{
@@ -182,7 +178,7 @@ export default function AboutPage() {
                   >
                     {[
                       "Infrastructure Strategy",
-                      "Operational Leadership",
+                      "Operational Excellence",
                       "Long-Term Planning",
                       "Client Partnership",
                     ].map((s, i) => (

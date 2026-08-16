@@ -38,7 +38,7 @@ export default function Contact() {
     ].join("\n");
 
     window.open(
-      `mailto:doris.shehi2@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+      `mailto:sales@infomanage.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
       "_blank",
     );
 
@@ -240,38 +240,6 @@ export default function Contact() {
                   <button type="submit" className="send-btn">
                     Submit
                   </button>
-                  <div className="social-row">
-                    {[
-                      {
-                        icon: "bi-linkedin",
-                        href: "https://www.linkedin.com/company/infomanage-corporation/",
-                      },
-                      { icon: "bi-twitter-x", href: "#" },
-                      {
-                        icon: "bi-facebook",
-                        href: "https://www.facebook.com/profile.php?id=100078690196056",
-                      },
-                      {
-                        icon: "bi-envelope",
-                        href: "mailto:sales@infomanage.net",
-                      },
-                    ].map((s, i) => (
-                      <a
-                        key={i}
-                        href={s.href}
-                        target={
-                          s.href.startsWith("http") ? "_blank" : undefined
-                        }
-                        rel={
-                          s.href.startsWith("http")
-                            ? "noopener noreferrer"
-                            : undefined
-                        }
-                      >
-                        <i className={`bi ${s.icon}`} />
-                      </a>
-                    ))}
-                  </div>
                 </div>
               </form>
             </div>

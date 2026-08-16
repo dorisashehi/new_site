@@ -88,6 +88,55 @@ const whyDifferentItems = [
   "Paperless invoicing and account management",
 ];
 
+const processSteps = [
+  {
+    num: 1,
+    title: "Account Set-up",
+    color: "#123a63",
+    bullets: [
+      "Documents signed and approved",
+      "Account is assigned a Project Manager",
+    ],
+  },
+  {
+    num: 2,
+    title: "Meet Your Project Manager",
+    color: "#134f83",
+    bullets: [
+      "Confirm implementation details — number porting, LAN/WAN infrastructure, and requirements",
+      "Complete project checklist",
+    ],
+  },
+  {
+    num: 3,
+    title: "Scheduling",
+    color: "#1a6cb5",
+    bullets: [
+      "Choose and finalize install date and time",
+      "Affirm expectations",
+      "Confirm porting date",
+    ],
+  },
+  {
+    num: 4,
+    title: "Installation",
+    color: "#3684c4",
+    bullets: [
+      "Install equipment and train employees",
+      "Validate everything works before technicians depart",
+    ],
+  },
+  {
+    num: 5,
+    title: "Account Completion",
+    color: "#6ba8d9",
+    bullets: [
+      "Finalize paperwork and any service modifications",
+      "Billing dates established",
+    ],
+  },
+];
+
 const whoForItems = [
   "Have a remote, hybrid, or multi-location workforce",
   "Want to cut the cost of buying and maintaining phone hardware",
@@ -461,6 +510,83 @@ export default function VoipPage() {
                   <p style={{ fontSize: 14.5 }}>{item}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Our Process — vertical numbered timeline ──────────── */}
+        <section className="mit-section" style={{ padding: "48px 0 56px", background: "#fff" }}>
+          <div className="container">
+            <div
+              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}
+              data-aos="fade-up"
+            >
+              <span
+                style={{
+                  display: "block",
+                  fontSize: 12,
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: 2,
+                  color: "var(--accent)",
+                  marginBottom: 10,
+                }}
+              >
+                Getting Started
+              </span>
+              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+                Our Process
+              </h2>
+              <p style={{ color: "#666", fontSize: 15 }}>
+                A clear, five-step path from signed agreement to a fully
+                working phone system, no surprises along the way.
+              </p>
+            </div>
+
+            <div className="voip-process">
+              {processSteps.map((step, i) => {
+                const side = step.num % 2 === 1 ? "left" : "right";
+                return (
+                  <div
+                    key={step.num}
+                    className="voip-process-row"
+                    data-aos="fade-up"
+                    data-aos-delay={100 + i * 80}
+                  >
+                    {side === "left" && (
+                      <div className="voip-process-text left">
+                        <span className="voip-process-step-label">
+                          Step {step.num}
+                          <span className="dots" />
+                        </span>
+                        <div className="voip-process-title">{step.title}</div>
+                        <ul className="voip-process-bullets">
+                          {step.bullets.map((b, j) => (
+                            <li key={j}>{b}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    <div className="voip-process-node" style={{ background: step.color }}>
+                      <span>{step.num}</span>
+                    </div>
+                    {side === "right" && (
+                      <div className="voip-process-text right">
+                        <span className="voip-process-step-label">
+                          <span className="dots" />
+                          Step {step.num}
+                        </span>
+                        <div className="voip-process-title">{step.title}</div>
+                        <ul className="voip-process-bullets">
+                          {step.bullets.map((b, j) => (
+                            <li key={j}>{b}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

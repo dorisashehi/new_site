@@ -3081,6 +3081,172 @@ a:hover {
   );
 }
 
+/* ---- VoIP Our Process — interlocking chevron chain diagram ---- */
+.voip-process {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.voip-process-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  min-height: 122px;
+}
+.voip-process-row:not(:first-child) {
+  margin-top: -34px;
+}
+.voip-process-text {
+  padding: 14px 24px;
+  position: relative;
+}
+.voip-process-text.left {
+  grid-column: 1;
+  text-align: right;
+}
+.voip-process-text.right {
+  grid-column: 3;
+  text-align: left;
+}
+.voip-process-text.left .voip-process-bullets {
+  text-align: right;
+}
+.voip-process-text.left .voip-process-bullets li {
+  padding-left: 0;
+  padding-right: 14px;
+}
+.voip-process-text.left .voip-process-bullets li::before {
+  left: auto;
+  right: 0;
+}
+.voip-process-step-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.voip-process-text.left .voip-process-step-label {
+  justify-content: flex-end;
+}
+.voip-process-step-label .dots {
+  flex: 0 1 40px;
+  height: 0;
+  border-top: 2px dotted rgba(26, 108, 181, 0.5);
+  min-width: 16px;
+}
+.voip-process-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 8px;
+}
+.voip-process-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.voip-process-bullets li {
+  font-size: 13.5px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 4px;
+  padding-left: 14px;
+  position: relative;
+}
+.voip-process-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.voip-process-node {
+  grid-column: 2;
+  width: 92px;
+  height: 108px;
+  margin: 0 auto;
+  clip-path: polygon(
+    50% 100%,
+    91% 80%,
+    100% 52%,
+    100% 18%,
+    80% 0%,
+    20% 0%,
+    0% 18%,
+    0% 52%,
+    9% 80%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 6px 16px rgba(13, 30, 46, 0.28);
+}
+.voip-process-node span {
+  color: #fff;
+  font-weight: 900;
+  font-size: 26px;
+  font-family: "Nunito", sans-serif;
+  margin-top: -10px;
+}
+@media (max-width: 820px) {
+  .voip-process-row {
+    grid-template-columns: 92px 1fr;
+    gap: 16px;
+    min-height: 0;
+    margin-bottom: 0;
+  }
+  .voip-process-row:not(:first-child) {
+    margin-top: -22px;
+  }
+  .voip-process-node {
+    grid-column: 1;
+    width: 68px;
+    height: 80px;
+  }
+  .voip-process-node span {
+    font-size: 20px;
+  }
+  .voip-process-text.left,
+  .voip-process-text.right {
+    grid-column: 2;
+    padding: 10px 4px;
+    text-align: left;
+  }
+  .voip-process-text.left {
+    text-align: left;
+  }
+  .voip-process-text.left .voip-process-bullets,
+  .voip-process-text.left .voip-process-bullets li {
+    text-align: left;
+  }
+  .voip-process-text.left .voip-process-bullets li {
+    padding-left: 14px;
+    padding-right: 0;
+  }
+  .voip-process-text.left .voip-process-bullets li::before {
+    left: 0;
+    right: auto;
+  }
+  .voip-process-text.left .voip-process-step-label {
+    justify-content: flex-start;
+  }
+  .voip-process-step-label .dots {
+    display: none;
+  }
+}
+
 /* Three Principles Section */
 .cyber-principles {
   padding: 80px 0;

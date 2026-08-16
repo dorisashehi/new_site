@@ -9,7 +9,11 @@ const steps = [
     num: '02',
     icon: 'bi-shield-lock',
     title: 'Secure',
-    desc: "We close the gaps that put your business at risk — locking down every device with endpoint protection, patch management, and security baseline hardening, and putting tested backup and disaster recovery plans in place so one bad day can't take you down.",
+    desc: 'We close the gaps that put your business at risk:',
+    bullets: [
+      'Endpoint protection, patch management, and security baseline hardening',
+      "Tested backup and disaster recovery, so one bad day can't take you down",
+    ],
   },
   {
     num: '03',
@@ -27,7 +31,7 @@ const steps = [
 
 export default function HowWeWork() {
   return (
-    <section id="how-we-work" style={{ padding: '56px 0', background: 'var(--light-bg)' }}>
+    <section id="how-we-work" style={{ padding: '56px 0', background: '#fff' }}>
       <div className="container">
         <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 32px' }} data-aos="fade-up">
           <span style={{ display: 'block', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 2, color: 'var(--accent)', marginBottom: 10 }}>
@@ -46,19 +50,28 @@ export default function HowWeWork() {
             {steps.map((s, i) => (
               <div
                 key={i}
-                className="its-lifecycle-row"
-                style={{ padding: '13px 0' }}
+                className="approach-card"
                 data-aos="fade-up"
                 data-aos-delay={150 + i * 70}
               >
-                <div className="its-lifecycle-dot" style={{ width: 40, height: 40 }}>
-                  <i className={`bi ${s.icon}`} style={{ fontSize: 17 }} />
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                  <div className="approach-icon">
+                    <i className={`bi ${s.icon}`} />
+                  </div>
+                  <span className="approach-phase-pill">Phase {s.num}</span>
                 </div>
-                <div className="its-lifecycle-content">
-                  <div className="its-lifecycle-label">Phase {s.num}</div>
-                  <h5>{s.title}</h5>
-                  <p>{s.desc}</p>
-                </div>
+                <h5>{s.title}</h5>
+                <p>{s.desc}</p>
+                {s.bullets && (
+                  <ul className="approach-checklist">
+                    {s.bullets.map((b, j) => (
+                      <li key={j}>
+                        <i className="bi bi-check-circle-fill" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
@@ -69,9 +82,9 @@ export default function HowWeWork() {
               alt="Technicians monitoring and securing client systems"
               style={{
                 width: '100%',
-                borderRadius: 12,
+                borderRadius: '28px 28px 28px 80px',
                 display: 'block',
-                boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
+                boxShadow: '0 20px 48px rgba(13, 30, 46, 0.16)',
               }}
             />
           </div>

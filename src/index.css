@@ -3849,6 +3849,82 @@ a:hover {
   margin: 0;
 }
 
+/* ---- Our Approach — card-style steps ---- */
+.approach-card {
+  background: #fff;
+  border: 1px solid #eef1f5;
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(13, 30, 46, 0.06);
+  transition: 0.3s;
+}
+.approach-card:hover {
+  box-shadow: 0 10px 32px rgba(13, 30, 46, 0.1);
+  transform: translateY(-2px);
+}
+.approach-card:last-child {
+  margin-bottom: 0;
+}
+.approach-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(26, 108, 181, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.approach-icon i {
+  color: var(--accent);
+  font-size: 18px;
+}
+.approach-phase-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(26, 108, 181, 0.08);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+.approach-card h5 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0 0 8px;
+}
+.approach-card > p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+.approach-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+.approach-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #555;
+  padding: 4px 0;
+  line-height: 1.6;
+}
+.approach-checklist li i {
+  color: var(--accent);
+  font-size: 13px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
 /* Vendor Strategy — dark glass cards */
 .its-vendor-grid {
   display: grid;

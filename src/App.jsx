@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
+import WhenToContact from "./components/WhenToContact";
 import CTA from "./components/CTA";
 import HowWeWork from "./components/HowWeWork";
 import ClientBenefits from "./components/ClientBenefits";
@@ -43,6 +44,7 @@ function HomePage({ loaded }) {
       <main className="main home-page">
         <Hero />
         <Services />
+        <WhenToContact />
         <About />
         <HowWeWork />
         <ClientBenefits />

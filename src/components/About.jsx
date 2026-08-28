@@ -92,32 +92,6 @@ export default function About() {
                   }}
                 />
               </div>
-              {/* badge */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "38%",
-                  left: "48%",
-                  minWidth: 100,
-                  background: "var(--accent)",
-                  color: "#fff",
-                  padding: "16px 18px",
-                  borderRadius: 12,
-                  textAlign: "center",
-                  boxShadow: "0 8px 24px rgba(26, 108, 181, 0.4)",
-                }}
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div style={{ fontSize: 26, fontWeight: 900, lineHeight: 1 }}>
-                  30+
-                </div>
-                <div style={{ fontSize: 11, marginTop: 4, lineHeight: 1.3 }}>
-                  Years of
-                  <br />
-                  Expertise
-                </div>
-              </div>
             </div>
           </div>
 

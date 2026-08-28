@@ -1,8 +1,7 @@
-const stats = [
-  { icon: "bi-chat-heart", value: "30+", label: "Years of Experience" },
-  { icon: "bi-chat-square-heart", value: "98%", label: "Client Retention" },
-  { icon: "bi-shield-check", value: "99.9%", label: "System Uptime" },
-  { icon: "bi-clock-history", value: "24×7", label: "Monitoring & Support" },
+const credibility = [
+  { icon: "bi-diagram-3", label: "One Partner Across Your Technology" },
+  { icon: "bi-gear-wide-connected", label: "End-to-End Operational & Project Expertise" },
+  { icon: "bi-clock-history", label: "24×7 Monitoring Available" },
 ];
 
 export default function Trusted() {
@@ -58,6 +57,32 @@ export default function Trusted() {
                 display: "block",
               }}
             />
+            <div
+              style={{
+                position: "absolute",
+                bottom: 16,
+                right: -16,
+                zIndex: 2,
+                minWidth: 100,
+                background: "var(--accent)",
+                color: "#fff",
+                padding: "16px 18px",
+                borderRadius: 12,
+                textAlign: "center",
+                boxShadow: "0 8px 24px rgba(26, 108, 181, 0.4)",
+              }}
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div style={{ fontSize: 26, fontWeight: 900, lineHeight: 1 }}>
+                30+
+              </div>
+              <div style={{ fontSize: 11, marginTop: 4, lineHeight: 1.3 }}>
+                Years of
+                <br />
+                Expertise
+              </div>
+            </div>
           </div>
 
           {/* Text */}
@@ -88,17 +113,18 @@ export default function Trusted() {
                 lineHeight: 1.3,
               }}
             >
-              Keeping Your Business Up and Running
+              Technology Experience That Goes Beyond the Help Desk
             </h2>
             <p style={{ color: "#666", lineHeight: 1.8, fontSize: 15 }}>
-              For nearly 30 years, InfoManage has helped businesses stay
-              productive, secure, and prepared for what&apos;s next.
+              Founded in 1995, InfoManage brings decades of experience across IT
+              operations, infrastructure, cybersecurity, cloud, communications,
+              projects and technology strategy.
             </p>
           </div>
 
           {/* Stats */}
           <div style={{ flex: "2 1 500px", display: "flex", flexWrap: "wrap" }}>
-            {stats.map((s, i) => (
+            {credibility.map((c, i) => (
               <div
                 key={i}
                 className="trusted-stat-item"
@@ -107,10 +133,10 @@ export default function Trusted() {
                   textAlign: "center",
                   padding: "0 16px",
                   borderRight:
-                    i < stats.length - 1 ? "1px solid #e5e9f0" : "none",
+                    i < credibility.length - 1 ? "1px solid #e5e9f0" : "none",
                 }}
                 data-aos="zoom-in"
-                data-aos-delay={150 + i * 80}
+                data-aos-delay={230 + i * 80}
               >
                 <div
                   style={{
@@ -125,32 +151,20 @@ export default function Trusted() {
                   }}
                 >
                   <i
-                    className={`bi ${s.icon}`}
+                    className={`bi ${c.icon}`}
                     style={{ fontSize: 22, color: "var(--accent)" }}
                   />
                 </div>
                 <span
                   style={{
                     display: "block",
-                    fontSize: 26,
-                    fontWeight: 900,
+                    fontSize: 13.5,
+                    fontWeight: 700,
                     color: "var(--heading-color)",
-                    fontFamily: '"Nunito", sans-serif',
-                    lineHeight: 1,
-                    marginBottom: 8,
-                  }}
-                >
-                  {s.value}
-                </span>
-                <span
-                  style={{
-                    fontSize: 12.5,
-                    color: "#777",
-                    fontWeight: 600,
                     lineHeight: 1.4,
                   }}
                 >
-                  {s.label}
+                  {c.label}
                 </span>
               </div>
             ))}

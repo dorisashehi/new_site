@@ -70,7 +70,7 @@ export default function Hero() {
               className="btn-cta-primary"
               style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
             >
-              Request an IT Risk Assessment
+              Contact InfoManage
               <i className="bi bi-arrow-right" />
             </a>
             <Link
@@ -78,7 +78,7 @@ export default function Hero() {
               className="btn-cta-outline"
               style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
             >
-              Our Services
+              Explore Our Services
               <i className="bi bi-arrow-right" />
             </Link>
           </div>

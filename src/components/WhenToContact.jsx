@@ -87,14 +87,14 @@ export default function WhenToContact() {
             {situations.map((s, i) => (
               <div
                 key={i}
-                style={{ display: "flex", alignItems: "flex-start", gap: 12 }}
+                style={{ display: "flex", alignItems: "center", gap: 12 }}
               >
                 <div
                   style={{
-                    width: 40,
-                    height: 40,
-                    borderRadius: 10,
-                    background: "rgba(26,108,181,0.1)",
+                    width: 36,
+                    height: 36,
+                    borderRadius: 8,
+                    background: "rgba(26,108,181,0.12)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -103,10 +103,18 @@ export default function WhenToContact() {
                 >
                   <i
                     className={`bi ${s.icon}`}
-                    style={{ color: "var(--accent)", fontSize: 18 }}
+                    style={{ color: "var(--accent)", fontSize: 16 }}
                   />
                 </div>
-                <p style={{ fontSize: 14, color: "#555", margin: 0, lineHeight: 1.5 }}>
+                <p
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "var(--heading-color)",
+                    margin: 0,
+                    lineHeight: 1.4,
+                  }}
+                >
                   {s.text}
                 </p>
               </div>

@@ -696,6 +696,15 @@ a:hover {
   line-height: 1.7;
   margin: 0;
 }
+.service-item-link {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.service-item-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
 .service-card .service-number {
   position: absolute;
   bottom: 12px;

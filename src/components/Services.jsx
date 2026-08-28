@@ -1,77 +1,30 @@
-import { Link } from "react-router-dom";
-
 const services = [
   {
-    icon: "bi-hdd-network",
-    title: "Managed Service Provider",
-    desc: "Proactive technology management for a predictable flat monthly fee.",
-    bullets: [
-      "Ongoing IT maintenance",
-      "Proactive device monitoring",
-      "Security updates and improvements",
+    icon: "bi-shield-lock",
+    title: "Managed & Secure",
+    desc: "Keep people productive and systems protected.",
+    items: [
+      "Managed IT & Help Desk",
+      "Cybersecurity",
+      "Backup & Business Continuity",
+      "Technology Strategy",
     ],
-    cta: "Explore Managed Services",
-    to: "/managed-it-services",
   },
   {
-    icon: "bi-shield-check",
-    title: "Cybersecurity",
-    desc: "Enterprise-grade protection, sized for your business.",
-    bullets: [
-      "24/7 monitoring for potential security threats",
-      "Email protection, filtering, and anti-spoofing",
-      "Employee phishing awareness training and testing",
+    icon: "bi-people",
+    title: "Connect & Collaborate",
+    desc: "Make the workplace connected, flexible and easy to use.",
+    items: [
+      "Microsoft 365 & Google Workspace",
+      "Networks, Wi-Fi & Internet",
+      "Cloud Phones & Communications",
     ],
-    cta: "Explore Cybersecurity",
-    to: "/cybersecurity-services",
   },
   {
-    icon: "bi-cloud-arrow-up",
-    title: "Backup & Disaster Recovery (BCDR)",
-    desc: "Your data protected, whatever happens.",
-    bullets: [
-      "Reliable cloud and local backup solutions",
-      "Protection against hardware and software failures",
-      "Recovery planning for disasters and cyberattacks",
-    ],
-    cta: "See BCDR Plans",
-    to: "/contact",
-  },
-  {
-    icon: "bi-tools",
-    title: "Project Management",
-    desc: "Office moves and IT rollouts, fully coordinated.",
-    bullets: [
-      "IT installation and configuration",
-      "Cabling and infrastructure coordination",
-      "Hardware and software implementation",
-    ],
-    cta: "View Project Services",
-    to: "/managed-it-services#operational-support",
-  },
-  {
-    icon: "bi-telephone",
-    title: "VoIP Phone Systems",
-    desc: "Cloud phone service that moves with your team.",
-    bullets: [
-      "Reliable business calling from anywhere",
-      "Mobile, desktop, and video integration",
-      "Built-in screen sharing and collaboration",
-    ],
-    cta: "Explore VoIP",
-    to: "/voip-phone-systems",
-  },
-  {
-    icon: "bi-person-workspace",
-    title: "vCIO",
-    desc: "Strategic technology leadership, without the full-time hire.",
-    bullets: [
-      "IT strategy, roadmap, and budget planning",
-      "Vendor and technology management",
-      "Technology decisions aligned with business goals",
-    ],
-    cta: "Explore vCIO Services",
-    to: "/it-strategy-advisory",
+    icon: "bi-building-add",
+    title: "Move, Build & Grow",
+    desc: "Put the technology foundation in place for what comes next.",
+    items: ["New Offices & Buildouts", "Moves & Expansions", "IT Projects"],
   },
 ];
 
@@ -146,18 +99,14 @@ export default function Services() {
                 </div>
                 <h4 style={{ margin: 0 }}>{s.title}</h4>
               </div>
-              <Link to={s.to} className="arrow-link" data-tooltip={s.cta}>
-                <i className="bi bi-arrow-right" />
-              </Link>
               <p style={{ marginBottom: 12 }}>{s.desc}</p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                {s.bullets.map((b, j) => (
+                {s.items.map((item, j) => (
                   <li
                     key={j}
                     style={{
-                      fontSize: 12,
-                      color: "#666",
-                      padding: "3px 0",
+                      fontSize: 13,
+                      padding: "5px 0",
                       display: "flex",
                       gap: 6,
                       alignItems: "flex-start",
@@ -171,7 +120,9 @@ export default function Services() {
                         marginTop: 2,
                       }}
                     />
-                    {b}
+                    <a href="#" className="service-item-link">
+                      {item}
+                    </a>
                   </li>
                 ))}
               </ul>

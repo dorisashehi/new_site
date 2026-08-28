@@ -29,7 +29,7 @@ export default function Hero() {
             }}
           >
             <i
-              className="bi bi-calendar-check"
+              className="bi bi-diagram-3"
               style={{ color: "var(--accent)", fontSize: 14 }}
             />
             <span
@@ -39,7 +39,7 @@ export default function Hero() {
                 fontWeight: 500,
               }}
             >
-              Serving organizations since 1995
+              ONE TECHNOLOGY PARTNER
             </span>
           </div>
           <h2
@@ -53,9 +53,18 @@ export default function Hero() {
             Your Technology.
             <sup style={{ fontSize: "0.4em" }}>™</sup>
           </h2>
-          <p style={{ marginBottom: 32 }}>
+          <p style={{ marginBottom: 12 }}>
             Support, security, cloud, communications, infrastructure and IT
             strategy — all managed together.
+          </p>
+          <p
+            style={{
+              marginBottom: 32,
+              fontSize: 14,
+              color: "rgba(255,255,255,0.6)",
+            }}
+          >
+            Serving organizations since 1995
           </p>
           <div
             className="hero-cta-row"

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "/", internal: true },
-  { label: "About", href: "/about", internal: true },
   {
     label: "Services",
     children: [
@@ -13,6 +12,8 @@ const navLinks = [
     ],
   },
   { label: "Industries", href: "/industries", internal: true },
+  { label: "About", href: "/about", internal: true },
+  { label: "Insights", href: "/insights", internal: true },
   { label: "Contact", href: "/contact", internal: true },
 ];
 

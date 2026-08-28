@@ -89,7 +89,11 @@ export default function Header() {
             <ul>
               {navLinks.map((link, i) =>
                 link.children ? (
-                  <li key={i} className="dropdown" style={{ padding: "10px 14px" }}>
+                  <li
+                    key={i}
+                    className="dropdown"
+                    style={{ padding: "10px 14px" }}
+                  >
                     <a href="#">
                       <span>{link.label}</span>
                       <i className="bi bi-chevron-down toggle-dropdown" />
@@ -125,7 +129,7 @@ export default function Header() {
           </nav>
 
           <a href="/contact" className="cta-btn">
-            Schedule Consultation
+            Contact InfoManage
           </a>
           <i
             className="bi bi-list mobile-nav-toggle"

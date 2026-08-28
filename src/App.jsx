@@ -25,10 +25,10 @@ function ScrollToHash() {
   const { hash } = useLocation();
   useEffect(() => {
     if (!hash) return;
-    const id = hash.replace('#', '');
+    const id = hash.replace("#", "");
     const timer = setTimeout(() => {
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     }, 150);
     return () => clearTimeout(timer);
   }, [hash]);
@@ -42,8 +42,8 @@ function HomePage({ loaded }) {
       <Header />
       <main className="main home-page">
         <Hero />
-        <About />
         <Services />
+        <About />
         <HowWeWork />
         <ClientBenefits />
         <CTA />

@@ -1,31 +1,21 @@
 const steps = [
   {
-    num: "01",
-    icon: "bi-search",
-    title: "Discover",
-    desc: "We learn your business before we touch your technology — sitting down to understand your goals, your team's day-to-day frustrations, and how your existing infrastructure, contracts, and costs actually stack up.",
+    icon: "bi-wrench-adjustable",
+    title: "Fix",
+    desc: "Fix what isn't working.",
+    color: "var(--accent)",
   },
   {
-    num: "02",
-    icon: "bi-shield-lock",
-    title: "Secure",
-    desc: "We close the gaps that put your business at risk:",
-    bullets: [
-      "Endpoint protection, patch management, and security baseline hardening",
-      "Tested backup and disaster recovery, so one bad day can't take you down",
-    ],
+    icon: "bi-gear",
+    title: "Maintain",
+    desc: "Maintain the technology your business depends on.",
+    color: "var(--heading-color)",
   },
   {
-    num: "03",
-    icon: "bi-headset",
-    title: "Support",
-    desc: "An extension of your staff, not just a vendor on call — every request is tracked, prioritized, and escalated immediately when it's critical, with extended or 24×7 coverage available depending on your plan.",
-  },
-  {
-    num: "04",
     icon: "bi-graph-up-arrow",
-    title: "Evolve",
-    desc: "Your technology keeps pace as your business grows — we build an ongoing technology roadmap with lifecycle planning and vCIO advisory, all under predictable, fixed-fee pricing that scales with your business instead of surprising you with invoices.",
+    title: "Enhance",
+    desc: "Enhance your technology as your business evolves and new technologies emerge.",
+    color: "var(--accent-dark)",
   },
 ];
 
@@ -48,7 +38,7 @@ export default function HowWeWork() {
               marginBottom: 10,
             }}
           >
-            Our Approach
+            HOW WE HELP
           </span>
           <h2
             style={{
@@ -58,7 +48,7 @@ export default function HowWeWork() {
               marginBottom: 10,
             }}
           >
-            A Clear Approach to Better IT
+            Fix. Maintain. Enhance.
           </h2>
           <p style={{ color: "#666", fontSize: 15 }}>
             From understanding your needs to continuously improving your
@@ -70,64 +60,100 @@ export default function HowWeWork() {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: 40,
             alignItems: "center",
+            gap: 8,
+            border: "1px solid #e5eaf1",
+            borderBottom: "4px solid var(--heading-color)",
+            borderRadius: 16,
+            padding: "32px 36px",
+            boxShadow: "0 8px 28px rgba(13, 30, 46, 0.06)",
+            marginBottom: 48,
           }}
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
-          <div
-            style={{ flex: "1 1 400px" }}
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            {steps.map((s, i) => (
+          {steps.map((s, i) => (
+            <div
+              key={i}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                flex: "1 1 0",
+                gap: 8,
+              }}
+            >
               <div
-                key={i}
-                className="approach-card"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 14,
+                  flex: "1 1 auto",
+                  minWidth: 200,
+                }}
                 data-aos="fade-up"
-                data-aos-delay={150 + i * 70}
+                data-aos-delay={150 + i * 100}
               >
+                <div
+                  style={{
+                    width: 60,
+                    height: 60,
+                    borderRadius: "50%",
+                    border: `2px solid ${s.color}`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  <i
+                    className={`bi ${s.icon}`}
+                    style={{ color: s.color, fontSize: 22 }}
+                  />
+                </div>
+                <div>
+                  <h6
+                    style={{
+                      color: s.color,
+                      fontWeight: 700,
+                      fontSize: 14,
+                      textTransform: "uppercase",
+                      letterSpacing: 0.5,
+                      margin: "0 0 4px",
+                    }}
+                  >
+                    {s.title}.
+                  </h6>
+                  <p
+                    style={{
+                      fontSize: 13,
+                      color: "#666",
+                      margin: 0,
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {s.desc}
+                  </p>
+                </div>
+              </div>
+
+              {i < steps.length - 1 && (
                 <div
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 12,
-                    marginBottom: 12,
+                    flex: "0 1 60px",
+                    minWidth: 30,
                   }}
                 >
-                  <div className="approach-icon">
-                    <i className={`bi ${s.icon}`} />
-                  </div>
-                  <span className="approach-phase-pill">Phase {s.num}</span>
+                  <div style={{ flex: 1, borderTop: "2px dotted #d0d7e2" }} />
+                  <i
+                    className="bi bi-chevron-right"
+                    style={{ color: "#c3ccd9", fontSize: 14, margin: "0 4px" }}
+                  />
                 </div>
-                <h5>{s.title}</h5>
-                <p>{s.desc}</p>
-                {s.bullets && (
-                  <ul className="approach-checklist">
-                    {s.bullets.map((b, j) => (
-                      <li key={j}>{b}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div
-            style={{ flex: "1 1 380px" }}
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <img
-              src="/images/about/governance.jpg"
-              alt="Technicians monitoring and securing client systems"
-              style={{
-                width: "100%",
-                borderRadius: "28px 28px 28px 80px",
-                display: "block",
-                boxShadow: "0 20px 48px rgba(13, 30, 46, 0.16)",
-              }}
-            />
-          </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>

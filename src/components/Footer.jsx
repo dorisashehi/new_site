@@ -66,7 +66,7 @@ export default function Footer() {
                   marginBottom: 14,
                 }}
               >
-                Ready to Improve Your IT Operations?
+                Let's Talk About What You Need From IT.
               </h2>
               <p
                 style={{
@@ -75,8 +75,8 @@ export default function Footer() {
                   fontSize: 16,
                 }}
               >
-                Let&apos;s build a more secure, reliable, and efficient
-                technology environment together.
+                Ongoing IT management, a technology problem, a major project, or
+                a new office start with InfoManage.
               </p>
             </div>
             <div style={{ flexShrink: 0 }}>
@@ -91,7 +91,7 @@ export default function Footer() {
                   fontSize: 15,
                 }}
               >
-                Schedule a Consultation
+                Contact InfoManage
                 <i className="bi bi-arrow-right" />
               </Link>
             </div>

@@ -215,7 +215,7 @@ export default function Footer() {
           <div className="container">
             <div className="footer-bottom-inner">
               <div className="copyright">
-                <p>© 2026 InfoManage, LLC. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} InfoManage Corporation. All rights reserved.</p>
               </div>
             </div>
           </div>

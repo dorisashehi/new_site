@@ -43,11 +43,11 @@ function HomePage({ loaded }) {
       <Header />
       <main className="main home-page">
         <Hero />
+        <About />
         <Services />
         <WhenToContact />
-        <About />
         <HowWeWork />
-        <ClientBenefits />
+        {/* <ClientBenefits /> */}
         <CTA />
         <Trusted />
         <FAQ />

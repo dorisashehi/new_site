@@ -63,7 +63,6 @@ export default function HowWeWork() {
             alignItems: "center",
             gap: 8,
             border: "1px solid #e5eaf1",
-            borderBottom: "4px solid var(--heading-color)",
             borderRadius: 16,
             padding: "32px 36px",
             boxShadow: "0 8px 28px rgba(13, 30, 46, 0.06)",
@@ -114,7 +113,7 @@ export default function HowWeWork() {
                   <h6
                     style={{
                       color: s.color,
-                      fontWeight: 700,
+                      fontWeight: 900,
                       fontSize: 14,
                       textTransform: "uppercase",
                       letterSpacing: 0.5,
@@ -126,7 +125,7 @@ export default function HowWeWork() {
                   <p
                     style={{
                       fontSize: 13,
-                      color: "#666",
+                      color: "rgb(85, 85, 85)",
                       margin: 0,
                       lineHeight: 1.4,
                     }}

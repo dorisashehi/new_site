@@ -109,8 +109,8 @@ export default function WhenToContact() {
                 <p
                   style={{
                     fontSize: 14,
-                    fontWeight: 600,
-                    color: "var(--heading-color)",
+                    fontWeight: 400,
+                    color: "rgb(85, 85, 85)",
                     margin: 0,
                     lineHeight: 1.4,
                   }}
@@ -123,33 +123,36 @@ export default function WhenToContact() {
 
           <div
             style={{
-              flex: "1 1 260px",
+              flex: "1 1 220px",
+              maxWidth: 280,
               background: "var(--light-bg)",
               borderRadius: 14,
-              padding: "28px 24px",
+              padding: "24px 20px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: 14,
+              gap: 12,
               textAlign: "left",
             }}
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <i
-              className="bi bi-chat-dots"
-              style={{ fontSize: 44, color: "var(--accent)" }}
-            />
-            <p
-              style={{
-                fontWeight: 700,
-                color: "var(--heading-color)",
-                margin: 0,
-                fontSize: 17,
-              }}
-            >
-              Recognize your situation?
-            </p>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <i
+                className="bi bi-chat-dots"
+                style={{ fontSize: 32, color: "var(--accent)", flexShrink: 0 }}
+              />
+              <p
+                style={{
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  margin: 0,
+                  fontSize: 17,
+                }}
+              >
+                Recognize your situation?
+              </p>
+            </div>
             <p style={{ color: "#777", fontSize: 13, margin: 0 }}>
               If any of this sounds familiar, it's time to talk.
             </p>

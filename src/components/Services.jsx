@@ -113,7 +113,7 @@ export default function Services() {
                     }}
                   >
                     <i
-                      className="bi bi-check2"
+                      className="bi bi-arrow-right"
                       style={{
                         color: "var(--accent)",
                         flexShrink: 0,

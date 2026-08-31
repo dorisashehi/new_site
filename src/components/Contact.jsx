@@ -38,7 +38,7 @@ export default function Contact() {
     ].join("\n");
 
     window.open(
-      `mailto:sales@infomanage.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+      `mailto:doris.shehi2@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
       "_blank",
     );
 

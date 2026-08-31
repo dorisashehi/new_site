@@ -10,85 +10,98 @@ const avatarPhotos = [
   "/images/avatars/client-5.jpg",
 ];
 
-/* Previous testimonial set (initials-based avatar style)
-const testimonials = [
-  {
-    initials: 'DO',
-    quote: 'InfoManage feels like an extension of our own team. Every ticket gets solved fast, and nothing falls through the cracks.',
-    role: 'Director of Operations',
-    industry: 'Financial Services',
-  },
-  {
-    initials: 'ITM',
-    quote: 'They caught a security gap before it became a real problem. That kind of proactive attention is rare.',
-    role: 'IT Manager',
-    industry: 'Healthcare',
-  },
-  {
-    initials: 'FM',
-    quote: 'Our office move could have been a nightmare. InfoManage planned every cable and connection ahead of time, so we were up and running day one.',
-    role: 'Facilities Manager',
-    industry: 'Real Estate',
-  },
-  {
-    initials: 'VP',
-    quote: "Response times are fast, and it's always the same technicians—nobody makes us re-explain the problem.",
-    role: 'VP of Technology',
-    industry: 'Manufacturing',
-  },
-  {
-    initials: 'OD',
-    quote: 'Flat monthly pricing means no surprise invoices—we finally know what IT actually costs us each month.',
-    role: 'Operations Director',
-    industry: 'Legal Services',
-  },
-  {
-    initials: 'ME',
-    quote: "Our production schedule doesn't leave room for tech delays. InfoManage keeps everything running so we never miss a deadline.",
-    role: 'Managing Editor',
-    industry: 'Media',
-  },
-];
-*/
-
 const testimonials = [
   {
     quote:
-      "InfoManage feels like an extension of our own team. Every ticket gets solved fast, and nothing falls through the cracks.",
+      "InfoManage feels like an extension of our own team — every ticket gets solved fast, systems stay patched, and nothing falls through the cracks.",
     role: "Director of Operations",
     industry: "Financial Services",
+    rating: 5,
   },
   {
     quote:
-      "They caught a security gap before it became a real problem. That kind of proactive attention is rare.",
+      "Response times are fast, and it's always the same technicians — nobody makes us re-explain the problem.",
     role: "IT Manager",
     industry: "Healthcare",
+    rating: 4.5,
   },
   {
     quote:
-      "Our office move could have been a nightmare. InfoManage planned every cable and connection ahead of time, so we were up and running day one.",
+      "Our office move could have been a nightmare. InfoManage planned every cable, connection, and workstation ahead of time, so we were fully operational on day one.",
     role: "Facilities Manager",
     industry: "Real Estate",
+    rating: 5,
   },
   {
     quote:
-      "Response times are fast, and it's always the same technicians—nobody makes us re-explain the problem.",
-    role: "VP of Technology",
+      "They ran our entire network buildout for the new facility — cabling, servers, wireless — and had us live two days ahead of schedule.",
+    role: "Operations Manager",
     industry: "Manufacturing",
+    rating: 4.5,
   },
   {
     quote:
-      "Flat monthly pricing means no surprise invoices—we finally know what IT actually costs us each month.",
-    role: "Operations Director",
+      "They're not just our IT vendor — they sit in on our planning conversations and help shape our technology roadmap years out, not just fix what's broken today.",
+    role: "Managing Partner",
     industry: "Legal Services",
+    rating: 5,
   },
   {
     quote:
-      "Our production schedule doesn't leave room for tech delays. InfoManage keeps everything running so we never miss a deadline.",
-    role: "Managing Editor",
+      "Flat monthly pricing and a team that understands our long-term goals — InfoManage feels like a genuine extension of our leadership team.",
+    role: "Operations Director",
     industry: "Media",
+    rating: 4.5,
   },
 ];
+
+function StarRating({ rating }) {
+  const fullStars = Math.floor(rating);
+  const hasHalf = rating % 1 !== 0;
+  return (
+    <div style={{ display: "flex", gap: 3, marginBottom: 14 }}>
+      {Array.from({ length: fullStars }).map((_, s) => (
+        <i
+          key={s}
+          className="bi bi-star-fill"
+          style={{ color: "#ffc107", fontSize: 12 }}
+        />
+      ))}
+      {hasHalf && (
+        <span
+          style={{
+            position: "relative",
+            display: "inline-block",
+            width: 12,
+            height: 12,
+          }}
+        >
+          <i
+            className="bi bi-star-fill"
+            style={{
+              position: "absolute",
+              inset: 0,
+              color: "rgba(255,255,255,0.25)",
+              fontSize: 12,
+            }}
+          />
+          <i
+            className="bi bi-star-fill"
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "inline-block",
+              width: "50%",
+              overflow: "hidden",
+              color: "#ffc107",
+              fontSize: 12,
+            }}
+          />
+        </span>
+      )}
+    </div>
+  );
+}
 
 export default function CTA() {
   return (
@@ -118,7 +131,7 @@ export default function CTA() {
             }}
             data-aos="fade-up"
           >
-            <span className="mit-split-label">Client Reviews</span>
+            <span className="mit-split-label">CLIENT EXPERIENCE</span>
             <h2
               style={{
                 fontSize: 28,
@@ -128,7 +141,7 @@ export default function CTA() {
                 marginBottom: 20,
               }}
             >
-              The Trust We&apos;ve Earned, One Client at a Time
+              Trusted for the Everyday, and the Critical
             </h2>
             <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
               <div style={{ display: "flex" }}>
@@ -148,15 +161,6 @@ export default function CTA() {
                   />
                 ))}
               </div>
-              <span
-                style={{
-                  color: "rgba(255,255,255,0.75)",
-                  fontSize: 13,
-                  fontWeight: 600,
-                }}
-              >
-                100+ Happy Clients
-              </span>
             </div>
           </div>
 
@@ -195,15 +199,7 @@ export default function CTA() {
                       flexDirection: "column",
                     }}
                   >
-                    <div style={{ display: "flex", gap: 3, marginBottom: 14 }}>
-                      {[1, 2, 3, 4, 5].map((s) => (
-                        <i
-                          key={s}
-                          className="bi bi-star-fill"
-                          style={{ color: "#ffc107", fontSize: 12 }}
-                        />
-                      ))}
-                    </div>
+                    <StarRating rating={t.rating} />
                     <p
                       style={{
                         color: "rgba(255,255,255,0.8)",

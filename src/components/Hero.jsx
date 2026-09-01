@@ -74,14 +74,14 @@ export default function Hero() {
               flexWrap: "wrap",
             }}
           >
-            <a
-              href="#about"
+            <Link
+              to="/contact"
               className="btn-cta-primary"
               style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
             >
               Contact InfoManage
               <i className="bi bi-arrow-right" />
-            </a>
+            </Link>
             <Link
               to="/managed-it-services"
               className="btn-cta-outline"

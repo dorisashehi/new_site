@@ -129,9 +129,9 @@ export default function Header() {
             </ul>
           </nav>
 
-          <a href="/contact" className="cta-btn">
+          <Link to="/contact" className="cta-btn">
             Contact InfoManage
-          </a>
+          </Link>
           <i
             className="bi bi-list mobile-nav-toggle"
             onClick={() => setMobileOpen(true)}
